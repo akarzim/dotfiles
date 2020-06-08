@@ -44,3 +44,25 @@ copy() {
   fi
 }
 
+decipher() {
+  local filepath=$argv[1]
+  local dotfile=${argv[2]:-.${filepath:t}}
+
+  if [[ -d $filepath ]] then
+    echo "$fg[red][!]$reset_color decipher failed. $dotfile is a directory"
+  elif [[ -e ~/$dotfile ]] then
+    if gpg --no-tty -q -d $filepath | diff -q - ~/$dotfile &>/dev/null; then
+      echo "$fg[blue][•]$reset_color $dotfile already exists"
+    else
+      echo "$fg[yellow][?]$reset_color files $filepath and $dotfile differ"
+    fi
+  elif [[ -a $filepath ]] then
+    if gpg --no-tty -q -d $filepath 1> ~/$dotfile; then
+      echo "$fg[green][+]$reset_color $dotfile file deciphered"
+    else
+      echo "$fg[red][!]$reset_color $dotfile file decipher failed"
+    fi
+  else
+    echo "$fg[red][!]$reset_color $filepath does not exist"
+  fi
+}

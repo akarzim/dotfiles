@@ -80,22 +80,26 @@ cd dotflies && source ./init.zsh
 
 ## Usage
 
-Add support for other dotfiles by editing `init.zsh`. You have two functions at
-your disposal:
+Add support for other dotfiles by editing `init.zsh`. You have three functions
+at your disposal:
 
 - `link SOURCE [DOTFILE]` to create a symlink from `SOURCE` to `DOTFILE`
 - `copy SOURCE [DOTFILE]` to copy the `SOURCE` file to the `DOTFILE` destination
+- `decipher SOURCE [DOTFILE]` to copy an encrypted `SOURCE` file to the `DOTFILE` destination
 
 NOTE: The last argument is optional. If it is missing, it will be forged from
       the file name `SOURCE` prefixed with a period.
 
 ## Roadmap
 
-See the [open issues](https://github.com/akarizm/dotfiles/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/akarizm/dotfiles/issues) for a list of
+proposed features (and known issues).
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to
+be learn, inspire, and create. Any contributions you make are **greatly
+appreciated**.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)

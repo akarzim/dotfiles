@@ -31,6 +31,16 @@ copy ${0:A:h}/home/tigrc
 # git
 copy ${0:A:h}/home/gitconfig
 
+if [[ -d ~/dev/synbioz ]] then
+  decipher ${0:A:h}/home/dev/synbioz/mailmap.gpg dev/synbioz/.mailmap
+  decipher ${0:A:h}/home/dev/synbioz/gitconfig.gpg dev/synbioz/.gitconfig
+fi
+
+if [[ -d ~/dev/perso ]] then
+  decipher ${0:A:h}/home/dev/perso/mailmap.gpg dev/perso/.mailmap
+  decipher ${0:A:h}/home/dev/perso/gitconfig.gpg dev/perso/.gitconfig
+fi
+
 # bat
 copy ${0:A:h}/home/config/bat .config/bat
 
