@@ -23,13 +23,13 @@ if [[ -d ${0:A:h:h}/vim ]] then
 fi
 
 # tmux
-copy ${0:A:h}/tmux.conf
+copy ${0:A:h}/home/tmux.conf
 
 # tig
-copy ${0:A:h}/tigrc
+copy ${0:A:h}/home/tigrc
 
 # git
-copy ${0:A:h}/gitconfig
+copy ${0:A:h}/home/gitconfig
 
 # bat
-copy ${0:A:h}/bat .config/bat
+copy ${0:A:h}/home/config/bat .config/bat
