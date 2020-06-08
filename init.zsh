@@ -33,3 +33,8 @@ copy ${0:A:h}/home/gitconfig
 
 # bat
 copy ${0:A:h}/home/config/bat .config/bat
+
+# Iosevka font
+if [[ -d ~/git/iosevka ]] then
+  copy ${0:A:h}/home/fonts/iosevka/private-build-plans.toml private-build-plans.toml
+fi

@@ -1,0 +1,33 @@
+[buildPlans.iosevka-custom]   # <iosevka-custom> is your plan name
+family = "Iosevka Custom"     # Font menu family name
+design = ["leading-1250", "sp-term", "dlig", "cv08", "cv19", "cv67", "cv72", "cv74", "cv76", "cv78", "cv81", "cv83", "cv95"]   # Customize styles
+upright = ["upright-only", "styles", "cv69", "cv79"]                         # Upright-only styles
+italic = ["italic-only", "styles", "cv14", "cv24", "cv38", "cv92"]   # Italic-only styles
+oblique = ["oblique-only", "styles", "cv69", "cv79"]                         # Oblique-only styles
+hintParams = ["-a", "sss"]    # Optional custom parameters for ttfautohint
+
+###################################################################################################
+# Override default building weights
+# When buildPlans.<plan name>.weights is absent, all weights would built and mapped to
+# default values.
+# IMPORTANT : Currently "menu" and "css" property only support numbers between 0 and 1000.
+#             and "shape" properly only supports number between 100 and 900 (inclusive).
+#             If you decide to use custom weights you have to define all the weights you
+#             plan to use otherwise they will not be built.
+[buildPlans.iosevka-custom.weights.regular]
+shape = 400  # Weight for glyph shapes.
+menu  = 400  # Weight for the font's names.
+css   = 400  # Weight for webfont CSS.
+
+[buildPlans.iosevka-custom.weights.book]
+shape = 450
+menu  = 450  # Use 450 here to name the font's weight "Book"
+css   = 450
+
+[buildPlans.iosevka-custom.weights.bold]
+shape = 700
+menu  = 700
+css   = 700
+
+# end weight section
+###################################################################################################
