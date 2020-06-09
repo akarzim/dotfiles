@@ -42,7 +42,10 @@ if [[ -d ~/dev/perso ]] then
 fi
 
 # bat
-copy ${0:A:h}/home/config/bat .config/bat
+if which bat &> /dev/null; then
+  copy ${0:A:h}/home/config/bat .config/bat
+  bat cache --build
+fi
 
 # Iosevka font
 if [[ -d ~/git/iosevka ]] then
