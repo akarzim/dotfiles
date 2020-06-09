@@ -30,6 +30,7 @@ copy ${0:A:h}/home/tigrc
 
 # git
 copy ${0:A:h}/home/gitconfig
+copy ${0:A:h}/home/gitignore
 
 if [[ -d ~/dev/synbioz ]] then
   decipher ${0:A:h}/home/dev/synbioz/mailmap.gpg dev/synbioz/.mailmap
