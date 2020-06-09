@@ -66,3 +66,8 @@ decipher() {
     echo "$fg[red][!]$reset_color $filepath does not exist"
   fi
 }
+
+caching_policy() {
+  local oldp=( $1/*(.Nmh-1) )
+  (( $#oldp ))
+}
