@@ -1,7 +1,8 @@
+#!/usr/bin/env zsh
 source "functions.zsh"
 
 # zsh
-if [[ -d ${0:A:h:h}/zsh ]] then
+if [[ -d ${0:A:h:h}/zsh ]]; then
   link ${0:A:h:h}/zsh
   copy ${0:A:h:h}/zsh/zlogin
   copy ${0:A:h:h}/zsh/zlogout
@@ -10,13 +11,13 @@ if [[ -d ${0:A:h:h}/zsh ]] then
   copy ${0:A:h:h}/zsh/zshrc
 
   # zplug
-  if [[ -d ~/.zplug ]] then
+  if [[ -d $HOME/.zplug ]]; then
     copy ${0:A:h:h}/zsh/zplug-packages.zsh .zplug/packages.zsh
   fi
 fi
 
 # vim
-if [[ -d ${0:A:h:h}/vim ]] then
+if [[ -d ${0:A:h:h}/vim ]]; then
   link ${0:A:h:h}/vim
   link ${0:A:h:h}/vim .config/nvim
   copy ${0:A:h:h}/vim/config.vim .vimrc
@@ -32,12 +33,12 @@ copy ${0:A:h}/home/tigrc
 copy ${0:A:h}/home/gitconfig
 copy ${0:A:h}/home/gitignore
 
-if [[ -d ~/dev/synbioz ]] then
+if [[ -d $HOME/dev/synbioz ]]; then
   decipher ${0:A:h}/home/dev/synbioz/mailmap.gpg dev/synbioz/.mailmap
   decipher ${0:A:h}/home/dev/synbioz/gitconfig.gpg dev/synbioz/.gitconfig
 fi
 
-if [[ -d ~/dev/perso ]] then
+if [[ -d $HOME/dev/perso ]]; then
   decipher ${0:A:h}/home/dev/perso/mailmap.gpg dev/perso/.mailmap
   decipher ${0:A:h}/home/dev/perso/gitconfig.gpg dev/perso/.gitconfig
 fi
@@ -55,6 +56,6 @@ if which bat &> /dev/null; then
 fi
 
 # Iosevka font
-if [[ -d ~/git/iosevka ]] then
+if [[ -d $HOME/git/iosevka ]]; then
   copy ${0:A:h}/home/fonts/iosevka/private-build-plans.toml private-build-plans.toml
 fi
