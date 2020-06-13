@@ -1,6 +1,7 @@
 .DS_Store
 .byebug_history
 .gitattributes
+.gitconfig
 .mailmap
 afdko_env/
 vendor/bundle/
