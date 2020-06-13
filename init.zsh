@@ -34,13 +34,17 @@ copy ${0:A:h}/home/gitconfig
 copy ${0:A:h}/home/gitignore
 
 if [[ -d $HOME/dev/synbioz ]]; then
-  decipher ${0:A:h}/home/dev/synbioz/mailmap.gpg dev/synbioz/.mailmap
-  decipher ${0:A:h}/home/dev/synbioz/gitconfig.gpg dev/synbioz/.gitconfig
+  for project in $HOME/dev/synbioz/*(/); do
+    decipher ${0:A:h}/home/dev/synbioz/mailmap.gpg dev/synbioz/${project:t}/.mailmap
+    decipher ${0:A:h}/home/dev/synbioz/gitconfig.gpg dev/synbioz/${project:t}/.gitconfig
+  done
 fi
 
 if [[ -d $HOME/dev/perso ]]; then
-  decipher ${0:A:h}/home/dev/perso/mailmap.gpg dev/perso/.mailmap
-  decipher ${0:A:h}/home/dev/perso/gitconfig.gpg dev/perso/.gitconfig
+  for project in $HOME/dev/perso/*(/); do
+    decipher ${0:A:h}/home/dev/perso/mailmap.gpg dev/perso/${project:t}/.mailmap
+    decipher ${0:A:h}/home/dev/perso/gitconfig.gpg dev/perso/${project:t}/.gitconfig
+  done
 fi
 
 # bat
