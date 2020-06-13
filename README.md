@@ -75,10 +75,19 @@ git clone https://github.com/akarizm/dotfiles.git
 2. Install dotfiles
 
 ```sh
-cd dotflies && source ./init.zsh
+cd dotflies && ./init.zsh
 ```
 
 ## Usage
+
+```
+Options:
+
+-d, --diff      show changes between files if they are different
+-f, --force     overwrite existing files if they are different
+-h, --help      print this help
+-V, --version   print the version number
+```
 
 Add support for other dotfiles by editing `init.zsh`. You have three functions
 at your disposal:
