@@ -2,7 +2,7 @@
 autoload -Uz colors && colors
 source "functions.zsh"
 
-version="0.3.1"
+version="0.3.2"
 
 help="dotfiles $version
 
@@ -81,17 +81,13 @@ copy ${0:A:h}/home/gitconfig
 copy ${0:A:h}/home/gitignore
 
 if [[ -d $HOME/dev/synbioz ]]; then
-  for project in $HOME/dev/synbioz/*(/); do
-    decipher ${0:A:h}/home/dev/synbioz/mailmap.gpg dev/synbioz/${project:t}/.mailmap
-    decipher ${0:A:h}/home/dev/synbioz/gitconfig.gpg dev/synbioz/${project:t}/.gitconfig
-  done
+  rdecipher $HOME/dev/synbioz ${0:A:h}/home/dev/synbioz/mailmap.gpg .mailmap
+  rdecipher $HOME/dev/synbioz ${0:A:h}/home/dev/synbioz/gitconfig.gpg .gitconfig
 fi
 
 if [[ -d $HOME/dev/perso ]]; then
-  for project in $HOME/dev/perso/*(/); do
-    decipher ${0:A:h}/home/dev/perso/mailmap.gpg dev/perso/${project:t}/.mailmap
-    decipher ${0:A:h}/home/dev/perso/gitconfig.gpg dev/perso/${project:t}/.gitconfig
-  done
+  rdecipher $HOME/dev/perso ${0:A:h}/home/dev/perso/mailmap.gpg .mailmap
+  rdecipher $HOME/dev/perso ${0:A:h}/home/dev/perso/gitconfig.gpg .gitconfig
 fi
 
 # bat

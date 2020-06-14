@@ -94,15 +94,24 @@ Options:
   -V, --version               print the version number"
 ```
 
-Add support for other dotfiles by editing `init.zsh`. You have three functions
+Add support for other dotfiles by editing `init.zsh`. You have six functions
 at your disposal:
 
 - `link SOURCE [DOTFILE]` to create a symlink from `SOURCE` to `DOTFILE`
 - `copy SOURCE [DOTFILE]` to copy the `SOURCE` file to the `DOTFILE` destination
 - `decipher SOURCE [DOTFILE]` to copy an encrypted `SOURCE` file to the `DOTFILE` destination
+- `rlink DIRECTORY SOURCE [DOTFILE]` recursively link `SOURCE` to `DOTFILE` in `DIRECTORY` subdirectories
+- `rcopy DIRECTORY SOURCE [DOTFILE]` recursively copy `SOURCE` to `DOTFILE` in `DIRECTORY` subdirectories
+- `rdecipher DIRECTORY SOURCE [DOTFILE]`recursively decipher `SOURCE` to `DOTFILE` in `DIRECTORY` subdirectories
 
 NOTE: The last argument is optional. If it is missing, it will be forged from
       the file name `SOURCE` prefixed with a period.
+
+### Cache
+
+A caching policy is also available to avoid useless computations:
+
+- `caching_policy DIRECTORY` returns true if the cache is obslolete.
 
 ## Roadmap
 
