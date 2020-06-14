@@ -35,6 +35,7 @@
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
+* [Miscellanea](#miscellanea)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
@@ -119,6 +120,13 @@ By providing your program selection, you can update a subset of the available
 configuration. For example, to choose only zsh and git, just call `./init.zsh
 zsh git` and that's it.
 
+## Miscellanea
+
+1. `init.zsh` and `functions.zsh` contain ZSH syntax which is not Bash compatible:
+   - Glob qualifiers[^1]
+   - Character Highlighting[^2]
+1. `functions.zsh` contains BSD-based specific regex syntax[^3]
+
 ## Roadmap
 
 See the [open issues](https://github.com/akarizm/dotfiles/issues) for a list of
@@ -150,6 +158,11 @@ Project Link: <https://github.com/akarizm/dotfiles>
 
 * [Othneil Drew][othneildrew] for [this readme template][readme-template]
 * [DevHints.io][devhints] for [this Bash cheatsheet][bash]
+
+<!-- footnotes -->
+[^1]: http://zsh.sourceforge.net/Doc/Release/Expansion.html#Glob-Qualifiers
+[^2]: http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Character-Highlighting
+[^3]: https://stackoverflow.com/a/12696899/1340861
 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/akarzim/dotfiles.svg?style=flat-square
