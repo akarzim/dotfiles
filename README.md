@@ -81,12 +81,17 @@ cd dotflies && ./init.zsh
 ## Usage
 
 ```
-Options:
+Usage: ./init.zsh [-d | --diff] [-f | --force] [-h | --help] [-V | --version]
 
--d, --diff      show changes between files if they are different
--f, --force     overwrite existing files if they are different
--h, --help      print this help
--V, --version   print the version number
+Environment:
+  DIFF      hide/show changes between files if they are different (default: 0 ; values: 0, 1)
+  FORCE     overwrite or not existing files if they are different (default: 0 ; values: 0, 1)
+
+Options:
+  -d, --diff, --no-diff       show/hide changes between files if they are different
+  -f, --force, --no-force     overwrite or not existing files if they are different
+  -h, --help                  print this help
+  -V, --version               print the version number"
 ```
 
 Add support for other dotfiles by editing `init.zsh`. You have three functions

@@ -2,16 +2,21 @@
 autoload -Uz colors && colors
 source "functions.zsh"
 
-version="0.3.0"
+version="0.3.1"
 
 help="dotfiles $version
 
-Options:
+Usage: ${0:t} [-d | --diff] [-f | --force] [-h | --help] [-V | --version]
 
--d, --diff      show changes between files if they are different
--f, --force     overwrite existing files if they are different
--h, --help      print this help
--V, --version   print the version number"
+Environment:
+  DIFF      hide/show changes between files if they are different (default: 0 ; values: 0, 1)
+  FORCE     overwrite or not existing files if they are different (default: 0 ; values: 0, 1)
+
+Options:
+  -d, --diff, --no-diff       show/hide changes between files if they are different
+  -f, --force, --no-force     overwrite or not existing files if they are different
+  -h, --help                  print this help
+  -V, --version               print the version number"
 
 # options
 while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do case $1 in
@@ -25,11 +30,19 @@ while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do case $1 in
     ;;
   -d | --diff )
     echo "$fg[green](|)$reset_color diff mode on"
-    diff=1
+    DIFF=1
+    ;;
+  --no-diff )
+    echo "$fg[yellow](–)$reset_color diff mode off"
+    DIFF=0
     ;;
   -f | --force )
     echo "$fg[red](|)$reset_color force mode on"
-    force=1
+    FORCE=1
+    ;;
+  --no-force )
+    echo "$fg[yellow](–)$reset_color force mode off"
+    FORCE=0
     ;;
 esac; shift; done
 
@@ -37,53 +50,53 @@ if [[ "$1" == '--' ]]; then shift; fi
 
 # zsh
 if [[ -d ${0:A:h:h}/zsh ]]; then
-  link -d$diff -f$force ${0:A:h:h}/zsh
-  copy -d$diff -f$force ${0:A:h:h}/zsh/zlogin
-  copy -d$diff -f$force ${0:A:h:h}/zsh/zlogout
-  copy -d$diff -f$force ${0:A:h:h}/zsh/zprofile
-  copy -d$diff -f$force ${0:A:h:h}/zsh/zshenv
-  copy -d$diff -f$force ${0:A:h:h}/zsh/zshrc
+  link ${0:A:h:h}/zsh
+  copy ${0:A:h:h}/zsh/zlogin
+  copy ${0:A:h:h}/zsh/zlogout
+  copy ${0:A:h:h}/zsh/zprofile
+  copy ${0:A:h:h}/zsh/zshenv
+  copy ${0:A:h:h}/zsh/zshrc
 
   # zplug
   if [[ -d $HOME/.zplug ]]; then
-    copy -d$diff -f$force ${0:A:h:h}/zsh/zplug-packages.zsh .zplug/packages.zsh
+    copy ${0:A:h:h}/zsh/zplug-packages.zsh .zplug/packages.zsh
   fi
 fi
 
 # vim
 if [[ -d ${0:A:h:h}/vim ]]; then
-  link -d$diff -f$force ${0:A:h:h}/vim
-  link -d$diff -f$force ${0:A:h:h}/vim .config/nvim
-  copy -d$diff -f$force ${0:A:h:h}/vim/config.vim .vimrc
+  link ${0:A:h:h}/vim
+  link ${0:A:h:h}/vim .config/nvim
+  copy ${0:A:h:h}/vim/config.vim .vimrc
 fi
 
 # tmux
-copy -d$diff -f$force ${0:A:h}/home/tmux.conf
+copy ${0:A:h}/home/tmux.conf
 
 # tig
-copy -d$diff -f$force ${0:A:h}/home/tigrc
+copy ${0:A:h}/home/tigrc
 
 # git
-copy -d$diff -f$force ${0:A:h}/home/gitconfig
-copy -d$diff -f$force ${0:A:h}/home/gitignore
+copy ${0:A:h}/home/gitconfig
+copy ${0:A:h}/home/gitignore
 
 if [[ -d $HOME/dev/synbioz ]]; then
   for project in $HOME/dev/synbioz/*(/); do
-    decipher -d$diff -f$force ${0:A:h}/home/dev/synbioz/mailmap.gpg dev/synbioz/${project:t}/.mailmap
-    decipher -d$diff -f$force ${0:A:h}/home/dev/synbioz/gitconfig.gpg dev/synbioz/${project:t}/.gitconfig
+    decipher ${0:A:h}/home/dev/synbioz/mailmap.gpg dev/synbioz/${project:t}/.mailmap
+    decipher ${0:A:h}/home/dev/synbioz/gitconfig.gpg dev/synbioz/${project:t}/.gitconfig
   done
 fi
 
 if [[ -d $HOME/dev/perso ]]; then
   for project in $HOME/dev/perso/*(/); do
-    decipher -d$diff -f$force ${0:A:h}/home/dev/perso/mailmap.gpg dev/perso/${project:t}/.mailmap
-    decipher -d$diff -f$force ${0:A:h}/home/dev/perso/gitconfig.gpg dev/perso/${project:t}/.gitconfig
+    decipher ${0:A:h}/home/dev/perso/mailmap.gpg dev/perso/${project:t}/.mailmap
+    decipher ${0:A:h}/home/dev/perso/gitconfig.gpg dev/perso/${project:t}/.gitconfig
   done
 fi
 
 # bat
 if which bat &> /dev/null; then
-  copy -d$diff -f$force ${0:A:h}/home/config/bat .config/bat
+  copy ${0:A:h}/home/config/bat .config/bat
 
   if caching_policy ${HOME}/.config/bat/themes; then
     bat cache --build
@@ -95,5 +108,5 @@ fi
 
 # Iosevka font
 if [[ -d $HOME/git/iosevka ]]; then
-  copy -d$diff -f$force ${0:A:h}/home/fonts/iosevka/private-build-plans.toml private-build-plans.toml
+  copy ${0:A:h}/home/fonts/iosevka/private-build-plans.toml private-build-plans.toml
 fi

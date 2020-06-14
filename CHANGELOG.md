@@ -14,6 +14,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Security
 -->
 
+## [0.3.1] - 2020-06-14
+
+### Added
+
+- Environment variable support (DIFF, FORCE)
+- negative options support (no-diff, no-force)
+
 ## [0.3.0] - 2020-06-13
 
 ### Added
@@ -37,6 +44,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - First release
 - Copy, link & decipher
 
-[Unreleased]: https://github.com/akarzim/dotfiles/compare/0.3.0...master
+[Unreleased]: https://github.com/akarzim/dotfiles/compare/0.3.1...master
+[0.3.1]: https://github.com/akarzim/dotfiles/compare/0.3.0...0.3.1
 [0.3.0]: https://github.com/akarzim/dotfiles/compare/0.2.0...0.3.0
 [0.2.0]: https://github.com/akarzim/dotfiles/compare/0.1.0...0.2.0
