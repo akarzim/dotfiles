@@ -81,7 +81,7 @@ cd dotflies && ./init.zsh
 ## Usage
 
 ```
-Usage: ./init.zsh [-d | --diff] [-f | --force] [-h | --help] [-V | --version]
+Usage: ./init.zsh [-d | --diff] [-f | --force] [-h | --help] [-V | --version] [program ...]
 
 Environment:
   DIFF      hide/show changes between files if they are different (default: 0 ; values: 0, 1)
@@ -112,6 +112,12 @@ NOTE: The last argument is optional. If it is missing, it will be forged from
 A caching policy is also available to avoid useless computations:
 
 - `caching_policy DIRECTORY` returns true if the cache is obslolete.
+
+### A la carte
+
+By providing your program selection, you can update a subset of the available
+configuration. For example, to choose only zsh and git, just call `./init.zsh
+zsh git` and that's it.
 
 ## Roadmap
 

@@ -148,3 +148,7 @@ caching_policy() {
   local oldp=( $1/*(.Nmh-1) )
   (( $#oldp ))
 }
+
+program() {
+  [[ ${#PROGRAM} == 0 || ${PROGRAM} =~ [[:\<:]]$1[[:\>:]] ]] && which -s "$1" &> /dev/null
+}
