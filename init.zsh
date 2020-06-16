@@ -2,7 +2,7 @@
 autoload -Uz colors && colors
 source "functions.zsh"
 
-version="0.3.3"
+version="0.3.4"
 
 help="dotfiles $version
 
@@ -50,87 +50,7 @@ if [[ "$1" == '--' ]]; then shift; fi
 
 PROGRAM=${argv[@]}
 
-# zsh
-if program "zsh" && [[ -d ${0:A:h:h}/zsh ]]; then
-  link ${0:A:h:h}/zsh
-  copy ${0:A:h:h}/zsh/zlogin
-  copy ${0:A:h:h}/zsh/zlogout
-  copy ${0:A:h:h}/zsh/zprofile
-  copy ${0:A:h:h}/zsh/zshenv
-  copy ${0:A:h:h}/zsh/zshrc
-
-  # zplug
-  if [[ -d $HOME/.zplug ]]; then
-    copy ${0:A:h:h}/zsh/zplug-packages.zsh .zplug/packages.zsh
-  else
-    echo "$fg[magenta][/]$reset_color skip zplug"
-  fi
-else
-  echo "$fg[magenta][/]$reset_color skip zsh"
-fi
-
-# vim
-if program "vim" && [[ -d ${0:A:h:h}/vim ]]; then
-  link ${0:A:h:h}/vim
-  copy ${0:A:h:h}/vim/config.vim .vimrc
-else
-  echo "$fg[magenta][/]$reset_color skip vim"
-fi
-
-# nvim
-if program "nvim" && [[ -d ${0:A:h:h}/vim ]]; then
-  link ${0:A:h:h}/vim .config/nvim
-else
-  echo "$fg[magenta][/]$reset_color skip nvim"
-fi
-
-# tmux
-if program "tmux"; then
-  copy ${0:A:h}/home/tmux.conf
-else
-  echo "$fg[magenta][/]$reset_color skip tmux"
-fi
-
-# tig
-if program "tig"; then
-  copy ${0:A:h}/home/tigrc
-else
-  echo "$fg[magenta][/]$reset_color skip tig"
-fi
-
-# git
-if program "git"; then
-  copy ${0:A:h}/home/gitconfig
-  copy ${0:A:h}/home/gitignore
-
-  if [[ -d $HOME/dev/synbioz ]]; then
-    rdecipher $HOME/dev/synbioz ${0:A:h}/home/dev/synbioz/mailmap.gpg .mailmap
-    rdecipher $HOME/dev/synbioz ${0:A:h}/home/dev/synbioz/gitconfig.gpg .gitconfig
-  fi
-
-  if [[ -d $HOME/dev/perso ]]; then
-    rdecipher $HOME/dev/perso ${0:A:h}/home/dev/perso/mailmap.gpg .mailmap
-    rdecipher $HOME/dev/perso ${0:A:h}/home/dev/perso/gitconfig.gpg .gitconfig
-  fi
-else
-  echo "$fg[magenta][/]$reset_color skip git"
-fi
-
-# bat
-if program "bat"; then
-  copy ${0:A:h}/home/config/bat .config/bat
-
-  if caching_policy ${HOME}/.config/bat/themes; then
-    bat cache --build
-    echo "$fg[green][+]$reset_color bat cache rebuilt"
-  else
-    echo "$fg[yellow][-]$reset_color no need to rebuild bat cache"
-  fi
-else
-  echo "$fg[magenta][/]$reset_color skip bat"
-fi
-
-# Iosevka font
-if [[ -d $HOME/git/iosevka ]]; then
-  copy ${0:A:h}/home/fonts/iosevka/private-build-plans.toml private-build-plans.toml
-fi
+# Load modules
+for module in ${0:A:h}/modules/*.zsh; do
+  source $module
+done

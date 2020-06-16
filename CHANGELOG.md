@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Security
 -->
 
+## [0.3.4] - 2020-06-16
+
+### Changed
+
+- move configuration in modules
+
 ## [0.3.3] - 2020-06-14
 
 ### Added
@@ -60,7 +66,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - First release
 - Copy, link & decipher
 
-[Unreleased]: https://github.com/akarzim/dotfiles/compare/0.3.2...master
+[Unreleased]: https://github.com/akarzim/dotfiles/compare/0.3.4...master
+[0.3.4]: https://github.com/akarzim/dotfiles/compare/0.3.3...0.3.4
+[0.3.3]: https://github.com/akarzim/dotfiles/compare/0.3.2...0.3.3
 [0.3.2]: https://github.com/akarzim/dotfiles/compare/0.3.1...0.3.2
 [0.3.1]: https://github.com/akarzim/dotfiles/compare/0.3.0...0.3.1
 [0.3.0]: https://github.com/akarzim/dotfiles/compare/0.2.0...0.3.0

@@ -150,5 +150,5 @@ caching_policy() {
 }
 
 program() {
-  [[ ${#PROGRAM} == 0 || ${PROGRAM} =~ [[:\<:]]$1[[:\>:]] ]] && which -s "$1" &> /dev/null
+  [[ ${#PROGRAM} == 0 || ${PROGRAM} =~ [[:\<:]]$1[[:\>:]] ]] && (( $+commands[$1] ))
 }
