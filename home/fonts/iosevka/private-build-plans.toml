@@ -1,9 +1,9 @@
 [buildPlans.iosevka-custom]   # <iosevka-custom> is your plan name
 family = "Iosevka Custom"     # Font menu family name
-design = ["leading-1250", "sp-term", "dlig", "cv08", "cv19", "cv67", "cv72", "cv74", "cv76", "cv78", "cv81", "cv83", "cv95"]   # Customize styles
-upright = ["upright-only", "styles", "cv69", "cv79"]                         # Upright-only styles
-italic = ["italic-only", "styles", "cv14", "cv24", "cv38", "cv92"]   # Italic-only styles
-oblique = ["oblique-only", "styles", "cv69", "cv79"]                         # Oblique-only styles
+design = ["leading-1250", "sp-term", "dlig", "cv08", "cv19", "cv67", "cv72", "cv74", "cv76", "cv78", "cv81", "cv83", "cv95", "cv96", "VXAF"]   # Customize styles
+upright = ["upright-only", "styles", "cv69", "cv79", "VXAH"]                         # Upright-only styles
+italic = ["italic-only", "styles", "cv14", "cv24", "cv38", "cv92", "VXAI", "VXAU"]   # Italic-only styles
+oblique = ["oblique-only", "styles", "cv69", "cv79", "VXAH"]                         # Oblique-only styles
 hintParams = ["-a", "sss"]    # Optional custom parameters for ttfautohint
 
 ###################################################################################################
