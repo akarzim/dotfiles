@@ -11,8 +11,8 @@ if program "zsh" && [[ -d ${0:A:h:h:h}/zsh ]]; then
   if [[ -d $HOME/.zplug ]]; then
     copy ${0:A:h:h:h}/zsh/zplug-packages.zsh .zplug/packages.zsh
   else
-    echo "$fg[magenta][/]$reset_color skip zplug"
+    skip "zplug"
   fi
 else
-  echo "$fg[magenta][/]$reset_color skip zsh"
+  skip "zsh"
 fi

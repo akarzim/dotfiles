@@ -2,5 +2,5 @@
 if program "gpg"; then
   copy ${0:A:h:h}/home/gnupg/gpg-agent.conf .gnupg/gpg-agent.conf
 else
-  echo "$fg[magenta][/]$reset_color skip gpg"
+  skip "gpg"
 fi

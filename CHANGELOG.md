@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Security
 -->
 
+## [0.4.0] - 2020-07-04
+
+### Added
+
+- Skip function
+
 ## [0.3.4] - 2020-06-16
 
 ### Changed

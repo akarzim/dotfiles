@@ -13,5 +13,5 @@ if program "git"; then
     rdecipher $HOME/dev/perso ${0:A:h:h}/home/dev/perso/gitconfig.gpg .gitconfig
   fi
 else
-  echo "$fg[magenta][/]$reset_color skip git"
+  skip "git"
 fi

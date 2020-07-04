@@ -9,5 +9,5 @@ if program "bat"; then
     echo "$fg[yellow][-]$reset_color no need to rebuild bat cache"
   fi
 else
-  echo "$fg[magenta][/]$reset_color skip bat"
+  skip "bat"
 fi

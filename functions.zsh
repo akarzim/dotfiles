@@ -152,3 +152,7 @@ caching_policy() {
 program() {
   [[ ${#PROGRAM} == 0 || ${PROGRAM} =~ [[:\<:]]$1[[:\>:]] ]] && (( $+commands[$1] ))
 }
+
+skip() {
+  echo "$fg[magenta][/]$reset_color skip $1"
+}
