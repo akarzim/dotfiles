@@ -1,10 +1,10 @@
-[buildPlans.iosevka-custom]   # <iosevka-custom> is your plan name
-family = "Iosevka Custom"     # Font menu family name
-design = ["leading-1250", "sp-term", "dlig", "calt-exeq-alt-1", "cv08", "cv19", "cv67", "cv72", "cv74", "cv76", "cv78", "cv81", "cv83", "cv95", "cv96", "VXAF", "VXBI", "VXBL"]   # Customize styles
-upright = ["upright-only", "styles", "cv69", "cv79", "VXAH"]                         # Upright-only styles
-italic = ["italic-only", "styles", "cv14", "cv24", "cv38", "cv92", "VXAI", "VXAU", "VXBR"]   # Italic-only styles
-oblique = ["oblique-only", "styles", "cv69", "cv79", "VXAH"]                         # Oblique-only styles
-hintParams = ["-a", "sss"]    # Optional custom parameters for ttfautohint
+[buildPlans.iosevka-custom]                                             # <iosevka-custom> is your plan name
+family = "Iosevka Custom"                                               # Font menu family name
+design = ["leading-1250", "sp-term", "dlig", "calt-exeq-alt-1", "cv08", "cv19", "cv67", "cv72", "cv74", "cv76", "cv78", "cv81", "cv83", "cv95", "cv96", "VXBI", "VXAF"]   # Customize styles
+upright = ["upright-only", "styles", "cv69", "cv79", "VXAH", "VXBL"]    # Upright-only styles
+italic = ["italic-only", "styles", "default-to-old-style-digits", "cv14", "cv24", "cv38", "cv92", "VXAI", "VXAU", "VXBL", "VXBQ", "VXBR", "VXBS", "VXBT"]   # Italic-only styles
+oblique = ["oblique-only", "styles", "cv69", "cv79", "VXAH", "VXBL"]    # Oblique-only styles
+hintParams = ["-a", "sss"]                                              # Optional custom parameters for ttfautohint
 
 ###################################################################################################
 # Override default building weights
