@@ -1,6 +1,7 @@
 [core]
   excludesfile = ~/.gitignore
   pager = delta --plus-emph-color="#555628" --plus-color="#3b3c28" --minus-emph-color="#70342f" --minus-color="#4a2c2c" --theme='gruvbox.sepia'
+	attributesfile = ~/.gitattributes
 [color "status"]
   added = yellow
   changed = magenta

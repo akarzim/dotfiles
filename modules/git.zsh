@@ -2,6 +2,7 @@
 if program "git"; then
   copy ${0:A:h:h}/home/gitconfig
   copy ${0:A:h:h}/home/gitignore
+  copy ${0:A:h:h}/home/gitattributes
 
   if [[ -d $HOME/dev/synbioz ]]; then
     rdecipher $HOME/dev/synbioz ${0:A:h:h}/home/dev/synbioz/mailmap.gpg .mailmap
