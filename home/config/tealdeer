@@ -1,0 +1,30 @@
+[style.description]
+underline = false
+bold = false
+
+[style.command_name]
+foreground = "cyan"
+underline = false
+bold = true
+
+[style.example_text]
+foreground = "yellow"
+underline = false
+bold = false
+
+[style.example_code]
+underline = false
+bold = false
+
+[style.example_variable]
+foreground = "cyan"
+underline = false
+bold = false
+
+[display]
+compact = false
+use_pager = false
+
+[updates]
+auto_update = true
+auto_update_interval_hours = 720
