@@ -1,0 +1,66 @@
+[aws]
+disabled = true
+
+[character]
+success_symbol = "[❯](bold purple)"
+vicmd_symbol = "[❮](bold purple)"
+
+[cmd_duration]
+format = "[$duration]($style) "
+
+[directory]
+style = "bold blue"
+truncate_to_repo = false
+truncation_length = 8
+truncation_symbol = "…/"
+read_only = ""
+
+[elixir]
+format = '[$symbol$version \(OTP $otp_version\)]($style) '
+style = "purple dimmed"
+symbol = "🅴 "
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+style = "bold black"
+
+[git_commit]
+tag_disabled = false
+
+[git_status]
+conflicted = "‽"
+diverged = "⇡⇣"
+format = '([$all_status$ahead_behind]($style) )'
+stashed = "⇋"
+style = "green"
+
+[hostname]
+format = "[$hostname]($style) "
+style = "bold purple"
+
+[nodejs]
+format = "[$symbol$version]($style) "
+style = "green dimmed"
+symbol = "🅽 "
+
+[package]
+format = "[$symbol$version]($style) "
+style = "208 dimmed"
+symbol = "🅿 "
+
+[python]
+format = '[${symbol}${pyenv_prefix}${version}( \($virtualenv\))]($style) '
+pyenv_prefix = "v"
+pyenv_version_name = true
+style = "yellow dimmed"
+symbol = "🅿 "
+
+[ruby]
+format = "[$symbol$version]($style) "
+style = "red dimmed"
+symbol = "🆁 "
+
+[rust]
+format = "[$symbol$version]($style) "
+style = "black"
+symbol = "🆁 "
