@@ -3,5 +3,7 @@
 .gitattributes
 .gitconfig
 .mailmap
+.source_me
 afdko_env/
 vendor/bundle/
+scripts/templates/
