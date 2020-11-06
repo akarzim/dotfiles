@@ -31,6 +31,7 @@ tag_disabled = false
 conflicted = "‽"
 diverged = "⇡⇣"
 format = '([$all_status$ahead_behind]($style) )'
+modified = "±"
 stashed = "⇋"
 style = "green"
 
