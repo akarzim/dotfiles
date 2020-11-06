@@ -78,7 +78,7 @@ copy() {
       echo "$fg[red][!]$reset_color $dotfile directory copy failed"
     fi
   elif [[ -a $filepath ]]; then
-    if cp -p "${filepath:a}" "$dotfile"; then
+    if mkdir -p "${dotfile:h}" && cp -p "${filepath:a}" "$dotfile"; then
       echo "$fg[green][+]$reset_color $dotfile file copied"
     else
       echo "$fg[red][!]$reset_color $dotfile file copy failed"
