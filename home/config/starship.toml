@@ -7,6 +7,7 @@ vicmd_symbol = "[❮](bold purple)"
 
 [cmd_duration]
 format = "[$duration]($style) "
+style = "yellow"
 
 [directory]
 style = "bold blue"
@@ -38,6 +39,11 @@ style = "green"
 [hostname]
 format = "[$hostname]($style) "
 style = "bold purple"
+
+[java]
+format = "[${symbol}${version}]($style) "
+style = "blue dimmed"
+symbol = "🅹 "
 
 [nodejs]
 format = "[$symbol$version]($style) "
