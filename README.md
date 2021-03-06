@@ -76,7 +76,7 @@ git clone https://github.com/akarizm/dotfiles.git
 2. Install dotfiles
 
 ```sh
-cd dotflies && ./init.zsh
+cd dotfiles && ./init.zsh
 ```
 
 ## Usage
