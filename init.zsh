@@ -2,7 +2,7 @@
 autoload -Uz colors && colors
 source "functions.zsh"
 
-version="0.3.4"
+version="0.3.5"
 
 help="dotfiles $version
 

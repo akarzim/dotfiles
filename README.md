@@ -95,8 +95,8 @@ Options:
   -V, --version               print the version number"
 ```
 
-Add support for other dotfiles by editing `init.zsh`. You have six functions
-at your disposal:
+Add support for other dotfiles by creating new `.zsh` files under the `modules/`
+directory. You have some functions at your disposal:
 
 - `link SOURCE [DOTFILE]` to create a symlink from `SOURCE` to `DOTFILE`
 - `copy SOURCE [DOTFILE]` to copy the `SOURCE` file to the `DOTFILE` destination
@@ -104,6 +104,8 @@ at your disposal:
 - `rlink DIRECTORY SOURCE [DOTFILE]` recursively link `SOURCE` to `DOTFILE` in `DIRECTORY` subdirectories
 - `rcopy DIRECTORY SOURCE [DOTFILE]` recursively copy `SOURCE` to `DOTFILE` in `DIRECTORY` subdirectories
 - `rdecipher DIRECTORY SOURCE [DOTFILE]`recursively decipher `SOURCE` to `DOTFILE` in `DIRECTORY` subdirectories
+- `module MODULE` to check if `MODULE` is required
+- `program PROGRAM` to check if `PROGRAM` is executable
 
 NOTE: The last argument is optional. If it is missing, it will be forged from
       the file name `SOURCE` prefixed with a period.

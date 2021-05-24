@@ -1,4 +1,21 @@
 #!/usr/bin/env zsh
+module() {
+  [[ ${#PROGRAM} == 0 || ${PROGRAM} =~ [[:\<:]]$1[[:\>:]] ]]
+}
+
+program() {
+  module $1 && (( $+commands[$1] ))
+}
+
+caching_policy() {
+  local oldp=( $1/*(.Nmh-1) )
+  (( $#oldp ))
+}
+
+skip() {
+  echo "$fg[magenta][/]$reset_color skip $1"
+}
+
 link() {
   local filepath=$argv[1]
   local dotfile=${argv[2]:-.${filepath:t}}
@@ -142,17 +159,4 @@ rdecipher() {
   for subdir in $directory/*(/); do
     decipher "$filepath" "$subdir/$dotfile"
   done
-}
-
-caching_policy() {
-  local oldp=( $1/*(.Nmh-1) )
-  (( $#oldp ))
-}
-
-program() {
-  [[ ${#PROGRAM} == 0 || ${PROGRAM} =~ [[:\<:]]$1[[:\>:]] ]] && (( $+commands[$1] ))
-}
-
-skip() {
-  echo "$fg[magenta][/]$reset_color skip $1"
 }
