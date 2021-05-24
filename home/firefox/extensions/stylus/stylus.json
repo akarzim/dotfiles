@@ -1,218 +1,570 @@
 [
-	{
-		"enabled": true,
-		"updateUrl": null,
-		"md5Url": null,
-		"url": null,
-		"originalMd5": null,
-		"installDate": 1586955967330,
-		"name": "cryptpad.fr",
-		"sections": [
-			{
-				"code": ".CodeMirror {\n    font-family: 'Iosevka Custom';\n}\n\n.CodeMirror pre.CodeMirror-line,\n.CodeMirror pre.CodeMirror-line-like {\n    font-family: 'Iosevka Custom';\n}",
-				"domains": [
-					"cryptpad.fr",
-					"sandbox.cryptpad.info"
-				]
-			}
-		],
-		"updateDate": 1586956881952,
-		"_id": "f6a9eec3-ab5d-4838-9883-fffa34ab4cf2",
-		"_rev": 1592943331606,
-		"id": 1
-	},
-	{
-		"enabled": true,
-		"updateUrl": null,
-		"md5Url": null,
-		"url": null,
-		"originalMd5": null,
-		"installDate": 1591261329780,
-		"name": "git.delegateip.com",
-		"sections": [
-			{
-				"code": "textarea.js-gfm-input,\n.md code,\n.job-log {\n    font-family: \"Iosevka Custom\", monospace;\n    font-size: 14px;\n}",
-				"domains": [
-					"git.delegateip.com"
-				]
-			}
-		],
-		"updateDate": 1591361879547,
-		"_id": "cca79df5-2115-43d4-86d4-64cae288f3dd",
-		"_rev": 1592943331606,
-		"id": 2
-	},
-	{
-		"enabled": true,
-		"updateUrl": null,
-		"md5Url": null,
-		"url": null,
-		"originalMd5": null,
-		"installDate": 1591272037794,
-		"name": "www.synbioz.com",
-		"sections": [
-			{
-				"code": ".post-body code {\n    font-family: \"Iosevka Custom\", monospace;\n}",
-				"domains": [
-					"www.synbioz.com"
-				]
-			}
-		],
-		"updateDate": 1591272037794,
-		"_id": "1142e560-6da7-4507-954f-248dc48e76da",
-		"_rev": 1591272037794,
-		"id": 3
-	},
-	{
-		"enabled": true,
-		"updateUrl": null,
-		"md5Url": null,
-		"url": null,
-		"originalMd5": null,
-		"installDate": 1591361668880,
-		"name": "github.com",
-		"sections": [
-			{
-				"code": "code, pre, tt {\n    font-family: \"Iosevka Custom\", monospace;\n    font-size: 14px;\n}",
-				"domains": [
-					"github.com"
-				]
-			}
-		],
-		"updateDate": 1591361720836,
-		"_id": "80a6996d-d63a-40b7-a012-984495640aa1",
-		"_rev": 1592943331606,
-		"id": 4
-	},
-	{
-		"enabled": true,
-		"updateUrl": null,
-		"md5Url": null,
-		"url": null,
-		"originalMd5": null,
-		"installDate": 1592067673268,
-		"name": "mailcatcher.syn",
-		"sections": [
-			{
-				"code": "body {\n    font-family: \"iosevka custom\", monospace;\n}",
-				"domains": [
-					"mailcatcher.syn"
-				]
-			}
-		],
-		"updateDate": 1592067673268,
-		"_id": "3b34f46a-bab7-4f07-a1cc-13de599703e4",
-		"_rev": 1592943331606,
-		"id": 5
-	},
-	{
-		"enabled": true,
-		"updateUrl": null,
-		"md5Url": null,
-		"url": null,
-		"originalMd5": null,
-		"installDate": 1592163389140,
-		"name": "getpocket.com",
-		"sections": [
-			{
-				"code": "code,\nkbd,\nsamp {\n    font-family: \"Iosevka Custom\", monospace;\n    font-size: 1em;\n    opacity: 0.7;\n}\n\n.css-jt60ew {\n    font-family: \"Iosevka Aile\"\n}",
-				"domains": [
-					"getpocket.com"
-				]
-			}
-		],
-		"updateDate": 1592163842540,
-		"_id": "71404194-0954-43c6-bef5-f4d255c3ef0b",
-		"_rev": 1592943331606,
-		"id": 6
-	},
-	{
-		"enabled": true,
-		"updateUrl": null,
-		"md5Url": null,
-		"url": null,
-		"originalMd5": null,
-		"installDate": 1591272037794,
-		"name": "synbioz.com",
-		"sections": [
-			{
-				"code": ".post-body code {\n    font-family: \"Iosevka Custom\", monospace;\n}",
-				"domains": [
-					"synbioz.com"
-				]
-			}
-		],
-		"updateDate": 1592943149823,
-		"_id": "1142e560-6da7-4507-954f-248dc48e76da",
-		"_rev": 1592943331606,
-		"id": 7
-	},
-	{
-		"enabled": true,
-		"updateUrl": null,
-		"md5Url": null,
-		"url": null,
-		"originalMd5": null,
-		"installDate": 1592651193281,
-		"name": "synbioz.com (dark theme)",
-		"sections": [
-			{
-				"code": "/* AUTHOR */\n#communication-banner {\n    background: #4ca5d1;\n    color: #fff;\n    border-bottom: solid HSL(216, 14%, 15%) 6px;\n}\n\ndiv#site-wrapper {\n    background-color: HSL(216, 14%, 19%);\n}\n\nh3 {\n    color: HSL(216, 14%, 60%);\n}\n\nbody {\n    color: HSL(216, 14%, 75%);\n}\n\n.blog-date .blog-date-day {\n    color: HSL(216, 14%, 60%);\n}\n.blog-date .blog-date-month {\n    color: HSL(216, 14%, 60%);\n}\n\n.custom-widget-toolbox h3 {\n    color: HSL(216, 14%, 60%);\n}\n.custom-sidebar h3 {\n    color: HSL(216, 14%, 60%);\n}\n\ninput[type=\"text\"].hs-search-field__input {\n    border-top-right-radius: 0;\n    border-bottom-right-radius: 0;\n}\n.inputAndButton button {\n    background-color: hsl(216,14%,60%);\n    border: 1px solid hsl(216,14%,75%);\n    border-left: 0;\n}\n\n.custom-top-footer {\n    background-color: hsl(216,14%,19%);\n    border-top: solid hsl(216,14%,15%) 0;\n}\n\n/* ESQUISSE */\ndl.frontmatter-panel {\n    background-color: HSL(218, 14%, 26%);\n    box-shadow: hsl(216, 14%, 15%) 0px 0px 14px 0px inset;\n}\n\n/* BLOG POST */\n.custom-post-inner-wrapper {\n    background-color: HSL(216, 14%, 15%);\n}\n\n.post-header-info {\n    background: HSL(216, 14%, 15%);\n}\n\n.post-header-info .infos {\n    color: HSL(216, 14%, 60%);\n}\n\n.post-header-info .post-date-day {\n    color: HSL(216, 14%, 60%);\n}\n\n.hs-blog-post .blog-content {\n    background-color: HSL(216, 14%, 19%);\n    color: hsl(216, 14%, 90%);\n}\n\n.post-body blockquote {\n    color: HSL(216, 14%, 60%);\n}\n.post-body blockquote>:last-child {\n  background:url(/hubfs/Assets/guillemet-bas.png) no-repeat right bottom;\n}\n\n.post-body pre {\n    background: HSL(216, 14%, 26%);\n    box-shadow: 5rem 0 HSL(216, 14%, 26%),-5rem 0 HSL(216, 14%, 26%);\n}\n\n.post-body code {\n    color: HSL(216, 14%, 75%);\n    background-color: HSL(216, 14%, 26%);\n}\n\n.post-body hr {\n    background-color: hsl(216, 14%, 60%);\n}\n\n.post-body p:last-of-type {\n    color: hsl(216, 14%, 60%);\n}\n\n.sharing-button {\n    color: #fff;\n    background: HSL(216, 14%, 26%);\n}\n\n.blog-pagination {\n    background-color: HSL(216, 14%, 26%);\n}\n\n.blog-pagination a.next-posts-link {\n    border-left: 1px solid HSL(216, 14%, 26%);\n}\n\n.blog-pagination a.previous-posts-link {\n    border-right: 1px solid HSL(216, 14%, 26%);\n}\n\n.related-post {\n    background: HSL(216, 14%, 26%);\n    border-bottom: 1px solid HSL(216, 14%, 15%);\n}\n\n.custom-inner-article:hover {\n    background: HSL(216, 14%, 15%);\n}\n\n#comments-listing {\n    border: 1px solid HSL(216, 14%, 15%);\n}\n\ninput[type=\"text\"], input[type=\"password\"], input[type=\"datetime\"], input[type=\"datetime-local\"], input[type=\"date\"], input[type=\"month\"], input[type=\"time\"], input[type=\"week\"], input[type=\"number\"], input[type=\"email\"], input[type=\"url\"], input[type=\"search\"], input[type=\"tel\"], input[type=\"color\"], input[type=\"file\"], textarea, select {\n    background-color: hsl(216, 14%, 15%);\n    border: 1px solid hsl(216, 14%, 60%);\n    color: HSL(216, 14%, 60%);\n}\n\n.hs-form-field > label, label.hs-form-booleancheckbox-display {\n    color: HSL(216, 14%, 60%);\n}\n\nform.hs-form .hs-form-field ul.hs-error-msgs.inputs-list {\n    color: HSL(359, 45%, 60%);\n}\n\n.footer-container-wrapper {\n    border-top: 8px solid HSL(216, 14%, 15%);\n}\n\n/* ROUGE */\n.highlight table td { padding: 5px; }\n.highlight table pre { margin: 0; }\n.highlight, .highlight .w {\n  color: #d0d0d0;\n  background-color: #151515;\n}\n.highlight .err {\n  color: #151515;\n  background-color: #ac4142;\n}\n.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {\n  color: HSL(216, 14%, 60%);\n}\n.highlight .cp {\n  color: #f4bf75;\n}\n.highlight .nt {\n  color: #f4bf75;\n}\n.highlight .o, .highlight .ow {\n  color: #d0d0d0;\n}\n.highlight .p, .highlight .pi {\n  color: #d0d0d0;\n}\n.highlight .gi {\n  color: #90a959;\n}\n.highlight .gd {\n  color: #ac4142;\n}\n.highlight .gh {\n  color: #6a9fb5;\n  background-color: #151515;\n  font-weight: bold;\n}\n.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {\n  color: #aa759f;\n}\n.highlight .kc {\n  color: #d28445;\n}\n.highlight .kt {\n  color: #d28445;\n}\n.highlight .kd {\n  color: #d28445;\n}\n.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {\n  color: #90a959;\n}\n.highlight .sr {\n  color: #75b5aa;\n}\n.highlight .si {\n  color: #8f5536;\n}\n.highlight .se {\n  color: #8f5536;\n}\n.highlight .nn {\n  color: #f4bf75;\n}\n.highlight .nc {\n  color: #f4bf75;\n}\n.highlight .no {\n  color: #f4bf75;\n}\n.highlight .na {\n  color: #6a9fb5;\n}\n.highlight .nf {\n  color: HSL(359, 45%, 60%);\n  font-weight: normal;\n}\n.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {\n  color: #90a959;\n}\n.highlight .ss {\n  color: #90a959;\n}",
-				"domains": [
-					"synbioz.com",
-					"esquisse.synbioz.syn"
-				]
-			}
-		],
-		"updateDate": 1592944212270,
-		"_id": "dd271aa6-fb62-4ba6-9220-d23511fdb586",
-		"_rev": 1592944212270,
-		"id": 8
-	},
-	{
-		"enabled": true,
-		"updateUrl": null,
-		"md5Url": null,
-		"url": null,
-		"originalMd5": null,
-		"installDate": 1592854543769,
-		"name": "archiloque.net",
-		"sections": [
-			{
-				"code": "body {\n    background-color: hsl(213, 100%, 95%);\n    color: #222;\n    font-family: \"Iosevka Aile\", monospace;\n}\npre.pygments {\n    background: hsl(213, 50%, 90%);\n    padding: 1em;\n    margin: 0 -1em;\n}\npre {\n    font-family: \"Iosevka custom\", monospace;\n    font-size: 1em;\n    line-height: 1.2em;\n}\n\na {\n    color:#4575d2;\n}\n\n#site a {\n    color: #e6f1ff;\n}",
-				"domains": [
-					"archiloque.net"
-				]
-			}
-		],
-		"updateDate": 1592901238050,
-		"_id": "a048704d-8294-4d87-86f6-a7e0b117875e",
-		"_rev": 1592943331606,
-		"id": 9
-	},
-	{
-		"enabled": true,
-		"updateUrl": "https://userstyles.org/styles/chrome/153739.json",
-		"md5Url": "https://update.userstyles.org/153739.md5",
-		"url": "http://userstyles.org/styles/153739",
-		"originalMd5": "83aa11565fca706df10ef75199df8059",
-		"installDate": 1592943447498,
-		"sections": [
-			{
-				"urls": [],
-				"urlPrefixes": [],
-				"domains": [],
-				"regexps": [
-					"chrome-extension://.*",
-					"moz-extension://.*"
-				],
-				"code": "/*! Stylus-Dark v1.3 (2018-09-14)\r\n      Repository: https://github.com/overdodactyl/Stylus-Dark\r\n      License:    https://creativecommons.org/licenses/by-sa/4.0/\r\n\r\n      Code Mirror based on Firefox\r\n*/\r\n  #notes,\r\n  body {\r\n    background: #38383d!important;\r\n    color: #b1b1b3!important\r\n  }\r\n  #header {\r\n    color: silver!important;\r\n    background: #2a2a2e!important;\r\n    border-style: none!important\r\n  }\r\n  #stylus-popup {\r\n    background: #4a4a4f!important;\r\n    color: silver!important\r\n  }\r\n  #hotkey-info[data-active] {\r\n    border-left: 2px solid #2a2a2e!important\r\n  }\r\n  #hotkey-info div {\r\n    border-top: 1px solid #2a2a2e!important;\r\n    background-color: #2a2a2e!important\r\n  }\r\n  #help-popup,\r\n  #sections,\r\n  .newUI .target {\r\n    color: #b1b1b3!important\r\n  }\r\n  #help-popup,\r\n  #message-box > div,\r\n  #message-box-buttons,\r\n  #message-box-title,\r\n  body {\r\n    background: #2a2a2e!important\r\n  }\r\n  .search-result {\r\n    background: #4a4a4f!important;\r\n    border-color: #737373!important\r\n  }\r\n  .search-result:hover {\r\n    border-color: #b1b1b3!important\r\n  }\r\n  .search-result-meta {\r\n    background-color: #4a4a4f!important;\r\n    color: #b1b1b3!important\r\n  }\r\n  button,\r\n  input:not([type]),\r\n  select {\r\n    font-family: arial,sans-serif!important\r\n  }\r\n  input[type=checkbox]:not(.slider) {\r\n    background: #38383d!important\r\n  }\r\n  .applies-to li,\r\n  .firefox select,\r\n  input {\r\n    background-color: #38383d!important;\r\n    color: silver!important;\r\n    border: 1px solid #4a4a4f!important\r\n  }\r\n  .filter-selection select {\r\n    background-color: transparent!important;\r\n    border: none!important\r\n  }\r\n  #filters .filter-selection:hover {\r\n    background-color: transparent!important\r\n  }\r\n  button {\r\n    background: #2a2a2e!important;\r\n    border: 1px solid #484848!important;\r\n    color: silver!important;\r\n    border-radius: 3px!important\r\n  }\r\n  .svg-icon.checked {\r\n    fill: #45a1ff!important\r\n  }\r\n  button:hover {\r\n    color: #45a1ff!important\r\n  }\r\n  a,\r\n  a:visited {\r\n    color: #e1e1e1!important\r\n  }\r\n  #save-button:after {\r\n    content: 'd'!important\r\n  }\r\n  body.dirty #save-button:after {\r\n    content: '?'!important\r\n  }\r\n  .newUI .entry:hover .svg-icon:hover,\r\n  .svg-icon:hover {\r\n    fill: #45a1ff!important\r\n  }\r\n  #message-box.danger #message-box-title {\r\n    background-color: #b22222!important\r\n  }\r\n  .newUI .can-update .update,\r\n  .newUI .no-update:not(.update-problem):not(.update-done) .up-to-date {\r\n    color: #000!important\r\n  }\r\n  .svg-icon {\r\n    fill: #b1b1b3!important\r\n  }\r\n  #url {\r\n    filter: invert(65%)!important\r\n  }\r\n  .CodeMirror-gutters {\r\n    color: #b1b1b3!important\r\n  }\r\n  .newUI .entry {\r\n    background: #38383d!important\r\n  }\r\n  .newUI .entry:hover {\r\n    background: #2a2a2e!important\r\n  }\r\n  .disabled h2::after {\r\n    border: 1px solid #444!important\r\n  }\r\n  .svg-icon.select-arrow {\r\n    fill: silver!important\r\n  }\r\n  .newUI .entry .style-name:hover::before {\r\n    background: 0 0!important\r\n  }\r\n  body.all-styles-hidden-by-filters::after,\r\n  body.all-styles-hidden-by-filters::before {\r\n    color: #45a1ff!important\r\n  }\r\n  .active #filters-stats {\r\n    background-color: #45a1ff!important;\r\n    border-color: #45a1ff!important\r\n  }\r\n  #reset-filters {\r\n    fill: #45a1ff!important\r\n  }\r\n  .CodeMirror {\r\n    border: 1px solid #4a4a4f;\r\n    border-radius: 4px!important\r\n  }\r\n  .Codemirror-hints {\r\n    background: #353b48!important;\r\n    border-color: #737373!important\r\n  }\r\n  .Codemirror-hint {\r\n    color: #d7d7db!important\r\n  }\r\n  .CodeMirror {\r\n    background: #2a2a2e!important;\r\n    color: #b1b1b3!important\r\n  }\r\n  div.CodeMirror-selected {\r\n    background: #353b48!important\r\n  }\r\n  .CodeMirror-line > span > span::selection,\r\n  .CodeMirror-line > span::selection,\r\n  .CodeMirror-line::selection {\r\n    background: #353b48!important\r\n  }\r\n  .CodeMirror-line > span > span::-moz-selection,\r\n  .CodeMirror-line > span::-moz-selection,\r\n  .CodeMirror-line::-moz-selection {\r\n    background: #353b48!important\r\n  }\r\n  .CodeMirror-gutters {\r\n    background: #2a2a2e!important;\r\n    border-right: 0 solid #4a4a4f!important\r\n  }\r\n  .CodeMirror-guttermarker,\r\n  .CodeMirror-guttermarker-subtle {\r\n    color: #555!important\r\n  }\r\n  .CodeMirror-linenumber {\r\n    color: #939393!important\r\n  }\r\n  .CodeMirror-cursor {\r\n    border-left: 1px solid #fff!important\r\n  }\r\n  span.cm-comment {\r\n    color: #939393!important\r\n  }\r\n  span.cm-atom,\r\n  span.cm-attribute,\r\n  span.cm-builtin,\r\n  span.cm-error,\r\n  span.cm-keyword,\r\n  span.cm-quote {\r\n    color: #ff7de9!important\r\n  }\r\n  span.cm-number,\r\n  span.cm-string,\r\n  span.cm-string-2 {\r\n    color: #6b89ff!important\r\n  }\r\n  span.cm-hr,\r\n  span.cm-meta {\r\n    color: #939393!important\r\n  }\r\n  span.cm-header,\r\n  span.cm-qualifier,\r\n  span.cm-variable-2 {\r\n    color: #75bfff!important\r\n  }\r\n  span.cm-property {\r\n    color: #86de74!important\r\n  }\r\n  span.cm-bracket,\r\n  span.cm-def,\r\n  span.cm-link:visited,\r\n  span.cm-tag {\r\n    color: #75bfff!important\r\n  }\r\n  span.cm-variable {\r\n    color: #b98eff!important\r\n  }\r\n  span.cm-variable-3 {\r\n    color: #d7d7db!important\r\n  }\r\n  span.cm-link {\r\n    color: #737373!important\r\n  }\r\n  span.cm-operator {\r\n    color: #b1b1b3!important\r\n  }\r\n  span.cm-special {\r\n    color: #d7d7db!important\r\n  }\r\n  .CodeMirror-activeline-background {\r\n    background: rgba(185,215,253,.15)!important\r\n  }\r\n  .CodeMirror-matchingbracket {\r\n    outline: rgba(255,255,255,.25) solid 1px!important;\r\n    color: #fff!important\r\n  }\r\n  select {\r\n    color: silver;\r\n  }\r\n  option, optgroup {\r\n    background-color: #2a2a2e\r\n  }"
-			}
-		],
-		"name": "Stylus Dark - ShadowFox",
-		"originalDigest": "8e54cb8435bc3b4be928485008e0664486d98b70",
-		"_id": "3075ac9d-7a6d-456d-bf33-bf7e01c5b10c",
-		"_rev": 1592943447500,
-		"id": 10
-	}
+  {
+    "settings": {
+      "openEditInWindow": false,
+      "openEditInWindow.popup": false,
+      "windowPosition": {},
+      "show-badge": true,
+      "disableAll": false,
+      "exposeIframes": false,
+      "newStyleAsUsercss": false,
+      "styleViaXhr": false,
+      "patchCsp": false,
+      "config.autosave": true,
+      "popup.breadcrumbs": true,
+      "popup.breadcrumbs.usePath": false,
+      "popup.enabledFirst": true,
+      "popup.stylesFirst": true,
+      "popup.autoResort": false,
+      "popup.borders": false,
+      "popup.findStylesInline": true,
+      "manage.onlyEnabled": false,
+      "manage.onlyLocal": false,
+      "manage.onlyUsercss": false,
+      "manage.onlyEnabled.invert": false,
+      "manage.onlyLocal.invert": false,
+      "manage.onlyUsercss.invert": false,
+      "manage.actions.expanded": true,
+      "manage.backup.expanded": true,
+      "manage.filters.expanded": true,
+      "manage.newUI": true,
+      "manage.newUI.favicons": false,
+      "manage.newUI.faviconsGray": true,
+      "manage.newUI.targets": 3,
+      "manage.newUI.sort": "title,asc",
+      "editor.options": {},
+      "editor.toc.expanded": true,
+      "editor.options.expanded": true,
+      "editor.lint.expanded": true,
+      "editor.lineWrapping": true,
+      "editor.smartIndent": true,
+      "editor.indentWithTabs": false,
+      "editor.tabSize": 4,
+      "editor.keyMap": "default",
+      "editor.theme": "default",
+      "editor.beautify": {
+        "selector_separator_newline": true,
+        "newline_before_open_brace": false,
+        "newline_after_open_brace": true,
+        "newline_between_properties": true,
+        "newline_before_close_brace": true,
+        "newline_between_rules": false,
+        "preserve_newlines": true,
+        "end_with_newline": false,
+        "indent_conditional": true
+      },
+      "editor.beautify.hotkey": "",
+      "editor.lintDelay": 300,
+      "editor.linter": "csslint",
+      "editor.lintReportDelay": 500,
+      "editor.matchHighlight": "token",
+      "editor.autoCloseBrackets": true,
+      "editor.autocompleteOnTyping": false,
+      "editor.contextDelete": false,
+      "editor.selectByTokens": true,
+      "editor.appliesToLineWidget": true,
+      "editor.livePreview": true,
+      "editor.colorpicker": true,
+      "editor.colorpicker.hexUppercase": false,
+      "editor.colorpicker.hotkey": "",
+      "editor.colorpicker.color": "#f8fbff",
+      "editor.colorpicker.maxHeight": 300,
+      "hotkey._execute_browser_action": "",
+      "hotkey.openManage": "",
+      "hotkey.styleDisableAll": "",
+      "sync.enabled": "none",
+      "iconset": 0,
+      "badgeDisabled": "#8B0000",
+      "badgeNormal": "#006666",
+      "popupWidth": 246,
+      "updateInterval": 24
+    }
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "installDate": 1592163389140,
+    "name": "getpocket.com",
+    "sections": [
+      {
+        "code": "code,\nkbd,\nsamp {\n    font-family: \"Iosevka Custom\", monospace;\n    font-size: 1em;\n    opacity: 0.7;\n}\n\n.css-jt60ew {\n    font-family: \"Iosevka Aile\"\n}",
+        "domains": [
+          "getpocket.com"
+        ]
+      }
+    ],
+    "updateDate": 1592163842540,
+    "_id": "71404194-0954-43c6-bef5-f4d255c3ef0b",
+    "_rev": 1592944809967,
+    "id": 1
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "installDate": 1592391093920,
+    "name": "papstream.cc",
+    "sections": [
+      {
+        "code": "",
+        "domains": [
+          "papstream.cc"
+        ]
+      }
+    ],
+    "updateDate": 1592392708465,
+    "_id": "ff133551-bd0a-4173-a0f7-a155ef526f04",
+    "_rev": 1592392708465,
+    "id": 3
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "url": null,
+    "installDate": 1592651193281,
+    "name": "synbioz.com (dark theme)",
+    "sections": [
+      {
+        "code": "/* AUTHOR */\n#communication-banner {\n    background: #4ca5d1;\n    color: #fff;\n    border-bottom: solid HSL(216, 14%, 15%) 6px;\n}\n\ndiv#site-wrapper {\n    background-color: HSL(216, 14%, 19%);\n}\n\nh3 {\n    color: HSL(216, 14%, 60%);\n}\n\nbody {\n    color: HSL(216, 14%, 75%);\n}\n\n.blog-date .blog-date-day {\n    color: HSL(216, 14%, 60%);\n}\n.blog-date .blog-date-month {\n    color: HSL(216, 14%, 60%);\n}\n\n.custom-widget-toolbox h3 {\n    color: HSL(216, 14%, 60%);\n}\n.custom-sidebar h3 {\n    color: HSL(216, 14%, 60%);\n}\n\ninput[type=\"text\"].hs-search-field__input {\n    border-top-right-radius: 0;\n    border-bottom-right-radius: 0;\n}\n.inputAndButton button {\n    background-color: hsl(216,14%,60%);\n    border: 1px solid hsl(216,14%,75%);\n    border-left: 0;\n}\n\n.custom-top-footer {\n    background-color: hsl(216,14%,19%);\n    border-top: solid hsl(216,14%,15%) 0;\n}\n\n/* ESQUISSE */\ndl.frontmatter-panel {\n    background-color: HSL(218, 14%, 26%);\n    box-shadow: hsl(216, 14%, 15%) 0px 0px 14px 0px inset;\n}\n\n/* BLOG POST */\n.custom-post-inner-wrapper {\n    background-color: HSL(216, 14%, 15%);\n}\n\n.post-header-info {\n    background: HSL(216, 14%, 15%);\n}\n\n.post-header-info .infos {\n    color: HSL(216, 14%, 60%);\n}\n\n.post-header-info .post-date-day {\n    color: HSL(216, 14%, 60%);\n}\n\n.hs-blog-post .blog-content {\n    background-color: HSL(216, 14%, 19%);\n    color: hsl(216, 14%, 90%);\n}\n\n.post-body blockquote {\n    color: HSL(216, 14%, 60%);\n}\n.post-body blockquote>:last-child {\n  background:url(/hubfs/Assets/guillemet-bas.png) no-repeat right bottom;\n}\n\n.post-body pre {\n    background: HSL(216, 14%, 26%);\n    box-shadow: 5rem 0 HSL(216, 14%, 26%),-5rem 0 HSL(216, 14%, 26%);\n}\n\n.post-body code {\n    color: HSL(216, 14%, 75%);\n    background-color: HSL(216, 14%, 26%);\n}\n\n.post-body hr {\n    background-color: hsl(216, 14%, 60%);\n}\n\n.post-body p:last-of-type {\n    color: hsl(216, 14%, 60%);\n}\n\n.sharing-button {\n    color: #fff;\n    background: HSL(216, 14%, 26%);\n}\n\n.blog-pagination {\n    background-color: HSL(216, 14%, 26%);\n}\n\n.blog-pagination a.next-posts-link {\n    border-left: 1px solid HSL(216, 14%, 26%);\n}\n\n.blog-pagination a.previous-posts-link {\n    border-right: 1px solid HSL(216, 14%, 26%);\n}\n\n.related-post {\n    background: HSL(216, 14%, 26%);\n    border-bottom: 1px solid HSL(216, 14%, 15%);\n}\n\n.custom-inner-article:hover {\n    background: HSL(216, 14%, 15%);\n}\n\n#comments-listing {\n    border: 1px solid HSL(216, 14%, 15%);\n}\n\ninput[type=\"text\"], input[type=\"password\"], input[type=\"datetime\"], input[type=\"datetime-local\"], input[type=\"date\"], input[type=\"month\"], input[type=\"time\"], input[type=\"week\"], input[type=\"number\"], input[type=\"email\"], input[type=\"url\"], input[type=\"search\"], input[type=\"tel\"], input[type=\"color\"], input[type=\"file\"], textarea, select {\n    background-color: hsl(216, 14%, 15%);\n    border: 1px solid hsl(216, 14%, 60%);\n    color: HSL(216, 14%, 60%);\n}\n\n.hs-form-field > label, label.hs-form-booleancheckbox-display {\n    color: HSL(216, 14%, 60%);\n}\n\nform.hs-form .hs-form-field ul.hs-error-msgs.inputs-list {\n    color: HSL(359, 45%, 60%);\n}\n\n.footer-container-wrapper {\n    border-top: 8px solid HSL(216, 14%, 15%);\n}\n\n/* ROUGE */\n.highlight table td { padding: 5px; }\n.highlight table pre { margin: 0; }\n.highlight, .highlight .w {\n  color: #d0d0d0;\n  background-color: #151515;\n}\n.highlight .err {\n  color: #151515;\n  background-color: #ac4142;\n}\n.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {\n  color: HSL(216, 14%, 60%);\n}\n.highlight .cp {\n  color: #f4bf75;\n}\n.highlight .nt {\n  color: #f4bf75;\n}\n.highlight .o, .highlight .ow {\n  color: #d0d0d0;\n}\n.highlight .p, .highlight .pi {\n  color: #d0d0d0;\n}\n.highlight .gi {\n  color: #90a959;\n}\n.highlight .gd {\n  color: #ac4142;\n}\n.highlight .gh {\n  color: #6a9fb5;\n  font-weight: bold;\n}\n.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {\n  color: #aa759f;\n}\n.highlight .kc {\n  color: #d28445;\n}\n.highlight .kt {\n  color: #d28445;\n}\n.highlight .kd {\n  color: #d28445;\n}\n.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {\n  color: #90a959;\n}\n.highlight .sr {\n  color: #75b5aa;\n}\n.highlight .si {\n  color: #8f5536;\n}\n.highlight .se {\n  color: #8f5536;\n}\n.highlight .nn {\n  color: #f4bf75;\n}\n.highlight .nc {\n  color: #f4bf75;\n}\n.highlight .no {\n  color: #f4bf75;\n}\n.highlight .na {\n  color: #6a9fb5;\n}\n.highlight .nf {\n  color: HSL(359, 45%, 60%);\n  font-weight: normal;\n}\n.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {\n  color: #90a959;\n}\n.highlight .ss {\n  color: #90a959;\n}",
+        "domains": [
+          "synbioz.com",
+          "esquisse.synbioz.syn"
+        ]
+      }
+    ],
+    "updateDate": 1615624405662,
+    "_id": "dd271aa6-fb62-4ba6-9220-d23511fdb586",
+    "_rev": 1615624405662,
+    "id": 4
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "installDate": 1592854543769,
+    "name": "archiloque.net",
+    "sections": [
+      {
+        "code": "body {\n    background-color: hsl(213, 100%, 95%);\n    color: #222;\n    font-family: \"Iosevka Aile\", monospace;\n}\n\npre.pygments {\n    background: hsl(213, 50%, 90%);\n    padding: 1em;\n    margin: 0 -1em;\n}\npre {\n    font-family: \"Iosevka custom\", monospace;\n    font-size: 1em;\n    line-height: 1.2em;\n}\n\ncode {\n    /* font-family: \"Droid Sans Mono\",\"DejaVu Sans Mono\",monospace; */\n    font-family: monospace;\n}\na {\n    color: #4575d2;\n}\n\n#site a {\n    color: #e6f1ff;\n}",
+        "domains": [
+          "archiloque.net"
+        ]
+      }
+    ],
+    "updateDate": 1612392720320,
+    "_id": "a048704d-8294-4d87-86f6-a7e0b117875e",
+    "_rev": 1614023288247,
+    "id": 5
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "installDate": 1586955967330,
+    "name": "cryptpad.fr",
+    "sections": [
+      {
+        "code": ".CodeMirror {\n    font-family: 'Iosevka Custom';\n}\n\n.CodeMirror pre.CodeMirror-line,\n.CodeMirror pre.CodeMirror-line-like {\n    font-family: 'Iosevka Custom';\n}",
+        "domains": [
+          "cryptpad.fr",
+          "sandbox.cryptpad.info"
+        ]
+      }
+    ],
+    "updateDate": 1586956881952,
+    "_id": "f6a9eec3-ab5d-4838-9883-fffa34ab4cf2",
+    "_rev": 1592944809967,
+    "id": 6
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "installDate": 1591272037794,
+    "name": "synbioz.com",
+    "sections": [
+      {
+        "code": ".post-body code {\n    font-family: \"Iosevka Custom\", monospace;\n}",
+        "domains": [
+          "synbioz.com"
+        ]
+      }
+    ],
+    "updateDate": 1592943149823,
+    "_id": "1142e560-6da7-4507-954f-248dc48e76da",
+    "_rev": 1592944809967,
+    "id": 7
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "url": null,
+    "installDate": 1591361668880,
+    "name": "github.com",
+    "sections": [
+      {
+        "code": "code,\npre,\ntt,\ntextarea {\n    font-family: \"Iosevka Custom\", monospace;\n    font-size: 14px;\n}",
+        "domains": [
+          "github.com"
+        ]
+      }
+    ],
+    "updateDate": 1621676193022,
+    "_id": "80a6996d-d63a-40b7-a012-984495640aa1",
+    "_rev": 1621676193022,
+    "id": 8
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "installDate": 1592067673268,
+    "name": "mailcatcher.syn",
+    "sections": [
+      {
+        "code": "body {\n    font-family: \"iosevka custom\", monospace;\n}",
+        "domains": [
+          "mailcatcher.syn"
+        ]
+      }
+    ],
+    "updateDate": 1592067673268,
+    "_id": "3b34f46a-bab7-4f07-a1cc-13de599703e4",
+    "_rev": 1592944809967,
+    "id": 9
+  },
+  {
+    "enabled": true,
+    "updateUrl": "https://raw.githubusercontent.com/33kk/uso-archive/flomaster/data/usercss/153739.user.css",
+    "url": "https://33kk.github.io/uso-archive/?style=153739",
+    "installDate": 1592943447498,
+    "sections": [
+      {
+        "code": "/*! Stylus-Dark v1.3 (2018-09-14)\n      Repository: https://github.com/overdodactyl/Stylus-Dark\n      License:    https://creativecommons.org/licenses/by-sa/4.0/\n\n      Code Mirror based on Firefox\n*/\n  #notes,\n  body {\n    background: #38383d!important;\n    color: #b1b1b3!important\n  }\n  #header {\n    color: silver!important;\n    background: #2a2a2e!important;\n    border-style: none!important\n  }\n  #stylus-popup {\n    background: #4a4a4f!important;\n    color: silver!important\n  }\n  #hotkey-info[data-active] {\n    border-left: 2px solid #2a2a2e!important\n  }\n  #hotkey-info div {\n    border-top: 1px solid #2a2a2e!important;\n    background-color: #2a2a2e!important\n  }\n  #help-popup,\n  #sections,\n  .newUI .target {\n    color: #b1b1b3!important\n  }\n  #help-popup,\n  #message-box > div,\n  #message-box-buttons,\n  #message-box-title,\n  body {\n    background: #2a2a2e!important\n  }\n  .search-result {\n    background: #4a4a4f!important;\n    border-color: #737373!important\n  }\n  .search-result:hover {\n    border-color: #b1b1b3!important\n  }\n  .search-result-meta {\n    background-color: #4a4a4f!important;\n    color: #b1b1b3!important\n  }\n  button,\n  input:not([type]),\n  select {\n    font-family: arial,sans-serif!important\n  }\n  input[type=checkbox]:not(.slider) {\n    background: #38383d!important\n  }\n  .applies-to li,\n  .firefox select,\n  input {\n    background-color: #38383d!important;\n    color: silver!important;\n    border: 1px solid #4a4a4f!important\n  }\n  .filter-selection select {\n    background-color: transparent!important;\n    border: none!important\n  }\n  #filters .filter-selection:hover {\n    background-color: transparent!important\n  }\n  button {\n    background: #2a2a2e!important;\n    border: 1px solid #484848!important;\n    color: silver!important;\n    border-radius: 3px!important\n  }\n  .svg-icon.checked {\n    fill: #45a1ff!important\n  }\n  button:hover {\n    color: #45a1ff!important\n  }\n  a,\n  a:visited {\n    color: #e1e1e1!important\n  }\n  #save-button:after {\n    content: 'd'!important\n  }\n  body.dirty #save-button:after {\n    content: '?'!important\n  }\n  .newUI .entry:hover .svg-icon:hover,\n  .svg-icon:hover {\n    fill: #45a1ff!important\n  }\n  #message-box.danger #message-box-title {\n    background-color: #b22222!important\n  }\n  .newUI .can-update .update,\n  .newUI .no-update:not(.update-problem):not(.update-done) .up-to-date {\n    color: #000!important\n  }\n  .svg-icon {\n    fill: #b1b1b3!important\n  }\n  #url {\n    filter: invert(65%)!important\n  }\n  .CodeMirror-gutters {\n    color: #b1b1b3!important\n  }\n  .newUI .entry {\n    background: #38383d!important\n  }\n  .newUI .entry:hover {\n    background: #2a2a2e!important\n  }\n  .disabled h2::after {\n    border: 1px solid #444!important\n  }\n  .svg-icon.select-arrow {\n    fill: silver!important\n  }\n  .newUI .entry .style-name:hover::before {\n    background: 0 0!important\n  }\n  body.all-styles-hidden-by-filters::after,\n  body.all-styles-hidden-by-filters::before {\n    color: #45a1ff!important\n  }\n  .active #filters-stats {\n    background-color: #45a1ff!important;\n    border-color: #45a1ff!important\n  }\n  #reset-filters {\n    fill: #45a1ff!important\n  }\n  .CodeMirror {\n    border: 1px solid #4a4a4f;\n    border-radius: 4px!important\n  }\n  .Codemirror-hints {\n    background: #353b48!important;\n    border-color: #737373!important\n  }\n  .Codemirror-hint {\n    color: #d7d7db!important\n  }\n  .CodeMirror {\n    background: #2a2a2e!important;\n    color: #b1b1b3!important\n  }\n  div.CodeMirror-selected {\n    background: #353b48!important\n  }\n  .CodeMirror-line > span > span::selection,\n  .CodeMirror-line > span::selection,\n  .CodeMirror-line::selection {\n    background: #353b48!important\n  }\n  .CodeMirror-line > span > span::-moz-selection,\n  .CodeMirror-line > span::-moz-selection,\n  .CodeMirror-line::-moz-selection {\n    background: #353b48!important\n  }\n  .CodeMirror-gutters {\n    background: #2a2a2e!important;\n    border-right: 0 solid #4a4a4f!important\n  }\n  .CodeMirror-guttermarker,\n  .CodeMirror-guttermarker-subtle {\n    color: #555!important\n  }\n  .CodeMirror-linenumber {\n    color: #939393!important\n  }\n  .CodeMirror-cursor {\n    border-left: 1px solid #fff!important\n  }\n  span.cm-comment {\n    color: #939393!important\n  }\n  span.cm-atom,\n  span.cm-attribute,\n  span.cm-builtin,\n  span.cm-error,\n  span.cm-keyword,\n  span.cm-quote {\n    color: #ff7de9!important\n  }\n  span.cm-number,\n  span.cm-string,\n  span.cm-string-2 {\n    color: #6b89ff!important\n  }\n  span.cm-hr,\n  span.cm-meta {\n    color: #939393!important\n  }\n  span.cm-header,\n  span.cm-qualifier,\n  span.cm-variable-2 {\n    color: #75bfff!important\n  }\n  span.cm-property {\n    color: #86de74!important\n  }\n  span.cm-bracket,\n  span.cm-def,\n  span.cm-link:visited,\n  span.cm-tag {\n    color: #75bfff!important\n  }\n  span.cm-variable {\n    color: #b98eff!important\n  }\n  span.cm-variable-3 {\n    color: #d7d7db!important\n  }\n  span.cm-link {\n    color: #737373!important\n  }\n  span.cm-operator {\n    color: #b1b1b3!important\n  }\n  span.cm-special {\n    color: #d7d7db!important\n  }\n  .CodeMirror-activeline-background {\n    background: rgba(185,215,253,.15)!important\n  }\n  .CodeMirror-matchingbracket {\n    outline: rgba(255,255,255,.25) solid 1px!important;\n    color: #fff!important\n  }\n  select {\n    color: silver;\n  }\n  option, optgroup {\n    background-color: #2a2a2e\n  }",
+        "start": 706,
+        "regexps": [
+          "chrome-extension://.*",
+          "moz-extension://.*"
+        ]
+      }
+    ],
+    "name": "Stylus Dark - ShadowFox",
+    "originalDigest": "ebbe6645bdaac4dfe92c48409825522c920b44a6",
+    "_id": "3075ac9d-7a6d-456d-bf33-bf7e01c5b10c",
+    "_rev": 1614365641203,
+    "id": 10,
+    "etag": "W/\"bd292ba24caa8cf1fa80299fa6a4743f4a1469618e9f2c5492166691c2b9fc38\"",
+    "sourceCode": "/* ==UserStyle==\n@name           Stylus Dark - ShadowFox\n@namespace      USO Archive\n@author         overdodactyl\n@description    `This theme is specifically designed to match the dark mode used by Firefox's inspector and browser toolbox (background colors, text colors in the editor, fonts etc.).  Additionally, it is meant to compliment [ShadowFox](https://github.com/overdodactyl/ShadowFox) - a universal dark theme for Firefox.   Hosted on GitHub (please submit any issues there): https://github.com/overdodactyl/Stylus-Dark`\n@version        20180914.23.40\n@license        CC-BY-SA-4.0\n@preprocessor   uso\n==/UserStyle== */\n@-moz-document regexp(\"chrome-extension://.*\"),\nregexp(\"moz-extension://.*\") {\n  /*! Stylus-Dark v1.3 (2018-09-14)\n      Repository: https://github.com/overdodactyl/Stylus-Dark\n      License:    https://creativecommons.org/licenses/by-sa/4.0/\n\n      Code Mirror based on Firefox\n*/\n  #notes,\n  body {\n    background: #38383d!important;\n    color: #b1b1b3!important\n  }\n  #header {\n    color: silver!important;\n    background: #2a2a2e!important;\n    border-style: none!important\n  }\n  #stylus-popup {\n    background: #4a4a4f!important;\n    color: silver!important\n  }\n  #hotkey-info[data-active] {\n    border-left: 2px solid #2a2a2e!important\n  }\n  #hotkey-info div {\n    border-top: 1px solid #2a2a2e!important;\n    background-color: #2a2a2e!important\n  }\n  #help-popup,\n  #sections,\n  .newUI .target {\n    color: #b1b1b3!important\n  }\n  #help-popup,\n  #message-box > div,\n  #message-box-buttons,\n  #message-box-title,\n  body {\n    background: #2a2a2e!important\n  }\n  .search-result {\n    background: #4a4a4f!important;\n    border-color: #737373!important\n  }\n  .search-result:hover {\n    border-color: #b1b1b3!important\n  }\n  .search-result-meta {\n    background-color: #4a4a4f!important;\n    color: #b1b1b3!important\n  }\n  button,\n  input:not([type]),\n  select {\n    font-family: arial,sans-serif!important\n  }\n  input[type=checkbox]:not(.slider) {\n    background: #38383d!important\n  }\n  .applies-to li,\n  .firefox select,\n  input {\n    background-color: #38383d!important;\n    color: silver!important;\n    border: 1px solid #4a4a4f!important\n  }\n  .filter-selection select {\n    background-color: transparent!important;\n    border: none!important\n  }\n  #filters .filter-selection:hover {\n    background-color: transparent!important\n  }\n  button {\n    background: #2a2a2e!important;\n    border: 1px solid #484848!important;\n    color: silver!important;\n    border-radius: 3px!important\n  }\n  .svg-icon.checked {\n    fill: #45a1ff!important\n  }\n  button:hover {\n    color: #45a1ff!important\n  }\n  a,\n  a:visited {\n    color: #e1e1e1!important\n  }\n  #save-button:after {\n    content: 'd'!important\n  }\n  body.dirty #save-button:after {\n    content: '?'!important\n  }\n  .newUI .entry:hover .svg-icon:hover,\n  .svg-icon:hover {\n    fill: #45a1ff!important\n  }\n  #message-box.danger #message-box-title {\n    background-color: #b22222!important\n  }\n  .newUI .can-update .update,\n  .newUI .no-update:not(.update-problem):not(.update-done) .up-to-date {\n    color: #000!important\n  }\n  .svg-icon {\n    fill: #b1b1b3!important\n  }\n  #url {\n    filter: invert(65%)!important\n  }\n  .CodeMirror-gutters {\n    color: #b1b1b3!important\n  }\n  .newUI .entry {\n    background: #38383d!important\n  }\n  .newUI .entry:hover {\n    background: #2a2a2e!important\n  }\n  .disabled h2::after {\n    border: 1px solid #444!important\n  }\n  .svg-icon.select-arrow {\n    fill: silver!important\n  }\n  .newUI .entry .style-name:hover::before {\n    background: 0 0!important\n  }\n  body.all-styles-hidden-by-filters::after,\n  body.all-styles-hidden-by-filters::before {\n    color: #45a1ff!important\n  }\n  .active #filters-stats {\n    background-color: #45a1ff!important;\n    border-color: #45a1ff!important\n  }\n  #reset-filters {\n    fill: #45a1ff!important\n  }\n  .CodeMirror {\n    border: 1px solid #4a4a4f;\n    border-radius: 4px!important\n  }\n  .Codemirror-hints {\n    background: #353b48!important;\n    border-color: #737373!important\n  }\n  .Codemirror-hint {\n    color: #d7d7db!important\n  }\n  .CodeMirror {\n    background: #2a2a2e!important;\n    color: #b1b1b3!important\n  }\n  div.CodeMirror-selected {\n    background: #353b48!important\n  }\n  .CodeMirror-line > span > span::selection,\n  .CodeMirror-line > span::selection,\n  .CodeMirror-line::selection {\n    background: #353b48!important\n  }\n  .CodeMirror-line > span > span::-moz-selection,\n  .CodeMirror-line > span::-moz-selection,\n  .CodeMirror-line::-moz-selection {\n    background: #353b48!important\n  }\n  .CodeMirror-gutters {\n    background: #2a2a2e!important;\n    border-right: 0 solid #4a4a4f!important\n  }\n  .CodeMirror-guttermarker,\n  .CodeMirror-guttermarker-subtle {\n    color: #555!important\n  }\n  .CodeMirror-linenumber {\n    color: #939393!important\n  }\n  .CodeMirror-cursor {\n    border-left: 1px solid #fff!important\n  }\n  span.cm-comment {\n    color: #939393!important\n  }\n  span.cm-atom,\n  span.cm-attribute,\n  span.cm-builtin,\n  span.cm-error,\n  span.cm-keyword,\n  span.cm-quote {\n    color: #ff7de9!important\n  }\n  span.cm-number,\n  span.cm-string,\n  span.cm-string-2 {\n    color: #6b89ff!important\n  }\n  span.cm-hr,\n  span.cm-meta {\n    color: #939393!important\n  }\n  span.cm-header,\n  span.cm-qualifier,\n  span.cm-variable-2 {\n    color: #75bfff!important\n  }\n  span.cm-property {\n    color: #86de74!important\n  }\n  span.cm-bracket,\n  span.cm-def,\n  span.cm-link:visited,\n  span.cm-tag {\n    color: #75bfff!important\n  }\n  span.cm-variable {\n    color: #b98eff!important\n  }\n  span.cm-variable-3 {\n    color: #d7d7db!important\n  }\n  span.cm-link {\n    color: #737373!important\n  }\n  span.cm-operator {\n    color: #b1b1b3!important\n  }\n  span.cm-special {\n    color: #d7d7db!important\n  }\n  .CodeMirror-activeline-background {\n    background: rgba(185,215,253,.15)!important\n  }\n  .CodeMirror-matchingbracket {\n    outline: rgba(255,255,255,.25) solid 1px!important;\n    color: #fff!important\n  }\n  select {\n    color: silver;\n  }\n  option, optgroup {\n    background-color: #2a2a2e\n  }\n}",
+    "usercssData": {
+      "name": "Stylus Dark - ShadowFox",
+      "namespace": "USO Archive",
+      "author": "overdodactyl",
+      "description": "This theme is specifically designed to match the dark mode used by Firefox's inspector and browser toolbox (background colors, text colors in the editor, fonts etc.).  Additionally, it is meant to compliment [ShadowFox](https://github.com/overdodactyl/ShadowFox) - a universal dark theme for Firefox.   Hosted on GitHub (please submit any issues there): https://github.com/overdodactyl/Stylus-Dark",
+      "version": "20180914.23.40",
+      "license": "CC-BY-SA-4.0",
+      "preprocessor": "uso"
+    },
+    "author": "overdodactyl",
+    "description": "This theme is specifically designed to match the dark mode used by Firefox's inspector and browser toolbox (background colors, text colors in the editor, fonts etc.).  Additionally, it is meant to compliment [ShadowFox](https://github.com/overdodactyl/ShadowFox) - a universal dark theme for Firefox.   Hosted on GitHub (please submit any issues there): https://github.com/overdodactyl/Stylus-Dark",
+    "updateDate": 1614365641203
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "installDate": 1594548936922,
+    "name": "loxodata.com",
+    "sections": [
+      {
+        "code": ".hljs {\n    font-family: \"Iosevka Custom\", monospace;\n    background: #3C3836;\n}",
+        "domains": [
+          "loxodata.com"
+        ]
+      }
+    ],
+    "updateDate": 1594549166270,
+    "_id": "9c9ff77d-345b-4176-8d78-794feb3b9eff",
+    "_rev": 1614023288247,
+    "id": 11
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "installDate": 1594810444565,
+    "name": "netflix.com",
+    "sections": [
+      {
+        "code": "/* - Desaturate logo - P1 */\n.pinning-header .main-header .logo {\n    color: lightgrey;\n}\n\n/* - Use neutral color for progression bars - P1 */\n/* On Homepage */\n.progress-completed {\n    background-color: white;\n}\n/* On Player */\n.nfp .scrubber-container .current-progress {\n    background: white;\n}\n.nfp .scrubber-container .scrubber-head {\n    background: white;\n}\n.nfp .scrubber-container .track {\n    background: #444;\n}\n\n/* - Remove full width suggestions - U1 */\n.billboard-row, .lolomoBigRow{\n    display: none !important\n}\n\n/* - Make homepage tiles more sober - U1 */\n.title-card{\n    transition: 400ms all ease;\n    opacity:  0.8\n}\n.title-card.is-bob-open{\n    opacity: 1\n}\n\n/* - Hide homepage tiles video autoplay - C3 */\n.bob-container .VideoMerchPlayer{\n    display: none !important;\n    visibility: hidden;\n}\n.bob-actions-wrapper .global-supplemental-audio-toggle{\n    display: none;\n}",
+        "domains": [
+          "netflix.com"
+        ]
+      }
+    ],
+    "updateDate": 1594810444565,
+    "_id": "d8d3a82d-e84c-4d1c-b1dc-96893e36a0fb",
+    "_rev": 1594810444566,
+    "id": 12
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "installDate": 1594810813301,
+    "name": "stackoverflow.com",
+    "sections": [
+      {
+        "code": "/* - Hide \"featured\" meta pannel, newsletter prompt, teams prompt - U3 */\n.community-bulletin,\n#newsletter-ad,\nol.nav-links>li.p6{\n  display: none !important;\n}\n/* - Remove hot network questions - C2 */\n#hot-network-questions{\n  display: none !important;\n}\n/* - Hide badges and reputation from topbar - C3 */\n.my-profile .-badges, .my-profile .-rep{\n  display: none !important;\n}\n\n/* - Remove left content border */\n#content{\n  border: none;\n}\n\n/* - Make top bar's colors fit the background color - P1 */\n.top-bar{\n  border: none;\n  background-color: white;\n}\n.top-bar._fixed {\n  box-shadow: 0 0 .3em .3em white;\n}\n#question-header{\n  border: none;\n}\n\n/* - Make the logo more discrete - P1 */\n.-logo{\n  filter: grayscale(1);\n  opacity: 0.6;\n}\n\n/* - Make related questions colors less bright - U1 */\n.show-votes .sidebar-linked .spacer > a:first-child .answer-votes, .show-votes .sidebar-related .spacer > a:first-child .answer-votes {\n  color: slategrey;\n  background-color: transparent;\n}\n.show-votes .sidebar-linked .spacer > a:first-child .answer-votes.answered-accepted, .show-votes .sidebar-related .spacer > a:first-child .answer-votes.answered-accepted {\n  color: #5fba7d;\n  background-color: transparent;\n}\n.sidebar-related .question-hyperlink {\n  color: slategrey;\n}\n\n/* - Make navigation colors neutral - P1 */\n.nav-links .youarehere .nav-links--link {\n  border: none;\n}",
+        "domains": [
+          "stackoverflow.com"
+        ]
+      }
+    ],
+    "updateDate": 1594810813301,
+    "_id": "60c9452f-8ffe-4361-907b-32939ec2b1c2",
+    "_rev": 1594810859441,
+    "id": 13
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "installDate": 1594841314394,
+    "name": "youtube.com",
+    "sections": [
+      {
+        "code": "/* - Center the video if possible - C1 */\n#info,\n#report,\n#meta,\n#donation-shelf,\n#comments {\n    width: auto !important;\n}\n#player {\n    margin: auto !important;\n}\n/* - Remove some useless suggestion around the video description - C2 */\n#related,\n#ticket-shelf,\n#merch-shelf {\n    display: none !important;\n}\n.ytd-horizontal-card-list-renderer {\n    display: none !important;\n}\n/* - Remove trending and premium links - P2 */\na[href=\"/feed/trending\"],\na[href=\"/feed/trending?disable_polymer=1\"],\na[href=\"/premium\"] {\n    display: none !important;\n}\nytd-guide-entry-renderer,\n.paper-item.ytd-guide-entry-renderer {\n    min-height: auto !important;\n}\n/* - Simplify youtube logo to make it more discrete - P1 */\n#country-code,\n#logo-container .content-region {\n    display: none !important;\n}\n#logo svg,\n#logo-container .logo,\n#footer-logo {\n    filter: grayscale(1);\n    opacity: 0.5;\n}\n/* - Remove useless youtube appdrawer - U3 */\ndiv.ytd-masthead > ytd-topbar-menu-button-renderer:nth-child(2) {\n    display: none !important;\n}\n/* - Remove right side video suggestions and eventual playlist sidebar (replaced by the playlist button on the top left corner of the video) - P2 C1 */\n.watch-sidebar,\n#playlist {\n    display: none !important;\n}\n.videowall-endscreen {\n    display: none !important;\n}\n/* Playlist button */\n.ytp-hide-info-bar .ytp-chrome-top {\n    height: 4em!important;\n}\n.ytp-hide-info-bar .ytp-gradient-top,\n.ytp-hide-info-bar .ytp-chrome-top .ytp-playlist-menu-button,\n.ytp-hide-info-bar .ytp-chrome-top .ytp-overflow-button,\n.ytp-hide-info-bar .ytp-chrome-top .ytp-title {\n    display: block;\n}\n.ytp-hide-info-bar .ytp-chrome-top .ytp-title {\n    opacity: 0;\n}\n/* - Desaturate thumbnails and pictures - U1 */\nimg.yt-img-shadow {\n    filter: saturate(0.8) contrast(0.8)\n}\n/* - Hide suggested channels. Only work when the channel owner already suggests channels - P2 */\n.ytd-browse-secondary-contents-renderer:nth-child(2) {\n    display: none !important;\n}\n/* - Use a neutral color for the bottom video progress bar - P1 */\n.ytp-swatch-background-color {\n    background-color: #fff;\n}\n/* - Use a neutral color for the subscribe button and remove sub-count from it - P1 C3 */\npaper-button.ytd-subscribe-button-renderer:not([subscribed]),\nytd-button-renderer.style-destructive[is-paper-button] {\n    background-color: grey;\n}\nytd-button-renderer.style-suggestive[is-paper-button] {\n    color: grey;\n    border: none;\n    background: transparent;\n}\n.ytd-subscribe-button-renderer:not([subscribed]) .deemphasize {\n    display: none!important;\n}\n/* - Remove left side annotations. - C3 */\n.iv-promo {\n    display: none\n}\n/* - Remove bottom right video branding - U3 */\n.iv-branding {\n    display: none\n}\n/* - Remove the theater button - U2 */\n.ytp-size-button {\n    display: none !important;\n}\n/* - Remove the minify button - U2 */\n.ytp-miniplayer-button {\n    display: none !important;\n}\n/* - Remove the \"next video\" button when the video is not in a playlist - C2 C3 */\n.ytp-next-button {\n    display: none !important;\n}\n.ytp-play-button-playlist + .ytp-next-button {\n    display: inline-block !important;\n}\n/* - Make video title lowercase except for the first character - U1 */\na.ytd-grid-video-renderer,\n.title.ytd-video-primary-info-renderer {\n    text-transform: lowercase!important;\n    display: block;\n}\na.title.ytd-video-primary-info-renderer::first-letter {\n    text-transform: uppercase !important;\n}\n/* - Remove all video suggestions on homepage - C3 P2 */\nytd-two-column-browse-results-renderer > #primary > ytd-rich-grid-renderer {\n    display: none !important;\n}\n/* Mobile */\n/* - Use white for the background color of the navbar of the mobile website - P1 */\n.scbrr-tabs,\n.header-bar {\n    background-color: white;\n}\n.header-bar {\n    color: dimgrey;\n}\n.header-bar svg,\n.scbrr-tab[aria-selected=\"true\"] svg {\n    color: dimgrey;\n}\n.scbrr-tab[aria-selected=\"true\"] {\n    border: none\n}\n.scbrr-tab[aria-selected=\"false\"] svg {\n    fill: lightgrey;\n}\n.scbrr-tabs {\n    box-shadow: none;\n}\n\n/* Feuille de style intégrée #11 | https://www.youtube.com/ */\n\nytd-app {\n  background: var(--yt-spec-general-background-a);\n  /* background: url(https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/playlist_5e13.svg) no-repeat center var(--yt-spec-general-background-a);\n  background-blend-mode: luminosity; */\n}",
+        "domains": [
+          "youtube.com"
+        ]
+      }
+    ],
+    "updateDate": 1599386947375,
+    "_id": "b440e1a2-b382-4c85-87c6-fe13a2642aa0",
+    "_rev": 1599386947375,
+    "id": 18
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "installDate": 1602342793930,
+    "name": "la-coursive.fr",
+    "sections": [
+      {
+        "code": "@media (min-height: 500px) {\n    #fixe-menu li {\n        font-size: 1.6rem;\n        margin-bottom: 0.5rem;\n    }\n    .lien-forum.menu-large {\n        padding-bottom: 1rem;\n        line-height: 2rem;\n    }\n    .lien-forum.menu-large a {\n        font-size: 1.4rem;\n    }\n}\n@media (min-height: 600px) {\n    #fixe-menu li {\n        font-size: 2rem;\n        margin-bottom: 1.3rem;\n    }\n    .lien-forum.menu-large {\n        padding-bottom: 2rem;\n        line-height: 3rem;\n    }\n    .lien-forum.menu-large a {\n        font-size: 2rem;\n    }\n}\n@media (min-height: 768px) {\n    #fixe-menu li {\n        margin-bottom: 1.5rem;\n    }\n    .lien-forum.menu-large {\n        padding-bottom: 3rem;\n    }\n}",
+        "domains": [
+          "la-coursive.fr"
+        ]
+      }
+    ],
+    "updateDate": 1602343011918,
+    "_id": "460e3a96-da74-4055-9c60-0ac7815d0c8c",
+    "_rev": 1602343053809,
+    "id": 19
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "url": null,
+    "installDate": 1604755404074,
+    "name": "protonmail.com",
+    "sections": [
+      {
+        "code": ".composer-body-container textarea,\n.bodyDecrypted.plain {\n    font-family: monospace;\n}\n\n.plain > div:nth-child(1) {\n    font-size: 14px;\n    font-style: normal;\n}\n\n.covered-absolute {\n    font-size: 14px;\n}",
+        "domains": [
+          "protonmail.com"
+        ]
+      }
+    ],
+    "updateDate": 1620858154241,
+    "_id": "276a1190-4e2d-47a3-87e8-abaecf1f6cf0",
+    "_rev": 1620858154241,
+    "id": 20
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "installDate": 1605125982534,
+    "name": "inventaire.io",
+    "sections": [
+      {
+        "code": ".itemsCascade {\n    display: flex;\n    flex-flow: row wrap;\n}\n\nfigure {\n    position: initial !important;\n}\n\n@media screen and (min-width: 510px) {\n    .itemsCascade {\n        display: flex;\n        flex-flow: row wrap;\n    }\n}\n\n.itemCard > a.itemShow {\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n}\n\n.cover {\n    margin-bottom: auto;\n}\n\n.mixedBox,\n.userBox {\n    /* display: flex; */\n    display: none;\n}",
+        "domains": [
+          "inventaire.io"
+        ]
+      }
+    ],
+    "updateDate": 1605126585384,
+    "_id": "e3d73fb5-cb5a-4643-9189-c4a50223b5c6",
+    "_rev": 1605126585384,
+    "id": 21
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "installDate": 1605650424684,
+    "name": "elixir-lang.org",
+    "sections": [
+      {
+        "code": "/* style.css | https://elixir-lang.org/css/style.css */\ncode {\n    /* font-family: Monaco, monospace, Courier, \"Courier New\"; */\n    /* font-family: \"\"; */\n    font-family: \"Iosevka Custom\", monospace;\n}",
+        "domains": [
+          "elixir-lang.org"
+        ]
+      }
+    ],
+    "updateDate": 1605650424684,
+    "_id": "5c8a4556-6caf-4aa8-8e9e-22c9d8d09bb0",
+    "_rev": 1605650424685,
+    "id": 22
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "installDate": 1605654011047,
+    "name": "elixirschool.com",
+    "sections": [
+      {
+        "code": "/* main-9b7e48485057f2bb1d2663901b63809034825663a43d7badfc3ace39405d1fbf.css | https://elixirschool.com/assets/main-9b7e48485057f2bb1d2663901b63809034825663a43d7badfc3ace39405d1fbf.css */\ncode {\n    /* font-family: \"Courier New\", monospace; */\n    font-family: \"Iosevka Custom\", monospace;\n}",
+        "domains": [
+          "elixirschool.com"
+        ]
+      }
+    ],
+    "updateDate": 1605654011047,
+    "_id": "9ea9d256-2696-4c2b-afc5-32efa81e4680",
+    "_rev": 1605654011047,
+    "id": 23
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "installDate": 1605970225607,
+    "name": "framablog.org",
+    "sections": [
+      {
+        "code": "/* Feuille de style intégrée #15 | https://framablog.org/2020/09/26/detruire-le-capitalisme-de-surveillance-1/ */\nbody {\n    /* font-family: Verdana, Geneva, sans-serif; */\n    font-family: \"Iosevka Aile\";\n}\n\n/* style.css | https://framablog.org/wp-content/themes/framavirtue/style.css?x41403&ver=5.5.3 */\n.kad-post-navigation .kad-next-link a::after {\n    /* content: \"\\f054\"; */\n    content: \"〉\";\n}\n\n.kad-post-navigation .kad-previous-link a::before {\n    /* content: \"\\f053\"; */\n    content: \"〈\";\n}",
+        "domains": [
+          "framablog.org"
+        ]
+      }
+    ],
+    "updateDate": 1605976566607,
+    "_id": "6da5a29c-4d28-486e-b264-876a6121e8c6",
+    "_rev": 1605976566607,
+    "id": 24
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "installDate": 1606132538659,
+    "name": "wallabag.it",
+    "sections": [
+      {
+        "code": "/* material.css | https://app.wallabag.it/wallassets/material.css */\nhtml {\n    /* font-family: Roboto,sans-serif; */\n    font-family: \"Iosevka Aile\", sans-serif;\n}",
+        "domains": [
+          "wallabag.it"
+        ]
+      }
+    ],
+    "updateDate": 1606132538659,
+    "_id": "9441be0b-1595-4095-a5a7-4008f9d5f069",
+    "_rev": 1606132538660,
+    "id": 25
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "url": null,
+    "installDate": 1606205321594,
+    "name": "app.wallabag.it",
+    "sections": [
+      {
+        "code": "/* material.css | https://app.wallabag.it/wallassets/material.css */\nhtml {\n    /* font-family: Roboto,sans-serif; */\n    font-family: \"Iosevka Aile\", sans-serif;\n}\n\n.collection .mass-buttons {\n    /* margin: 5px; */\n    margin: 0;\n    padding: 5px;\n    background-color: #f2f2f2;\n}\n\n#article {\n    /* margin: 0 auto; */\n    /* padding: 5px 20px; */\n    margin: 0 auto 2em;\n    padding: 1em 2em 3em;\n}\n\n#article img {\n    opacity: 0.2;\n}\n\n#article img:hover {\n    opacity: 1;\n}\n\n\narticle::after {\n    content: \"——— ❧ ———\";\n    left: 50%;\n    transform: translateX(-4.5em);\n    display: block;\n    position: relative;\n    color: #e759f777;\n}\n\n.progress .determinate,\n.progress .indeterminate {\n    /* background-color: #26a69a; */\n    background-color: #e759f7;\n}\n\n.progress {\n    /* height: 3px; */\n    height: 5px;\n}\n\n.progress {\n    /* background-color: #acece6; */\n    background-color: #e759f777;\n}\n\nblockquote {\n    /* border-left: 5px solid #ee6e73; */\n    border-left: 5px solid #e759f777;\n}\n\ndiv > figure:first-child:last-child > figcaption {\n    text-align: center;\n}\n\ndiv > figure:first-child:last-child > img,\np > img:first-child:last-child {\n    left: 50%;\n    position: relative;\n    transform: translateX(-50%);\n}\n\np > a:first-child:last-child[href$=\".webp\"],\np > a:first-child:last-child[href$=\".png\"],\np > a:first-child:last-child[href$=\".gif\"],\np > a:first-child:last-child[href$=\".jpg\"],\np > a:first-child:last-child[href$=\".jpeg\"],\np > a:first-child:last-child > img {\n    left: 50%;\n    position: relative;\n    transform: translateX(-50%);\n    display: inline-block;\n}\n\np.c1 > a:first-child:last-child[href$=\".webp\"],\np.c1 > a:first-child:last-child[href$=\".png\"],\np.c1 > a:first-child:last-child[href$=\".gif\"],\np.c1 > a:first-child:last-child[href$=\".jpg\"],\np.c1 > a:first-child:last-child[href$=\".jpeg\"],\n#article p.c1 > a:first-child:last-child > img {\n    position: inherit;\n    transform: inherit;\n    opacity: 1;\n}\n\n#article img.alignright {\n    float: right;\n}\n\n#article pre {\n    color: inherit;\n    line-height: 1.25em;\n}\n\n.card-tag-labels {\n    /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */\n    grid-template-columns: 17em repeat(auto-fill, minmax(200px, 1fr));\n}\n\n.card-tag-link {\n    /* width: calc(100% - 48px); */\n    width: 100%;\n}\n\n\n/* Highlight.js // theme Atom One Light */\n.hljs {\n    display: block;\n    overflow-x: auto;\n    padding: .5em;\n    color: #383a42;\n    background: #fafafa\n}\n.hljs-comment,\n.hljs-quote {\n    color: #a0a1a7;\n    font-style: italic\n}\n.hljs-doctag,\n.hljs-formula,\n.hljs-keyword {\n    color: #a626a4\n}\n.hljs-deletion,\n.hljs-name,\n.hljs-section,\n.hljs-selector-tag,\n.hljs-subst {\n    color: #e45649\n}\n.hljs-literal {\n    color: #0184bb\n}\n.hljs-addition,\n.hljs-attribute,\n.hljs-meta-string,\n.hljs-regexp,\n.hljs-string {\n    color: #50a14f\n}\n.hljs-built_in,\n.hljs-class .hljs-title {\n    color: #c18401\n}\n.hljs-attr,\n.hljs-number,\n.hljs-selector-attr,\n.hljs-selector-class,\n.hljs-selector-pseudo,\n.hljs-template-variable,\n.hljs-type,\n.hljs-variable {\n    color: #986801\n}\n.hljs-bullet,\n.hljs-link,\n.hljs-meta,\n.hljs-selector-id,\n.hljs-symbol,\n.hljs-title {\n    color: #4078f2\n}\n.hljs-emphasis {\n    font-style: italic\n}\n.hljs-strong {\n    font-weight: 700\n}\n.hljs-link {\n    text-decoration: underline\n}\n\n/* dark theme */\n.dark-theme body,\n.dark-theme main #content,\n.dark-theme #article,\n.dark-theme .card,\n.dark-theme .card-panel,\n.dark-theme .card .card-reveal,\n.dark-theme .card-stacked .preview:not(.preview--default),\n.dark-theme .card .preview:not(.preview--default),\n.dark-theme .collapsible-header,\n.dark-theme .collection .collection-item,\n.dark-theme .dropdown-content,\n.dark-theme .nav-panel-add,\n.dark-theme .nav-panel-search,\n.dark-theme .side-nav,\n.dark-theme .side-nav .collapsible-body,\n.dark-theme .side-nav.fixed .collapsible-body,\n.dark-theme .tabs {\n    /* background-color: #000; */\n    background-color: #222;\n}\n\n.dark-theme #article {\n    /* box-shadow: 0 0 10px #575757; */\n    box-shadow: 0 0 20px black;\n}\n\n.dark-theme nav,\n.dark-theme .card,\n.dark-theme .side-nav {\n    /* box-shadow: 0 2px 2px 0 rgba(255,255,255,.4),0 1px 5px 0 rgba(255,255,255,.4),0 3px 1px -2px rgba(255,255,255,.4); */\n    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4), 0 1px 5px 0 rgba(0, 0, 0, 0.4), 0 3px 1px -2px rgba(0, 0, 0, 0.4);\n}\n\n.dark-theme .collection {\n    /* border: 1px solid #e0e0e0; */\n    border: 1px solid #333;\n}\n\n.dark-theme .collection .collection-item {\n    /* border-bottom: 1px solid #e0e0e0; */\n    border-bottom: 1px solid #333;\n}\n\n.dark-theme .collection .mass-buttons {\n    background-color: #333;\n}\n\n.dark-theme #article aside .chip a,\n.dark-theme #article aside .chip i {\n    /* color: #fff; */\n    color: #222;\n}\n\n.dark-theme #article pre {\n    /* border: #e3f2fd 1px solid; */\n    /* background: #f5f5f5; */\n    border: #85DEDD77 1px solid;\n    background: #282c34;\n}\n\n.dark-theme .nav-panels .input-field input:focus {\n    /* color: #444; */\n    color: #dfdfdf;\n}\n\n/* Highlight.js // theme Atom One Dark */\n.dark-theme .hljs {\n    display: block;\n    overflow-x: auto;\n    padding: .5em;\n    color: #abb2bf;\n    background: #282c34;\n}\n.dark-theme .hljs-comment,\n.dark-theme .hljs-quote {\n    color: #5c6370;\n    font-style: italic\n}\n.dark-theme .hljs-doctag,\n.dark-theme .hljs-formula,\n.dark-theme .hljs-keyword {\n    color: #c678dd\n}\n.dark-theme .hljs-deletion,\n.dark-theme .hljs-name,\n.dark-theme .hljs-section,\n.dark-theme .hljs-selector-tag,\n.dark-theme .hljs-subst {\n    color: #e06c75\n}\n.dark-theme .hljs-literal {\n    color: #56b6c2\n}\n.dark-theme .hljs-addition,\n.dark-theme .hljs-attribute,\n.dark-theme .hljs-meta-string,\n.dark-theme .hljs-regexp,\n.dark-theme .hljs-string {\n    color: #98c379\n}\n.dark-theme .hljs-built_in,\n.dark-theme .hljs-class .hljs-title {\n    color: #e6c07b\n}\n.dark-theme .hljs-attr,\n.dark-theme .hljs-number,\n.dark-theme .hljs-selector-attr,\n.dark-theme .hljs-selector-class,\n.dark-theme .hljs-selector-pseudo,\n.dark-theme .hljs-template-variable,\n.dark-theme .hljs-type,\n.dark-theme .hljs-variable {\n    color: #d19a66\n}\n.dark-theme .hljs-bullet,\n.dark-theme .hljs-link,\n.dark-theme .hljs-meta,\n.dark-theme .hljs-selector-id,\n.dark-theme .hljs-symbol,\n.dark-theme .hljs-title {\n    color: #61aeee\n}\n.dark-theme .hljs-emphasis {\n    font-style: italic\n}\n.dark-theme .hljs-strong {\n    font-weight: 700\n}\n.dark-theme .hljs-link {\n    text-decoration: underline\n}",
+        "domains": [
+          "app.wallabag.it"
+        ]
+      }
+    ],
+    "updateDate": 1616793396245,
+    "_id": "92691732-fba6-49cb-9c77-41cc581f285b",
+    "_rev": 1616793396245,
+    "id": 27
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "url": null,
+    "installDate": 1608312632260,
+    "name": "coagul.org",
+    "sections": [
+      {
+        "code": "/* style-zero.css | http://coagul.org/drupal/sites/all/themes/coagul1/css/style-zero.css?o */\nbody {\n    /* font-family: sans-serif, Arial, Verdana, Helvetica; */\n    /* font-size: 83%; */\n    /* line-height: 125%; */\n    font-family: monospace;\n    font-size: 14px;\n    line-height: 1.25em;\n}\n\n#main {\n    /* padding: 10px 20px 20px 20px; */\n    padding: 1em 3em 3em;\n}\n\n#top_right,\n#body_right {\n    /* padding: 0 25px; */\n    padding: 0 2em;\n}\n\nbody.layout-fluid .sizer0,\nbody.in-maintenance .sizer0 {\n    max-width: 850px;\n}\n\n#bottom_bg {\n    display: none;\n}\n\n#navlist2 {\n    /* margin-top: 15px; */\n    padding-bottom: 2em;\n}\n\nh2 {\n    /* font-size: 125%; */\n    font-size: 1em;\n}\n\n\n/* sky.css | http://coagul.org/drupal/sites/all/themes/coagul1/css/sky.css?o */\n\n.node.teaser {\n  border-bottom: 0;\n  background-color: inherit;\n  padding: 0;\n  background: none;\n  border: 0;\n  -moz-border-radius: 0;\n  -webkit-border-radius: 0;\n  -moz-box-shadow: none;\n  -webkit-box-shadow: none;\n}\n",
+        "domains": [
+          "coagul.org"
+        ]
+      }
+    ],
+    "updateDate": 1619466363766,
+    "_id": "61796129-47ff-448a-a95c-8c43671a5ac7",
+    "_rev": 1619466363766,
+    "id": 28
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "url": null,
+    "installDate": 1617735590485,
+    "name": "feedly.com",
+    "sections": [
+      {
+        "code": ".merriweather .entryBody {\n    /* font-family: \"Merriweather\",sans-serif; */\n    font-family: monospace;\n}",
+        "domains": [
+          "feedly.com"
+        ]
+      }
+    ],
+    "updateDate": 1617735590485,
+    "_id": "89b972eb-04e4-47cb-a5bf-131d06ca3857",
+    "_rev": 1617735590485,
+    "id": 29
+  }
 ]
