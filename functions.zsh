@@ -115,6 +115,24 @@ rcopy() {
   done
 }
 
+decryptool() {
+  local filepath=$argv[1]
+
+  if (( $+commands[$GPGTOOL] )) && [[ $filepath =~ ".gpg$" ]]; then
+    $GPGTOOL --no-tty -q -d "$filepath"
+  elif (( $+commands[$AGETOOL] )) && [[ -n "$AGEKEY" ]] && [[ $filepath =~ ".age$" ]]; then
+    $AGETOOL --decrypt -i $AGEKEY "$filepath"
+  elif [[ ! (( $+commands[$GPGTOOL] )) ]]; then
+    echo "$fg[red][!]$reset_color $GPGTOOL file encryption tool is not installed"
+  elif [[ ! (( $+commands[$AGETOOL] )) ]]; then
+    echo "$fg[red][!]$reset_color $AGETOOL file encryption tool is not installed"
+  elif [[ -z "$AGEKEY" ]]; then
+    echo "$fg[red][!]$reset_color age private key is missing."
+  else
+    echo "$fg[red][!]$reset_color $dotfile cannot be decrypted"
+  fi
+}
+
 decipher() {
   local filepath=$argv[1]
   local dotfile=${argv[2]:-.${filepath:t}}
@@ -126,10 +144,10 @@ decipher() {
   if [[ -d $filepath ]]; then
     echo "$fg[red][!]$reset_color decipher failed. $dotfile is a directory"
   elif [[ -e $dotfile ]]; then
-    if gpg --no-tty -q -d "$filepath" | diff -q - "$dotfile" &>/dev/null; then
+    if decryptool "$filepath" | diff -q - "$dotfile" &>/dev/null; then
       echo "$fg[blue][•]$reset_color $dotfile already exists"
     elif (( $FORCE )); then
-      if gpg --no-tty -q -d "$filepath" 1>| "$dotfile"; then
+      if decryptool "$filepath" 1>| "$dotfile"; then
         echo "$fg[green][+]$reset_color $dotfile file $fg[red]force$reset_color deciphered"
       else
         echo "$fg[red][!]$reset_color $dotfile file $fg[red]force$reset_color decipher failed"
@@ -137,11 +155,11 @@ decipher() {
     else
       echo "$fg[yellow][?]$reset_color files $filepath and $dotfile differ"
       if (( $DIFF )); then
-        gpg --no-tty -q -d "$filepath" | diff - "$dotfile"
+        decryptool "$filepath" | diff - "$dotfile"
       fi
     fi
   elif [[ -a $filepath ]]; then
-    if gpg --no-tty -q -d "$filepath" 1> "$dotfile"; then
+    if decryptool "$filepath" 1> "$dotfile"; then
       echo "$fg[green][+]$reset_color $dotfile file deciphered"
     else
       echo "$fg[red][!]$reset_color $dotfile file decipher failed"

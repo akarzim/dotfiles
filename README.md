@@ -65,6 +65,15 @@ brew install bat exa fd fzf git git-delta htop ncdu neovim ripgrep sqlparse \
              tig tldr tmux tree universal-ctags watch z zplug
 ```
 
+Plus for [age] file encryption tool support:
+
+```sh
+brew tap filippo.io/age https://filippo.io/age
+brew install age
+```
+
+[age]: https://github.com/FiloSottile/age
+
 ### Installation
 
 1. Clone the repo
@@ -87,8 +96,14 @@ Usage: ./init.zsh [-d | --diff] [-f | --force] [-h | --help] [-V | --version] [p
 Environment:
   DIFF      hide/show changes between files if they are different (default: 0 ; values: 0, 1)
   FORCE     overwrite or not existing files if they are different (default: 0 ; values: 0, 1)
+  GPGTOOL   executable for the GPG file encryption tool (default: gpg)
+  AGETOOL   executable for the age file encryption tool (default: age)
+  AGEKEY    path to your age private key
 
 Options:
+  --age-key=AGE_KEY           path to your age private key
+  --age-tool=AGE_TOOL         set the age file encryption tool executable
+  --gpg-tool=GPG_TOOL         set the gpg file encryption tool executable
   -d, --diff, --no-diff       show/hide changes between files if they are different
   -f, --force, --no-force     overwrite or not existing files if they are different
   -h, --help                  print this help

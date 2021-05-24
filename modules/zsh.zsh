@@ -6,7 +6,7 @@ if program "zsh" && [[ -d ${0:A:h:h:h}/zsh ]]; then
   copy ${0:A:h:h:h}/zsh/zprofile
   copy ${0:A:h:h:h}/zsh/zshenv
   copy ${0:A:h:h:h}/zsh/zshrc
-  decipher ${0:A:h:h}/home/zsecrets.gpg .zsecrets
+  decipher ${0:A:h:h}/home/zsecrets.age .zsecrets
 
   # zplug
   if [[ -d $HOME/.zplug ]]; then
