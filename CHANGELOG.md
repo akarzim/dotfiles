@@ -14,11 +14,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Security
 -->
 
-## [0.4.0] - 2020-07-04
+## [0.4.0] - 2021-05-24
 
 ### Added
 
 - Skip function
+- Module function
+- Age file encryption support
+- Output encrypted files with curly brackets
 
 ## [0.3.4] - 2020-06-16
 

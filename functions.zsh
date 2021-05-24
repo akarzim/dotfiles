@@ -142,30 +142,30 @@ decipher() {
   fi
 
   if [[ -d $filepath ]]; then
-    echo "$fg[red][!]$reset_color decipher failed. $dotfile is a directory"
+    echo "$fg[red]{!}$reset_color decipher failed. $dotfile is a directory"
   elif [[ -e $dotfile ]]; then
     if decryptool "$filepath" | diff -q - "$dotfile" &>/dev/null; then
-      echo "$fg[blue][•]$reset_color $dotfile already exists"
+      echo "$fg[blue]{•}$reset_color $dotfile already exists"
     elif (( $FORCE )); then
       if decryptool "$filepath" 1>| "$dotfile"; then
-        echo "$fg[green][+]$reset_color $dotfile file $fg[red]force$reset_color deciphered"
+        echo "$fg[green]{+}$reset_color $dotfile file $fg[red]force$reset_color deciphered"
       else
-        echo "$fg[red][!]$reset_color $dotfile file $fg[red]force$reset_color decipher failed"
+        echo "$fg[red]{!}$reset_color $dotfile file $fg[red]force$reset_color decipher failed"
       fi
     else
-      echo "$fg[yellow][?]$reset_color files $filepath and $dotfile differ"
+      echo "$fg[yellow]{?}$reset_color files $filepath and $dotfile differ"
       if (( $DIFF )); then
         decryptool "$filepath" | diff - "$dotfile"
       fi
     fi
   elif [[ -a $filepath ]]; then
     if decryptool "$filepath" 1> "$dotfile"; then
-      echo "$fg[green][+]$reset_color $dotfile file deciphered"
+      echo "$fg[green]{+}$reset_color $dotfile file deciphered"
     else
-      echo "$fg[red][!]$reset_color $dotfile file decipher failed"
+      echo "$fg[red]{!}$reset_color $dotfile file decipher failed"
     fi
   else
-    echo "$fg[red][!]$reset_color $filepath does not exist"
+    echo "$fg[red]{!}$reset_color $filepath does not exist"
   fi
 }
 
