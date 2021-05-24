@@ -1,2 +1,9 @@
-*.rb diff=ruby
-*.rake diff=ruby
+*.css     diff=css
+*.ex      diff=elixir
+*.exs     diff=elixir
+*.html    diff=html
+*.xhtml   diff=html
+*.md      diff=markdown
+*.gemspec diff=ruby
+*.rake    diff=ruby
+*.rb      diff=ruby

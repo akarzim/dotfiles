@@ -1,11 +1,15 @@
 [core]
   excludesfile = ~/.gitignore
-  pager = delta --plus-emph-color="#555628" --plus-color="#3b3c28" --minus-emph-color="#70342f" --minus-color="#4a2c2c" --theme='gruvbox.sepia'
+  ; pager = delta --plus-emph-color="#555628" --plus-color="#3b3c28" --minus-emph-color="#70342f" --minus-color="#4a2c2c" --theme='gruvbox.sepia'
 	attributesfile = ~/.gitattributes
+  # see https://stackoverflow.com/questions/51147825/is-it-possible-for-git-to-display-the-filename-with-accents
+	quotepath = false
 [color "status"]
   added = yellow
   changed = magenta
   untracked = cyan
+[commit]
+	gpgsign = true
 [diff]
   compactionHeuristic = true
 [difftool "vimdiff"]
@@ -28,5 +32,14 @@
 [rerere]
   enabled = true
 [user]
-  name = François Vantomme
-  signingkey = 18494474
+	name = François Vantomme
+  email = fvantomme@synbioz.com
+  signingkey = 23961A9C221E391FE2E624334BA5EFC5E2EE4C96
+  ; signingkey = 89AF7E357CE8E4C23972A3487C090509B9BF8D09
+  ; signingkey = A9A121905543A050F5AE91D70E39E37918494474
+
+[includeIf "gitdir:~/dev/perso/"]
+path = .gitconfig-perso
+
+[includeIf "gitdir:~/dev/coagul/"]
+path = .gitconfig-perso
