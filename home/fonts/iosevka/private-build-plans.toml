@@ -1,59 +1,44 @@
-[buildPlans.iosevka-custom]      # <iosevka-custom> is your plan name
-family = "Iosevka Custom"        # Font menu family name
-spacing = "term"                 # Optional; Values: `normal`, `term`, `fontconfig-mono`, or `fixed`
-serifs = "sans"                  # Optional; Values: `sans` or `slab`
-digit-form = "lining"            # Optional; Values `lining` or `old-style`
+[buildPlans.iosevka-custom]
+family = "Iosevka Custom"
+spacing = "term"
+serifs = "sans"
 
-###################################################################################################
-# Configure variants
+  [buildPlans.iosevka-custom.variants]
+  inherits = "ss20"
 
-# Optional; Whether to inherit a `ss##` variant
-[buildPlans.iosevka-custom.variants]
-inherits = "ss20"
+    [buildPlans.iosevka-custom.variants.design]
+    b = "toothless-corner"
+    l = "tailed-serifed"
+    p = "earless-corner"
+    nine = "closed-contour"
+    asterisk = "penta-low"
+    number-sign = "upright-open"
+    ampersand = "upper-open"
+    lig-ltgteq = "slanted"
 
-# Optional; Configure single character's variant
-[buildPlans.iosevka-custom.variants.design]
-number-sign = "upright-open"
-ampersand = "upper-open"
-dollar = "through"
-l = "italic"
-asterisk = "low"
-d = "toothed"
-b = "toothless-corner"
-i = "serifed"
-lig-ltgteq = "slanted"
-nine = "closed-contour"
+    [buildPlans.iosevka-custom.variants.italic]
+    capital-b = "standard-interrupted-serifless"
+    capital-g = "toothless-corner-serifless-hooked"
+    capital-n = "asymmetric"
+    capital-p = "open"
+    capital-r = "standing-open"
+    g = "double-storey-open"
+    h = "tailed"
+    q = "tailed"
+    ampersand = "lower-open"
+    dollar = "open"
+    cent = "open"
 
-# Optional; Configure single character's variant for Upright and Oblique; Overrides [design]
-# [buildPlans.iosevka-custom.variants.upright]
-# i = 'zshaped'
-# l = 'zshaped'
+    [buildPlans.iosevka-custom.variants.oblique]
+    capital-z = "curly-serifless-with-crossbar"
+    eszet = "traditional"
+    three = "flattop"
+    ampersand = "flat-top"
+    question = "corner"
 
-# Optional; Configure single character's variant for Italic only; Overrides [design]
-[buildPlans.iosevka-custom.variants.italic]
-ampersand = "lower-open"
-g = "opendoublestorey"
-h = "tailed"
-dollar = "open"
-i = "italic"
-capital-g = "toothless"
-nine = "closed-contour"
-ascii-single-quote = "raised-comma"
-
-# End variant section
-###################################################################################################
-
-###################################################################################################
-# Configure ligations
-
-[buildPlans.iosevka-custom.ligations]
-inherits = "dlig"   # Optional; inherits an existing ligation set
-disables = []       # Optional; disable specific ligation groups, overrides inherited ligation set
-enables  = ["exeq-alt-1"]  # Optional; enable specific ligation groups, overrides inherited ligation set
-
-# End ligation section
-###################################################################################################
-
+  [buildPlans.iosevka-custom.ligations]
+  inherits = "dlig"
+  enables  = ["eqeqeq", "exeqeq-dotted", "exeq-dotted"]
 
 ###################################################################################################
 # Override default building weights
@@ -63,20 +48,21 @@ enables  = ["exeq-alt-1"]  # Optional; enable specific ligation groups, override
 #             and "shape" properly only supports number between 100 and 900 (inclusive).
 #             If you decide to use custom weights you have to define all the weights you
 #             plan to use otherwise they will not be built.
-[buildPlans.iosevka-custom.weights.regular]
-shape = 400  # Weight for glyph shapes.
-menu  = 400  # Weight for the font's names.
-css   = 400  # Weight for webfont CSS.
 
-[buildPlans.iosevka-custom.weights.book]
-shape = 450
-menu  = 450  # Use 450 here to name the font's weight "Book"
-css   = 450
+# [buildPlans.iosevka-custom.weights.regular]
+# shape = 400  # Weight for glyph shapes.
+# menu  = 400  # Weight for the font's names.
+# css   = 400  # Weight for webfont CSS.
 
-[buildPlans.iosevka-custom.weights.bold]
-shape = 700
-menu  = 700
-css   = 700
+# [buildPlans.iosevka-custom.weights.book]
+# shape = 450
+# menu  = 450  # Use 450 here to name the font's weight "Book"
+# css   = 450
+
+# [buildPlans.iosevka-custom.weights.bold]
+# shape = 700
+# menu  = 700
+# css   = 700
 
 # End weight section
 ###################################################################################################
@@ -86,10 +72,10 @@ css   = 700
 # Format: <upright|italic|oblique> = <"normal"|"italic"|"oblique">
 # When this section is absent, all slopes would be built.
 
-[buildPlans.iosevka-custom.slopes]
-upright = "normal"
-italic = "italic"
-oblique = "oblique"
+# [buildPlans.iosevka-custom.slopes]
+# upright = "normal"
+# italic = "italic"
+# oblique = "oblique"
 
 # End slope section
 ###################################################################################################
@@ -160,3 +146,86 @@ css   = "normal"   # "font-stretch' property of webfont CSS.
 
 # End metric override section
 ###################################################################################################
+
+
+[buildPlans.iosevka-slab-custom]
+family = "Iosevka Slab Custom"
+spacing = "quasi-proportional"
+serifs = "slab"
+no-cv-ss = true
+
+[buildPlans.iosevka-slab-custom.variants.design]
+capital-a = "curly-top-serifed"
+capital-b = "standard-unilateral-serifed"
+capital-c = "unilateral-inward-serifed"
+capital-d = "standard-unilateral-serifed"
+capital-e = "motion-serifed"
+capital-f = "motion-serifed"
+capital-g = "toothless-corner-serifless-hooked"
+capital-h = "motion-serifed"
+capital-k = "curly-motion-serifed"
+capital-l = "motion-serifed"
+capital-m = "hanging-motion-serifed"
+capital-n = "asymmetric-motion-serifed"
+capital-p = "closed-motion-serifed"
+capital-q = "vertical-crossing"
+capital-r = "curly-motion-serifed"
+capital-s = "bilateral-inward-serifed"
+capital-t = "motion-serifed"
+capital-u = "toothless-corner-unilateral-motion-serifed"
+capital-v = "curly-motion-serifed"
+capital-w = "curly-motion-serifed"
+capital-x = "curly-motion-serifed"
+capital-y = "curly-motion-serifed"
+capital-z = "curly-bottom-serifed-with-horizontal-crossbar"
+a = "double-storey-toothless-corner"
+b = "toothless-corner"
+c = "unilateral-inward-serifed"
+d = "toothless-corner-serifless"
+g = "single-storey-motion-serifed"
+h = "straight-motion-serifed"
+i = "serifed-asymmetric"
+k = "curly-motion-serifed"
+l = "tailed-serifed"
+m = "motion-serifed"
+n = "straight-motion-serifed"
+p = "motion-serifed"
+q = "straight-motion-serifed"
+r = "corner-hooked-base-serifed"
+s = "unilateral-inward-serifed"
+u = "toothless-corner-motion-serifed"
+v = "curly-motion-serifed"
+w = "curly-motion-serifed"
+x = "curly-motion-serifed"
+y = "curly-motion-serifed"
+z = "curly-bottom-serifed-with-crossbar"
+eszet = "traditional-flat-hook"
+turn-v = "curly"
+capital-gamma = "motion-serifed"
+latn-epsilon = "inward-serifed"
+latn-reverse-epsilon = "inward-serifed"
+lower-iota = "zshaped"
+lower-lambda = "curly"
+cyrl-ka = "symmetric-touching-motion-serifed"
+cyrl-capital-u = "curly"
+one = "base"
+three = "flattop"
+six = "open-contour"
+seven = "straight-serifed"
+eight = "crossing-asymmetric"
+nine = "closed-contour"
+tilde = "low"
+asterisk = "turn-hex-high"
+number-sign = "upright-open"
+ampersand = "flat-top"
+dollar = "interrupted"
+cent = "bar-interrupted"
+ascii-single-quote = "raised-comma"
+ascii-grave = "raised-inverse-comma"
+
+  [buildPlans.iosevka-slab-custom.ligations]
+  inherits = "dlig"
+
+  [buildPlans.iosevka-slab-custom.slopes]
+  upright = "normal"
+  oblique = "oblique"
