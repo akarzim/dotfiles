@@ -178,3 +178,9 @@ rdecipher() {
     decipher "$filepath" "$subdir/$dotfile"
   done
 }
+
+notify() {
+  local msg=$argv[1]
+
+  echo "$fg[yellow][ℹ]$reset_color $msg"
+}
