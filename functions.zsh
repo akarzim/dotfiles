@@ -1,6 +1,10 @@
 #!/usr/bin/env zsh
 module() {
-  [[ ${#PROGRAM} == 0 || ${PROGRAM} =~ [[:\<:]]$1[[:\>:]] ]]
+  if [[ "$OSTYPE" == darwin* ]]; then
+    [[ ${#PROGRAM} == 0 || ${PROGRAM} =~ [[:\<:]]$1[[:\>:]] ]]
+  else
+    [[ ${#PROGRAM} == 0 || ${PROGRAM} =~ "\<$1\>" ]]
+  fi
 }
 
 program() {
