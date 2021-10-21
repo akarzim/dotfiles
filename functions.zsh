@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 module() {
-  if [[ "$OSTYPE" == darwin* ]]; then
+  if [[ -o rematchpcre || "$OSTYPE" == darwin* ]]; then
     [[ ${#PROGRAM} == 0 || ${PROGRAM} =~ [[:\<:]]$1[[:\>:]] ]]
   else
     [[ ${#PROGRAM} == 0 || ${PROGRAM} =~ "\<$1\>" ]]
