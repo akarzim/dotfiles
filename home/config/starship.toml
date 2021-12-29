@@ -18,6 +18,10 @@ truncation_length = 8
 truncation_symbol = "…/"
 read_only = ""
 
+[docker_context]
+format = "[$symbol$context]($style) "
+symbol = "🅳 "
+
 [elixir]
 format = '[$symbol$version \(OTP $otp_version\)]($style) '
 style = "purple dimmed"
