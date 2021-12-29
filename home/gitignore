@@ -8,3 +8,4 @@ afdko_env/
 vendor/bundle/
 scripts/templates/
 app_env.secrets
+docker-compose.override.yml
