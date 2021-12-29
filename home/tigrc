@@ -180,11 +180,14 @@ set pgrp               = no		# Make tig process-group leader
 #   %(prompt)		Prompt for the argument value.
 
 bind main	C	?git cherry-pick %(commit)
+bind main U ?git revert %(commit)
 bind main ! ?git commit --fixup=%(commit)
 bind main <Ctrl-R> !git rebase --autosquash -i %(commit)
 
 bind status A !git commit --amend
 bind status	C	!git commit --verbose
+bind status N !git add -N %(file)
+bind status P !git add -p %(file)
 
 bind stash  S ?git stash push --include-untracked
 bind stash	A	?git stash apply %(stash)
@@ -199,6 +202,8 @@ bind reflog	!	?git reset --hard %(commit)
 
 bind diff , !git log -p %(file)
 bind diff ! ?git checkout %(commit) -- %(file)
+
+bind tree , !git log -p %(file)
 
 # Normal commands
 # ---------------
