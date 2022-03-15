@@ -8,7 +8,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/akarizm/dotfiles">
+  <a href="https://github.com/akarzim/dotfiles">
     <img src="images/logo.svg" alt="Logo" width="80" height="80">
   </a>
 
@@ -17,12 +17,12 @@
   <p align="center">
     My personal dotfiles.
     <br />
-    <a href="https://github.com/akarizm/dotfiles"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/akarzim/dotfiles"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/akarizm/dotfiles/issues">Report Bug</a>
+    <a href="https://github.com/akarzim/dotfiles/issues">Report Bug</a>
     ·
-    <a href="https://github.com/akarizm/dotfiles/issues">Request Feature</a>
+    <a href="https://github.com/akarzim/dotfiles/issues">Request Feature</a>
   </p>
 </p>
 
@@ -79,7 +79,7 @@ brew install age
 1. Clone the repo
 
 ```sh
-git clone https://github.com/akarizm/dotfiles.git
+git clone https://github.com/akarzim/dotfiles.git
 ```
 
 2. Install dotfiles
@@ -146,7 +146,7 @@ zsh git` and that's it.
 
 ## Roadmap
 
-See the [open issues](https://github.com/akarizm/dotfiles/issues) for a list of
+See the [open issues](https://github.com/akarzim/dotfiles/issues) for a list of
 proposed features (and known issues).
 
 ## Contributing
@@ -169,7 +169,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 François Vantomme - [@akarzim](https://mastodon.host/@akarzim)
 
-Project Link: <https://github.com/akarizm/dotfiles>
+Project Link: <https://github.com/akarzim/dotfiles>
 
 ## Acknowledgements
 
