@@ -3,6 +3,14 @@ command_timeout = 1000
 [aws]
 disabled = true
 
+[battery]
+format = "[$symbol$percentage]($style) "
+full_symbol = " "
+charging_symbol = " "
+discharging_symbol = " "
+unknown_symbol = "↯ "
+empty_symbol = " "
+
 [character]
 success_symbol = "[❯](bold purple)"
 vicmd_symbol = "[❮](bold purple)"
