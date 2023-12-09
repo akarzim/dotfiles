@@ -125,26 +125,6 @@
   {
     "enabled": true,
     "updateUrl": null,
-    "url": null,
-    "installDate": 1592651193281,
-    "name": "synbioz.com (dark theme)",
-    "sections": [
-      {
-        "code": "/* AUTHOR */\n#communication-banner {\n    background: #4ca5d1;\n    color: #fff;\n    border-bottom: solid HSL(216, 14%, 15%) 6px;\n}\n\ndiv#site-wrapper {\n    background-color: HSL(216, 14%, 19%);\n}\n\nh3 {\n    color: HSL(216, 14%, 60%);\n}\n\nbody {\n    color: HSL(216, 14%, 75%);\n}\n\n.blog-date .blog-date-day {\n    color: HSL(216, 14%, 60%);\n}\n.blog-date .blog-date-month {\n    color: HSL(216, 14%, 60%);\n}\n\n.custom-widget-toolbox h3 {\n    color: HSL(216, 14%, 60%);\n}\n.custom-sidebar h3 {\n    color: HSL(216, 14%, 60%);\n}\n\ninput[type=\"text\"].hs-search-field__input {\n    border-top-right-radius: 0;\n    border-bottom-right-radius: 0;\n}\n.inputAndButton button {\n    background-color: hsl(216,14%,60%);\n    border: 1px solid hsl(216,14%,75%);\n    border-left: 0;\n}\n\n.custom-top-footer {\n    background-color: hsl(216,14%,19%);\n    border-top: solid hsl(216,14%,15%) 0;\n}\n\n/* ESQUISSE */\ndl.frontmatter-panel {\n    background-color: HSL(218, 14%, 26%);\n    box-shadow: hsl(216, 14%, 15%) 0px 0px 14px 0px inset;\n}\n\n/* BLOG POST */\n.custom-post-inner-wrapper {\n    background-color: HSL(216, 14%, 15%);\n}\n\n.post-header-info {\n    background: HSL(216, 14%, 15%);\n}\n\n.post-header-info .infos {\n    color: HSL(216, 14%, 60%);\n}\n\n.post-header-info .post-date-day {\n    color: HSL(216, 14%, 60%);\n}\n\n.hs-blog-post .blog-content {\n    background-color: HSL(216, 14%, 19%);\n    color: hsl(216, 14%, 90%);\n}\n\n.post-body blockquote {\n    color: HSL(216, 14%, 60%);\n}\n.post-body blockquote>:last-child {\n  background:url(/hubfs/Assets/guillemet-bas.png) no-repeat right bottom;\n}\n\n.post-body pre {\n    background: HSL(216, 14%, 26%);\n    box-shadow: 5rem 0 HSL(216, 14%, 26%),-5rem 0 HSL(216, 14%, 26%);\n}\n\n.post-body code {\n    color: HSL(216, 14%, 75%);\n    background-color: HSL(216, 14%, 26%);\n}\n\n.post-body hr {\n    background-color: hsl(216, 14%, 60%);\n}\n\n.post-body p:last-of-type {\n    color: hsl(216, 14%, 60%);\n}\n\n.sharing-button {\n    color: #fff;\n    background: HSL(216, 14%, 26%);\n}\n\n.blog-pagination {\n    background-color: HSL(216, 14%, 26%);\n}\n\n.blog-pagination a.next-posts-link {\n    border-left: 1px solid HSL(216, 14%, 26%);\n}\n\n.blog-pagination a.previous-posts-link {\n    border-right: 1px solid HSL(216, 14%, 26%);\n}\n\n.related-post {\n    background: HSL(216, 14%, 26%);\n    border-bottom: 1px solid HSL(216, 14%, 15%);\n}\n\n.custom-inner-article:hover {\n    background: HSL(216, 14%, 15%);\n}\n\n#comments-listing {\n    border: 1px solid HSL(216, 14%, 15%);\n}\n\ninput[type=\"text\"], input[type=\"password\"], input[type=\"datetime\"], input[type=\"datetime-local\"], input[type=\"date\"], input[type=\"month\"], input[type=\"time\"], input[type=\"week\"], input[type=\"number\"], input[type=\"email\"], input[type=\"url\"], input[type=\"search\"], input[type=\"tel\"], input[type=\"color\"], input[type=\"file\"], textarea, select {\n    background-color: hsl(216, 14%, 15%);\n    border: 1px solid hsl(216, 14%, 60%);\n    color: HSL(216, 14%, 60%);\n}\n\n.hs-form-field > label, label.hs-form-booleancheckbox-display {\n    color: HSL(216, 14%, 60%);\n}\n\nform.hs-form .hs-form-field ul.hs-error-msgs.inputs-list {\n    color: HSL(359, 45%, 60%);\n}\n\n.footer-container-wrapper {\n    border-top: 8px solid HSL(216, 14%, 15%);\n}\n\n/* ROUGE */\n.highlight table td { padding: 5px; }\n.highlight table pre { margin: 0; }\n.highlight, .highlight .w {\n  color: #d0d0d0;\n  background-color: #151515;\n}\n.highlight .err {\n  color: #151515;\n  background-color: #ac4142;\n}\n.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {\n  color: HSL(216, 14%, 60%);\n}\n.highlight .cp {\n  color: #f4bf75;\n}\n.highlight .nt {\n  color: #f4bf75;\n}\n.highlight .o, .highlight .ow {\n  color: #d0d0d0;\n}\n.highlight .p, .highlight .pi {\n  color: #d0d0d0;\n}\n.highlight .gi {\n  color: #90a959;\n}\n.highlight .gd {\n  color: #ac4142;\n}\n.highlight .gh {\n  color: #6a9fb5;\n  font-weight: bold;\n}\n.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {\n  color: #aa759f;\n}\n.highlight .kc {\n  color: #d28445;\n}\n.highlight .kt {\n  color: #d28445;\n}\n.highlight .kd {\n  color: #d28445;\n}\n.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {\n  color: #90a959;\n}\n.highlight .sr {\n  color: #75b5aa;\n}\n.highlight .si {\n  color: #8f5536;\n}\n.highlight .se {\n  color: #8f5536;\n}\n.highlight .nn {\n  color: #f4bf75;\n}\n.highlight .nc {\n  color: #f4bf75;\n}\n.highlight .no {\n  color: #f4bf75;\n}\n.highlight .na {\n  color: #6a9fb5;\n}\n.highlight .nf {\n  color: HSL(359, 45%, 60%);\n  font-weight: normal;\n}\n.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {\n  color: #90a959;\n}\n.highlight .ss {\n  color: #90a959;\n}",
-        "domains": [
-          "synbioz.com",
-          "esquisse.synbioz.syn"
-        ]
-      }
-    ],
-    "updateDate": 1615624405662,
-    "_id": "dd271aa6-fb62-4ba6-9220-d23511fdb586",
-    "_rev": 1615624405662,
-    "id": 4
-  },
-  {
-    "enabled": true,
-    "updateUrl": null,
     "md5Url": null,
     "url": null,
     "originalMd5": null,
@@ -184,27 +164,6 @@
     "_id": "f6a9eec3-ab5d-4838-9883-fffa34ab4cf2",
     "_rev": 1592944809967,
     "id": 6
-  },
-  {
-    "enabled": true,
-    "updateUrl": null,
-    "md5Url": null,
-    "url": null,
-    "originalMd5": null,
-    "installDate": 1591272037794,
-    "name": "synbioz.com",
-    "sections": [
-      {
-        "code": ".post-body code {\n    font-family: \"Iosevka Custom\", monospace;\n}",
-        "domains": [
-          "synbioz.com"
-        ]
-      }
-    ],
-    "updateDate": 1592943149823,
-    "_id": "1142e560-6da7-4507-954f-248dc48e76da",
-    "_rev": 1592944809967,
-    "id": 7
   },
   {
     "enabled": true,
