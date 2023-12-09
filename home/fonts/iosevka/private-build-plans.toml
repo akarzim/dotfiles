@@ -2,9 +2,9 @@
 family = "Iosevka Custom"
 spacing = "term"
 serifs = "sans"
-no-cv-ss = true
-export-glyph-names = true
-build-texture-feature = true
+noCvSs = true
+exportGlyphNames = true
+buildTextureFeature = true
 
   [buildPlans.iosevka-custom.ligations]
   inherits = "dlig"
