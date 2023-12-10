@@ -1,6 +1,6 @@
 # bundler
 if program "bundle"; then
-  decipher ${0:A:h:h}/home/gemrc.gpg .gemrc
+  copy ${0:A:h:h}/home/gemrc .gemrc
 else
   skip "bundler"
 fi
