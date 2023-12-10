@@ -43,3 +43,5 @@ path = .gitconfig-perso
 
 [includeIf "gitdir:~/dev/coagul/"]
 path = .gitconfig-perso
+[pull]
+	rebase = true
