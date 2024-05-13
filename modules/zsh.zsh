@@ -1,6 +1,7 @@
 # zsh
 if program "zsh" && [[ -d ${0:A:h:h:h}/zsh ]]; then
   link ${0:A:h:h:h}/zsh
+  copy ${0:A:h:h:h}/zsh/zfunctions
   copy ${0:A:h:h:h}/zsh/zlogin
   copy ${0:A:h:h:h}/zsh/zlogout
   copy ${0:A:h:h:h}/zsh/zprofile
