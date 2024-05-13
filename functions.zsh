@@ -64,6 +64,11 @@ rlink() {
 copy() {
   local filepath=$argv[1]
   local dotfile=${argv[2]:-.${filepath:t}}
+  local sudo=""
+  
+  if [[ -n "$argv[3]" ]]; then
+    sudo="sudo"
+  fi
 
   if [[ ! $dotfile =~ "^/" ]]; then
     dotfile="$HOME/$dotfile"
@@ -74,13 +79,13 @@ copy() {
       echo "$fg[blue][•]$reset_color $dotfile already exists"
     elif (( $FORCE )); then
       if [[ -d $filepath ]]; then
-        if cp -Rf "${filepath:a}" "$dotfile"; then
+        if $sudo cp -Rf "${filepath:a}" "$dotfile"; then
           echo "$fg[green][+]$reset_color $dotfile directory $fg[red]force$reset_color copied"
         else
           echo "$fg[red][!]$reset_color $dotfile directory $fg[red]force$reset_color copy failed"
         fi
       elif [[ -a $filepath ]]; then
-        if cp -pf "${filepath:a}" "$dotfile"; then
+        if $sudo cp -pf "${filepath:a}" "$dotfile"; then
           echo "$fg[green][+]$reset_color $dotfile file $fg[red]force$reset_color copied"
         else
           echo "$fg[red][!]$reset_color $dotfile file $fg[red]force$reset_color copy failed"
@@ -93,13 +98,13 @@ copy() {
       fi
     fi
   elif [[ -d $filepath ]]; then
-    if cp -R "${filepath:a}" "$dotfile"; then
+    if $sudo cp -R "${filepath:a}" "$dotfile"; then
       echo "$fg[green][+]$reset_color $dotfile directory copied"
     else
       echo "$fg[red][!]$reset_color $dotfile directory copy failed"
     fi
   elif [[ -a $filepath ]]; then
-    if mkdir -p "${dotfile:h}" && cp -p "${filepath:a}" "$dotfile"; then
+    if $sudo mkdir -p "${dotfile:h}" && $sudo cp -p "${filepath:a}" "$dotfile"; then
       echo "$fg[green][+]$reset_color $dotfile file copied"
     else
       echo "$fg[red][!]$reset_color $dotfile file copy failed"
@@ -107,6 +112,10 @@ copy() {
   else
     echo "$fg[red][!]$reset_color $filepath does not exist"
   fi
+}
+
+scopy() {
+  copy $argv "sudo"
 }
 
 rcopy() {
