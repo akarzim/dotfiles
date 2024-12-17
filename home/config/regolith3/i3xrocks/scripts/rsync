@@ -1,0 +1,55 @@
+#!/bin/bash
+
+RSYNC_VALUE="${value:-"rsync"}"
+BUTTON="${button:-}"
+
+rsync_today() {
+	journalctl -u rsync -o short-iso --since "${since:-today}" --until "${until:-now}"
+}
+
+rsync_statuses() {
+	rsync_today | awk '{if ($4 == "sent" && $5 > 0) print "finished"; else if ($4 == "connect") print "started"; else if ($5 == "error:" || $7 == "error:") print "error"}'
+}
+
+rsync_last_success() {
+	journalctl -u rsync -b -o short-iso | awk '{if ($4 == "sent") print $1}' | tail -n 1
+}
+
+rsync_last_success_unix() {
+	date -d $(rsync_last_success) +%s
+}
+
+rsync_aging_unix() {
+	date -d "${aging:-"3 days ago"}" +%s
+}
+
+_RSYNC_STATUSES=$(rsync_statuses)
+RSYNC_LAST_STATUS=$(echo "${_RSYNC_STATUSES}" | tail -n 1)
+RSYNC_SECOND_LAST_STATUS=$(echo "${_RSYNC_STATUSES}" | tail -n 2 | head -n 1)
+
+if [ "${RSYNC_LAST_STATUS}" == "error" ]; then
+	if [ "${RSYNC_SECOND_LAST_STATUS}" == "finished" ]; then
+		VALUE_COLOR=${warn_color:-$(xrescat i3xrocks.warning orange)}
+	else
+		VALUE_COLOR=${error_color:-$(xrescat i3xrocks.error.color red)}
+	fi
+elif [ "${RSYNC_LAST_STATUS}" == "finished" ]; then
+	VALUE_COLOR=${success_color:-$(xrescat i3xrocks.success green)}
+elif [ "${RSYNC_LAST_STATUS}" == "started" ]; then
+	VALUE_COLOR=${progress_color:-$(xrescat i3xrocks.value.color blue)}
+elif [ $(rsync_last_success_unix) -lt $(rsync_aging_unix) ]; then
+	VALUE_COLOR=${critical_color:-$(xrescat i3xrocks.critical.color purple)}
+else
+	VALUE_COLOR=${color:-$(xrescat i3xrocks.value.color white)}
+fi
+
+LABEL_ICON=${icon:-$(xrescat i3xrocks.label.rsync ⥮)}
+LABEL_COLOR=${label_color:-$(xrescat i3xrocks.label.color white)}
+
+echo "<span color=\"${LABEL_COLOR}\">${LABEL_ICON}</span> <span color=\"${VALUE_COLOR}\">${RSYNC_VALUE}</span>"
+echo "<span color=\"${VALUE_COLOR}\">${LABEL_ICON}</span>" # short text
+
+if [[ "x${BUTTON}" == "x1" ]]; then
+    ACTION=$(xrescat i3xrocks.action.network "regolith-control-center network")
+    /usr/bin/i3-msg -q exec "${ACTION}"
+fi

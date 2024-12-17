@@ -1,0 +1,33 @@
+###############################################################################
+## Screenshots
+###############################################################################
+
+set_from_resource $wm.storage.capture.path wm.storage.capture.path "/$HOME/Pictures/$(date -Iseconds).png"
+set_from_resource $wm.storage.capture.clipboard wm.storage.capture.clipboard xclip -selection clipboard -t image/png
+
+## Screenshot // Capture Screen // <><Print> ##
+set_from_resource $wm.binding.capture_screen wm.binding.capture_screen Print
+set_from_resource $wm.program.capture_screen wm.program.capture_screen maim
+bindsym $mod+$wm.binding.capture_screen exec --no-startup-id $wm.program.capture_screen $wm.storage.capture.path
+
+## Screenshot // Capture Active Window // <><Ctrl><Print> ##
+set_from_resource $wm.binding.capture_window wm.binding.capture_window Ctrl+Print
+set_from_resource $wm.program.capture_window wm.program.capture_window maim --window $(xdotool getactivewindow)
+bindsym $mod+$wm.binding.capture_window exec --no-startup-id $wm.program.capture_window $wm.storage.capture.path
+
+## Screenshot // Capture Active Window // <><Ctrl><Print> ##
+set_from_resource $wm.binding.capture_selection wm.binding.capture_selection Shift+Print
+set_from_resource $wm.program.capture_selection wm.program.capture_selection maim --select
+bindsym $mod+$wm.binding.capture_selection exec --no-startup-id $wm.program.capture_selection $wm.storage.capture.path
+
+## Screenshot // Clip Screen // <><Alt><Sys_Rec> ##
+set_from_resource $wm.binding.capture_clip_screen wm.binding.capture_clip_screen 0xff15
+bindsym $mod+$alt+$wm.binding.capture_clip_screen exec --no-startup-id $wm.program.capture_screen | $wm.storage.capture.clipboard
+
+## Screenshot // Clip Window // <><Alt><Ctrl><Sys_Rec> ##
+set_from_resource $wm.binding.capture_clip_window wm.binding.capture_clip_window Ctrl+0xff15
+bindsym $mod+$alt+$wm.binding.capture_clip_window exec --no-startup-id $wm.program.capture_window | $wm.storage.capture.clipboard
+
+## Screenshot // Clip Selection // <><Alt><Shift><Sys_Rec> ##
+set_from_resource $wm.binding.capture_clip_selection wm.binding.capture_clip_selection Shift+0xff15
+bindsym $mod+$alt+$wm.binding.capture_clip_selection exec --no-startup-id $wm.program.capture_selection | $wm.storage.capture.clipboard

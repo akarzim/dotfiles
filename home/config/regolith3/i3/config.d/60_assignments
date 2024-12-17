@@ -1,0 +1,6 @@
+assign [class="firefox-aurora"] $ws2
+assign [class="thunderbird-default"] $ws3
+assign [class="Rocket.Chat"] $ws4
+
+assign [class="Spotify"] $ws9
+assign [class="Firefox-esr"] $ws10

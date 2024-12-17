@@ -1,0 +1,7 @@
+###############################################################################
+# Window and Workspace Navigation
+###############################################################################
+
+## Navigate // Workspace Back & Forth // <> . ##
+set_from_resource $wm.binding.ws_back_and_forth wm.binding.ws_back_and_forth period
+bindsym $mod+$wm.binding.ws_back_and_forth workspace back_and_forth

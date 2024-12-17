@@ -1,0 +1,10 @@
+# Display daily backup status
+[rsync]
+critical_color=#b16286
+error_color=#cc241d
+progress_color=#458588
+success_color=#98971a
+# since=today
+# until=now
+# aging=3 days ago
+interval=xresource:i3xrocks.rsync.interval 10

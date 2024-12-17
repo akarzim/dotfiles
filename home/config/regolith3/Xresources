@@ -1,0 +1,42 @@
+gtk.theme_name: Gruvbox
+gtk.icon_theme_name: Adwaita
+
+gtk.font_name: IosevkaAile 12
+gtk.document_font_name: IosevkaAile 12
+gtk.monospace_font_name: IosevkaCustom 12
+
+i3xrocks.action.battery: regolith-control-center power --class=floating_window
+i3xrocks.action.mic.left: regolith-control-center sound --class=floating_window
+i3xrocks.action.network: regolith-control-center network --class=floating_window
+i3xrocks.action.time: regolith-control-center datetime --class=floating_window
+i3xrocks.action.volume.left: regolith-control-center sound --class=floating_window
+i3xrocks.date.format2: %d %b %H:%M
+i3xrocks.keyboard_layout.left_click_action: regolith-control-center keyboard --class=floating_window
+i3xrocks.keyboard_layout.right_click_action: regolith-control-center region --class=floating_window
+i3xrocks.label.mute: ◁
+i3xrocks.label.sound: ◀
+i3xrocks.label.time:  
+i3xrocks.value.font: IosevkaCustom 12
+
+regolith.look.path: /usr/share/regolith-look/gruvbox
+regolith.wallpaper.file: ~/Images/wallpapers/2024-11-03_for_Huion_by-David-Revoy.jpg
+
+wm.bar.font: IosevkaCustom 12
+wm.bar.trayoutput: none
+
+wm.binding.exit_app: q
+wm.binding.move_scratchpad: Ctrl+Next
+wm.binding.scratchpad: Ctrl+Prior
+wm.binding.swap_focus: Ctrl+period
+
+wm.storage.capture.path: "/$HOME/Images/Captures/$(date -Iseconds).png"
+
+wm.client.focused.color.child_border: #d79921		// yellow
+wm.bar.workspace.urgent.border.color: #b16286		// violet
+wm.bar.workspace.urgent.background.color: #b16286	// violet
+wm.bar.workspace.urgent.text.color: #282828		// base_01
+
+wm.font: IosevkaCustom 12
+wm.gaps.inner.size: 18
+wm.program.terminal: /usr/bin/kitty
+wm.window.border.size: 2

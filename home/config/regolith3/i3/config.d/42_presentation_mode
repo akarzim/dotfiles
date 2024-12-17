@@ -1,0 +1,59 @@
+## Presentation // Enter Presentation Mode // <> p ##
+set_from_resource $wm.presentation.sticky_title wm.presentation.sticky_title "(?i)jitsi meet"
+
+mode "Presentation Mode" {
+	## Navigate // Workspaces 1-10 // <> 0..9 ##
+	bindsym $mod+$ws1_key workspace number $ws1 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+$ws2_key workspace number $ws2 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+$ws3_key workspace number $ws3 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+$ws4_key workspace number $ws4 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+$ws5_key workspace number $ws5 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+$ws6_key workspace number $ws6 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+$ws7_key workspace number $ws7 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+$ws8_key workspace number $ws8 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+$ws9_key workspace number $ws9 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+$ws10_key workspace number $ws10 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	## Navigate // Workspace 11 - 19 // <><Ctrl> 1..9 ##
+	bindsym $mod+Ctrl+$ws1_key workspace number $ws11 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+Ctrl+$ws2_key workspace number $ws12 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+Ctrl+$ws3_key workspace number $ws13 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+Ctrl+$ws4_key workspace number $ws14 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+Ctrl+$ws5_key workspace number $ws15 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+Ctrl+$ws6_key workspace number $ws16 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+Ctrl+$ws7_key workspace number $ws17 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+Ctrl+$ws8_key workspace number $ws18 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+	bindsym $mod+Ctrl+$ws9_key workspace number $ws19 ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+
+	## Navigate // Next Workspace // <> Tab ##
+	bindsym $mod+$wm.binding.ws_next workspace next ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+
+	## Navigate // Next Workspace // <><Alt> → ##
+	bindsym $mod+$alt+$wm.binding.ws_next2 workspace next ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+
+	## Navigate // Next Workspace on Output // <><Ctrl> Tab ##
+	bindsym $mod+$wm.binding.ws_next_on_output workspace next_on_output ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+
+	## Navigate // Next Workspace on Output // <><Ctrl> l ##
+	bindsym $mod+$wm.binding.ws_next_on_output2 workspace next_on_output ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+
+	## Navigate // Previous Workspace // <><Shift> Tab ##
+	bindsym $mod+$wm.binding.ws_prev workspace prev ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+
+	## Navigate // Previous Workspace // <><Alt> ← ##
+	bindsym $mod+$alt+$wm.binding.ws_prev2 workspace prev ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+
+	## Navigate // Previous Workspace on Output // <><Ctrl><Shift> Tab ##
+	bindsym $mod+$wm.binding.ws_prev_on_output workspace prev_on_output ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+
+	## Navigate // Previous Workspace on Output // <><Ctrl> h ##
+	bindsym $mod+$wm.binding.ws_prev_on_output2 workspace prev_on_output ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
+
+	## Resize // Switch to Resize Mode // <> r
+	bindsym $mod+$wm.binding.resize_mode mode "Resize Mode"
+
+        ## Presentation // Exit Presentation Mode // Escape or Enter ##
+        # bindsym Return mode "default"
+        # bindsym Escape mode "default"
+        bindsym $mod+$wm.binding.presentation_mode mode "default"
+}
+bindsym $mod+$wm.binding.presentation_mode mode "Presentation Mode" ; [title=$wm.presentation.sticky_title] move to workspace current, move up, move right, resize set width 22 ppt
