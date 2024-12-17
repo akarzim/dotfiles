@@ -8,7 +8,7 @@ module() {
 }
 
 program() {
-  module $1 && (( $+commands[$1] ))
+  module ${2:-$1} && (( $+commands[$1] ))
 }
 
 caching_policy() {
