@@ -1,4 +1,4 @@
-[buildPlans.iosevka-custom]
+[buildPlans.IosevkaCustom]
 family = "Iosevka Custom"
 spacing = "term"
 serifs = "sans"
@@ -6,18 +6,10 @@ noCvSs = true
 exportGlyphNames = true
 buildTextureFeature = true
 
-  [buildPlans.iosevka-custom.ligations]
-  inherits = "dlig"
-
-  [buildPlans.iosevka-custom.widths.normal]
-  shape = 500
-  menu = 5
-  css = "normal"
-
-  [buildPlans.iosevka-custom.variants]
+  [buildPlans.IosevkaCustom.variants]
   inherits = "ss20"
 
-    [buildPlans.iosevka-custom.variants.design]
+    [buildPlans.IosevkaCustom.variants.design]
     b = "toothless-corner-serifless"
     l = "tailed-serifed"
     p = "earless-corner-serifless"
@@ -37,7 +29,7 @@ buildTextureFeature = true
     nine = "closed-contour"
     number-sign = "upright-open"
 
-    [buildPlans.iosevka-custom.variants.italic]
+    [buildPlans.IosevkaCustom.variants.italic]
     capital-b = "standard-interrupted-serifless"
     capital-g = "toothless-corner-serifless-hooked"
     capital-n = "asymmetric-serifless"
@@ -56,7 +48,7 @@ buildTextureFeature = true
     dollar = "open"
     eszet = "sulzbacher-middle-serifed-xh"
 
-    [buildPlans.iosevka-custom.variants.oblique]
+    [buildPlans.IosevkaCustom.variants.oblique]
     capital-b = "standard-interrupted-serifless"
     capital-g = "toothed-inward-serifed-hooked"
     capital-n = "asymmetric-serifless"
@@ -74,10 +66,18 @@ buildTextureFeature = true
     diacritic-dot = "square"
     eight = "crossing-asymmetric"
     eszet = "traditional-serifless"
-    four = "open-non-crossing"
+    four = "open-non-crossing-serifless"
     lig-neq = "vertical-dotted"
     lower-delta = "flat-top"
     punctuation-dot = "square"
     question = "corner"
     seven = "straight-serifed"
-    three = "flat-top"
+    three = "flat-top-serifless"
+
+  [buildPlans.IosevkaCustom.ligations]
+  inherits = "dlig"
+
+[buildPlans.IosevkaCustom.widths.Normal]
+shape = 500
+menu = 5
+css = "normal"
