@@ -1,3 +1,89 @@
+[buildPlans.IosevkaCustomQuasi]
+family = "Iosevka Custom Quasi"
+spacing = "quasi-proportional"
+serifs = "sans"
+noCvSs = true
+exportGlyphNames = true
+
+  [buildPlans.IosevkaCustomQuasi.variants]
+  inherits = "ss20"
+
+    [buildPlans.IosevkaCustomQuasi.variants.design]
+    eight = "crossing-asymmetric"
+    nine = "closed-contour"
+    b = "toothless-corner-serifless"
+    l = "tailed-serifed"
+    p = "earless-corner-serifless"
+    eszet = "sulzbacher-middle-serifed-xh"
+    cyrl-capital-zhe = "curly"
+    cyrl-zhe = "curly"
+    cyrl-yeri = "round"
+    cyrl-yery = "round-tailed"
+    cyrl-capital-ya = "curly-serifless"
+    cyrl-ya = "curly-serifless"
+    asterisk = "penta-low"
+    number-sign = "upright-open"
+    ampersand = "upper-open"
+    bar = "force-upright"
+    lig-ltgteq = "slanted"
+    lig-neq = "slightly-slanted-dotted"
+
+    [buildPlans.IosevkaCustomQuasi.variants.italic]
+    capital-b = "standard-interrupted-serifless"
+    capital-g = "toothless-corner-serifless-hooked"
+    capital-n = "asymmetric-serifless"
+    capital-p = "open-serifless"
+    capital-r = "standing-open-serifless"
+    g = "double-storey-open"
+    h = "tailed-serifless"
+    q = "tailed-serifless"
+    eszet = "sulzbacher-middle-serifed-xh"
+    cyrl-capital-zhe = "curly"
+    cyrl-zhe = "curly"
+    cyrl-yery = "round-tailed"
+    cyrl-capital-ya = "curly-open-serifless"
+    cyrl-ya = "curly-open-serifless"
+    ampersand = "lower-open"
+    dollar = "open"
+    cent = "open"
+
+    [buildPlans.IosevkaCustomQuasi.variants.oblique]
+    three = "flat-top-serifless"
+    four = "open-non-crossing-serifless"
+    seven = "straight-serifed"
+    eight = "crossing-asymmetric"
+    capital-b = "standard-interrupted-serifless"
+    capital-g = "toothed-inward-serifed-hooked"
+    capital-n = "asymmetric-serifless"
+    capital-p = "open-serifless"
+    capital-r = "curly-open-serifless"
+    capital-z = "curly-serifless-with-crossbar"
+    z = "curly-serifless-with-crossbar"
+    eszet = "traditional-serifless"
+    lower-delta = "flat-top"
+    cyrl-capital-ze = "unilateral-inward-serifed"
+    cyrl-ze = "unilateral-inward-serifed"
+    cyrl-ef = "top-serifed"
+    cyrl-capital-ya = "straight-open-serifless"
+    cyrl-ya = "straight-open-serifless"
+    diacritic-dot = "square"
+    punctuation-dot = "square"
+    ampersand = "flat-top"
+    at = "fourfold-solid-inner"
+    question = "corner"
+    lig-neq = "vertical-dotted"
+
+  [buildPlans.IosevkaCustomQuasi.ligations]
+  inherits = "dlig"
+
+[buildPlans.IosevkaCustomQuasi.widths.Normal]
+shape = 500
+menu = 5
+css = "normal"
+
+
+
+
 [buildPlans.IosevkaCustom]
 family = "Iosevka Custom"
 spacing = "term"
