@@ -1,25 +1,61 @@
 gtk.theme_name: Gruvbox
-gtk.icon_theme_name: Adwaita
+gtk.icon_theme_name: Gruvbox-Plus-Dark
 
-gtk.font_name: IosevkaAile 12
-gtk.document_font_name: IosevkaAile 12
+gtk.font_name: IosevkaCustomQuasi 12
+gtk.document_font_name: IosevkaCustomQuasi 12
 gtk.monospace_font_name: IosevkaCustom 12
 
-i3xrocks.action.battery: regolith-control-center power --class=floating_window
-i3xrocks.action.mic.left: regolith-control-center sound --class=floating_window
-i3xrocks.action.network: regolith-control-center network --class=floating_window
-i3xrocks.action.time: regolith-control-center datetime --class=floating_window
-i3xrocks.action.volume.left: regolith-control-center sound --class=floating_window
+i3xrocks.action.battery: regolith-control-center power
+i3xrocks.action.bluetooth.left: regolith-control-center bluetooth
+i3xrocks.action.mic.left: regolith-control-center sound
+i3xrocks.action.mic.middle: pavucontrol -t 4
+i3xrocks.action.network.left: regolith-control-center network
+i3xrocks.action.time: regolith-control-center datetime
+i3xrocks.action.volume.left: regolith-control-center sound
+i3xrocks.action.volume.middle: pavucontrol -t 3
+i3xrocks.action.vpn.left: regolith-control-center network
 i3xrocks.date.format2: %d %b %H:%M
-i3xrocks.keyboard_layout.left_click_action: regolith-control-center keyboard --class=floating_window
-i3xrocks.keyboard_layout.right_click_action: regolith-control-center region --class=floating_window
-i3xrocks.label.mute: ◁
-i3xrocks.label.sound: ◀
-i3xrocks.label.time:  
-i3xrocks.value.font: IosevkaCustom 12
+i3xrocks.keyboard_layout.left_click_action: regolith-control-center keyboard
+i3xrocks.keyboard_layout.right_click_action: regolith-control-center region
+i3xrocks.label.battery0:  
+i3xrocks.label.battery20:  
+i3xrocks.label.battery50:  
+i3xrocks.label.battery80:  
+i3xrocks.label.battery100:  
+i3xrocks.label.bt.on: 
+i3xrocks.label.bt.con: 
+i3xrocks.label.bt.off: 
+i3xrocks.label.fan: 
+i3xrocks.label.cpu:  
+i3xrocks.label.mic.mute:  
+i3xrocks.label.mic:  
+i3xrocks.label.mute:  
+i3xrocks.label.notify.none:  
+i3xrocks.label.notify.some:  
+i3xrocks.label.notify.crit:  
+i3xrocks.label.rsync.error:  
+i3xrocks.label.rsync:  
+i3xrocks.label.rsync.outdated:  
+i3xrocks.label.rsync.success:  
+i3xrocks.label.rsync.syncing:  
+i3xrocks.label.rsync.warning:  
+i3xrocks.label.sound:  
+i3xrocks.label.time: 
+i3xrocks.label.vpn:  
+i3xrocks.label.wifi.x: 
+i3xrocks.label.wifi.high: 
+i3xrocks.label.wifi.medium: 
+i3xrocks.label.wifi.low: 
+i3xrocks.label.wifi.none: 
+i3xrocks.label.wired:  
+i3xrocks.value.font: IosevkaCustomQuasi 12
+i3xrocks.wifi.fair: 60
+i3xrocks.wifi.good: 45
+i3xrocks.wifi.poor: 30
 
 regolith.look.path: /usr/share/regolith-look/gruvbox
-regolith.wallpaper.file: ~/Images/wallpapers/2024-11-03_for_Huion_by-David-Revoy.jpg
+regolith.wallpaper.file: wallpapers/wallpaper.jpg
+regolith.lockscreen.wallpaper.file: wallpapers/lockscreen.png
 
 wm.bar.font: IosevkaCustom 12
 wm.bar.trayoutput: none
