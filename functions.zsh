@@ -29,25 +29,29 @@ link() {
   fi
 
   if [[ $filepath -ef $dotfile ]]; then
-    echo "$fg[blue][•]$reset_color $dotfile link already exists"
+    info "$dotfile symlink already exists"
   elif [[ -e $dotfile ]]; then
     if (( $FORCE )); then
       if ln -svf "${filepath:a}" "$dotfile"; then
-        echo "$fg[green][+]$reset_color $dotfile $fg[red]force$reset_color linked"
+        success "$dotfile $fg[red]force$reset_color linked"
       else
-        echo "$fg[red][!]$reset_color $dotfile $fg[red]force$reset_color link failed"
+        alert "$dotfile $fg[red]force$reset_color link failed"
       fi
+    elif [[ -h $dotfile ]]; then
+      warn "$dotfile symllink exists but point to the wrong file"
+    elif [[ -d $dotfile ]]; then
+      warn "$dotfile should be a symlink but is a directory"
     else
-      echo "$fg[yellow][?]$reset_color $dotfile link exists but point to the wrong file"
+      warn "$dotfile should be a symlink but is a file"
     fi
   elif [[ -a $filepath ]]; then
     if ln -sv "${filepath:a}" "$dotfile"; then
-      echo "$fg[green][+]$reset_color $dotfile linked"
+      success "$dotfile linked"
     else
-      echo "$fg[red][!]$reset_color $dotfile link failed"
+      alert "$dotfile link failed"
     fi
   else
-    echo "$fg[red][!]$reset_color $filepath does not exist"
+    alert "$filepath does not exist"
   fi
 }
 
@@ -75,42 +79,71 @@ copy() {
   fi
 
   if [[ -e $dotfile ]]; then
-    if diff -q "$filepath" "$dotfile" &>/dev/null; then
-      echo "$fg[blue][•]$reset_color $dotfile already exists"
+    if diff -rq "$filepath" "$dotfile" &>/dev/null; then
+      info "$dotfile already exists"
     elif (( $FORCE )); then
-      if [[ -d $filepath ]]; then
-        if $sudo cp -Rf "${filepath:a}" "$dotfile"; then
-          echo "$fg[green][+]$reset_color $dotfile directory $fg[red]force$reset_color copied"
-        else
-          echo "$fg[red][!]$reset_color $dotfile directory $fg[red]force$reset_color copy failed"
+      if (( $THEIR )); then
+        if [[ -d $filepath ]]; then
+          if $sudo cp -Rf "${filepath:a}" "$dotfile"; then
+            success "$dotfile directory $fg[green]force$reset_color updated"
+          else
+            alert "$dotfile directory $fg[red]force$reset_color copy failed"
+          fi
+        elif [[ -a $filepath ]]; then
+          if $sudo cp -pf "${filepath:a}" "$dotfile"; then
+            success "$dotfile file $fg[green]force$reset_color updated"
+          else
+            alert "$dotfile file $fg[red]force$reset_color copy failed"
+          fi
         fi
-      elif [[ -a $filepath ]]; then
-        if $sudo cp -pf "${filepath:a}" "$dotfile"; then
-          echo "$fg[green][+]$reset_color $dotfile file $fg[red]force$reset_color copied"
-        else
-          echo "$fg[red][!]$reset_color $dotfile file $fg[red]force$reset_color copy failed"
+      elif (( $OURS )); then
+        if [[ -d $dotfile ]]; then
+          if $sudo cp -Rf "${dotfile:a}" "${filepath:h}"; then
+            success "$filepath directory $fg[green]force$reset_color updated"
+          else
+            alert "$filepath directory $fg[red]force$reset_color copy failed"
+          fi
+        elif [[ -a $dotfile ]]; then
+          if $sudo cp -pf "${dotfile:a}" "$filepath"; then
+            success "$filepath file $fg[green]force$reset_color updated"
+          else
+            alert "$filepath file $fg[red]force$reset_color copy failed"
+          fi
         fi
+      else
+        alert "please provide a copy direction"
       fi
     else
-      echo "$fg[yellow][?]$reset_color files $filepath and $dotfile differ"
+      warn "files $filepath and $dotfile differ"
       if (( $DIFF )); then
-        diff "$filepath" "$dotfile"
+        if (( $INTERACTIVE )); then
+          if [[ -f $dotfile ]]; then
+            ${EDITOR} -d "$filepath" "$dotfile"
+            if diff -rq "$filepath" "$dotfile" &>/dev/null; then
+              info "$filepath and $dotfile are now identical"
+            fi
+          else
+            diff -rq "$filepath" "$dotfile"
+          fi
+        else
+          diff -r "$filepath" "$dotfile"
+        fi
       fi
     fi
   elif [[ -d $filepath ]]; then
     if $sudo cp -R "${filepath:a}" "$dotfile"; then
-      echo "$fg[green][+]$reset_color $dotfile directory copied"
+      success "$dotfile directory copied"
     else
-      echo "$fg[red][!]$reset_color $dotfile directory copy failed"
+      alert "$dotfile directory copy failed"
     fi
   elif [[ -a $filepath ]]; then
     if $sudo mkdir -p "${dotfile:h}" && $sudo cp -p "${filepath:a}" "$dotfile"; then
-      echo "$fg[green][+]$reset_color $dotfile file copied"
+      success "$dotfile file copied"
     else
-      echo "$fg[red][!]$reset_color $dotfile file copy failed"
+      alert "$dotfile file copy failed"
     fi
   else
-    echo "$fg[red][!]$reset_color $filepath does not exist"
+    alert "$filepath does not exist"
   fi
 }
 
@@ -136,13 +169,13 @@ decryptool() {
   elif (( $+commands[$AGETOOL] )) && [[ -n "$AGEKEY" ]] && [[ $filepath =~ ".age$" ]]; then
     $AGETOOL --decrypt -i $AGEKEY "$filepath"
   elif [[ ! (( $+commands[$GPGTOOL] )) ]]; then
-    echo "$fg[red][!]$reset_color $GPGTOOL file encryption tool is not installed"
+    alert "$GPGTOOL file encryption tool is not installed"
   elif [[ ! (( $+commands[$AGETOOL] )) ]]; then
-    echo "$fg[red][!]$reset_color $AGETOOL file encryption tool is not installed"
+    alert "$AGETOOL file encryption tool is not installed"
   elif [[ -z "$AGEKEY" ]]; then
-    echo "$fg[red][!]$reset_color age private key is missing."
+    alert "age private key is missing."
   else
-    echo "$fg[red][!]$reset_color $dotfile cannot be decrypted"
+    alert "$dotfile cannot be decrypted"
   fi
 }
 
@@ -155,30 +188,35 @@ decipher() {
   fi
 
   if [[ -d $filepath ]]; then
-    echo "$fg[red]{!}$reset_color decipher failed. $dotfile is a directory"
+    alert "decipher failed. $dotfile is a directory"
   elif [[ -e $dotfile ]]; then
     if decryptool "$filepath" | diff -q - "$dotfile" &>/dev/null; then
-      echo "$fg[blue]{•}$reset_color $dotfile already exists"
+      info "$dotfile already exists"
     elif (( $FORCE )); then
       if decryptool "$filepath" 1>| "$dotfile"; then
-        echo "$fg[green]{+}$reset_color $dotfile file $fg[red]force$reset_color deciphered"
+        success "$dotfile file $fg[red]force$reset_color deciphered"
       else
-        echo "$fg[red]{!}$reset_color $dotfile file $fg[red]force$reset_color decipher failed"
+        alert "$dotfile file $fg[red]force$reset_color decipher failed"
       fi
     else
-      echo "$fg[yellow]{?}$reset_color files $filepath and $dotfile differ"
+      warn "files $filepath and $dotfile differ"
       if (( $DIFF )); then
+        if (( $INTERACTIVE )); then
+          notify "no interactive diff between encrypted files"
+        fi
         decryptool "$filepath" | diff - "$dotfile"
+        notify "to encrypt ${dotfile##*/} please run:"
+        notify "age --encrypt -i ${AGEKEY} --output ${filepath} ${dotfile}"
       fi
     fi
   elif [[ -a $filepath ]]; then
     if decryptool "$filepath" 1> "$dotfile"; then
-      echo "$fg[green]{+}$reset_color $dotfile file deciphered"
+      success "$dotfile file deciphered"
     else
-      echo "$fg[red]{!}$reset_color $dotfile file decipher failed"
+      alert "$dotfile file decipher failed"
     fi
   else
-    echo "$fg[red]{!}$reset_color $filepath does not exist"
+    alert "$filepath does not exist"
   fi
 }
 
@@ -192,8 +230,32 @@ rdecipher() {
   done
 }
 
+info() {
+  local msg=$argv[1]
+
+  echo "$fg[blue][•]$reset_color $msg"
+}
+
 notify() {
   local msg=$argv[1]
 
   echo "$fg[yellow][ℹ]$reset_color $msg"
+}
+
+success() {
+  local msg=$argv[1]
+
+  echo "$fg[green][+]$reset_color $msg"
+}
+
+warn() {
+  local msg=$argv[1]
+
+  echo "$fg[yellow][?]$reset_color $msg"
+}
+
+alert() {
+  local msg=$argv[1]
+
+  echo "$fg[red][!]$reset_color $msg"
 }

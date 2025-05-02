@@ -91,23 +91,28 @@ cd dotfiles && ./init.zsh
 ## Usage
 
 ```
-Usage: ./init.zsh [-d | --diff] [-f | --force] [-h | --help] [-V | --version] [program ...]
+Usage: init.zsh [-d | --diff] [-i | --interactive] [-f | --force] [--ours | --their] [-h | --help] [-V | --version] [program ...]
 
 Environment:
-  DIFF      hide/show changes between files if they are different (default: 0 ; values: 0, 1)
-  FORCE     overwrite or not existing files if they are different (default: 0 ; values: 0, 1)
-  GPGTOOL   executable for the GPG file encryption tool (default: gpg)
-  AGETOOL   executable for the age file encryption tool (default: age)
-  AGEKEY    path to your age private key
+  DIFF        hide/show changes between files if they are different (default: 0 ; values: 0, 1)
+  INTERACTIVE show changes in editor (default: 0 ; values: 0, 1)
+  FORCE       overwrite or not existing files if they are different (default: 0 ; values: 0, 1)
+  OURS        copy local files to dotfiles (default: 0 ; values: 0, 1)
+  THEIR       copy dotfiles to local files (default: 1 ; values: 0, 1)
+  GPGTOOL     executable for the GPG file encryption tool (default: gpg)
+  AGETOOL     executable for the age file encryption tool (default: age)
+  AGEKEY      path to your age private key
 
 Options:
-  --age-key=AGE_KEY           path to your age private key
-  --age-tool=AGE_TOOL         set the age file encryption tool executable
-  --gpg-tool=GPG_TOOL         set the gpg file encryption tool executable
-  -d, --diff, --no-diff       show/hide changes between files if they are different
-  -f, --force, --no-force     overwrite or not existing files if they are different
-  -h, --help                  print this help
-  -V, --version               print the version number"
+      --age-tool=AGE_TOOL               set the age file encryption tool executable
+      --gpg-tool=GPG_TOOL               set the gpg file encryption tool executable
+  -d, --diff, --no-diff                 show/hide changes between files if they are different
+  -f, --force, --no-force               overwrite or not existing files if they are different
+  -h, --help                            print this help
+  -i, --interactive, --no-interactive   show changes in editor
+      --ours                            copy local files to dotfiles when force is enabled
+      --their                           copy dotfiles to local files when force is enabled
+  -V, --version                         print the version number
 ```
 
 Add support for other dotfiles by creating new `.zsh` files under the `modules/`
