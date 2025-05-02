@@ -1,3 +1,15 @@
+PLAN?=IosevkaCustom
+JCMD?=8
+NICE?=1
+
+info:
+	@echo "Build name: $(PLAN)"
+	@echo "Niceness: $(NICE)"
+	@echo "Jobs: $(JCMD)"
+
+plans:
+	cat ./private-build-plans.toml | tomlq -t '.buildPlans | {Plans: keys}'
+
 init:		## Clone the repository
 	git clone --depth 1 https://github.com/be5invis/Iosevka.git
 	@echo "Initialized!"
@@ -21,23 +33,23 @@ bundle:		## Install node dependencies
 	@echo "Bundled!"
 
 build:		## Build the font
-	nice -n 1 npm run build -- ttf::IosevkaCustom
-	if [ -d ~/.local/share/fonts/IosevkaCustom/TTF ]; \
-		then if [ -d ~/.local/share/fonts/IosevkaCustom/TTF.old ]; \
-			then rm -r ~/.local/share/fonts/IosevkaCustom/TTF.old; \
+	nice -n $(NICE) npm run build -- --jCmd=$(JCMD) "ttf::$(PLAN)"
+	if [ -d "${HOME}/.local/share/fonts/$(PLAN)/TTF" ]; \
+		then if [ -d "${HOME}/.local/share/fonts/$(PLAN)/TTF.old" ]; \
+			then rm -r "${HOME}/.local/share/fonts/$(PLAN)/TTF.old"; \
 		fi; \
-		mv ~/.local/share/fonts/IosevkaCustom/TTF ~/.local/share/fonts/IosevkaCustom/TTF.old; \
+		mv "${HOME}/.local/share/fonts/$(PLAN)/TTF" "${HOME}/.local/share/fonts/$(PLAN)/TTF.old"; \
 	fi
-	cp -r dist/IosevkaCustom/TTF ~/.local/share/fonts/IosevkaCustom/TTF
+	cp -r "dist/$(PLAN)/TTF" "${HOME}/.local/share/fonts/$(PLAN)/TTF"
 	sudo fc-cache
 	@echo "Built!"
 
 clean:		## Clean the dist font directory
-	rm -r dist/IosevkaCustom/TTF*
+	rm -r "dist/$(PLAN)/TTF"*
 	@echo "Cleaned!"
 
 uninstall:	## Uninstall the font
-	rm -r ~/.local/share/fonts/IosevkaCustom
+	rm -r "${HOME}/.local/share/fonts/$(PLAN)"
 	sudo fc-cache
 	@echo "Uninstalled!"
 
@@ -59,5 +71,5 @@ upgrade: fetch install build clean	## Update dependencies & the font
 help:		## Show this help
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/##//'
 
-.PHONY: init fetch install build clean uninstall all update upgrade help
+.PHONY: info init fetch install build clean uninstall all update upgrade help
 .DEFAULT_GOAL := help
