@@ -4,6 +4,8 @@
 *.html    diff=html
 *.xhtml   diff=html
 *.md      diff=markdown
+*.remark  diff=markdown
 *.gemspec diff=ruby
 *.rake    diff=ruby
 *.rb      diff=ruby
+*.rbs     diff=ruby

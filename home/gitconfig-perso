@@ -1,4 +1,12 @@
+[commit]
+  gpgsign = true
+[maintenance]
+  repo = ~/dev/FAQ
+  repo = ~/dev/FSD
+  repo = ~/dev/web-wiki/
 [user]
-	name = François Vantomme
+  name = François Vantomme
   email = akarzim@pm.me
   signingkey = 23961A9C221E391FE2E624334BA5EFC5E2EE4C96
+  ; signingkey = 89AF7E357CE8E4C23972A3487C090509B9BF8D09
+  ; signingkey = A9A121905543A050F5AE91D70E39E37918494474

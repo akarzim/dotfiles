@@ -1,19 +1,25 @@
+[absorb]
+  maxStack = 50
+[alias]
+    # ATTENTION: All aliases prefixed with ! run in /bin/sh make sure you use sh syntax, not bash/zsh or whatever
+    recent = "!git_recent() { refbranch=$1 count=$2; git for-each-ref --sort=-committerdate refs/heads --format='%(refname:short)|%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' --color=always --count=${count:-20} | while read line; do branch=$(echo \"$line\" | awk 'BEGIN { FS = \"|\" }; { print $1 }' | tr -d '*'); colorline=$(echo \"$line\" | sed 's/^[^|]*|//'); echo \"$colorline\" | awk -F'|' -vOFS='|' '{$3=substr($3,1,70)}1' ; done | ( echo \"branch|lastcommit|message|author\n\" && cat) | column -ts'|';}; git_recent"
 [core]
   excludesfile = ~/.gitignore
   ; pager = delta --plus-emph-color="#555628" --plus-color="#3b3c28" --minus-emph-color="#70342f" --minus-color="#4a2c2c" --theme='gruvbox.sepia'
-	attributesfile = ~/.gitattributes
+  attributesfile = ~/.gitattributes
   # see https://stackoverflow.com/questions/51147825/is-it-possible-for-git-to-display-the-filename-with-accents
-	quotepath = false
+  quotepath = false
 [color "status"]
   added = yellow
   changed = magenta
   untracked = cyan
-[commit]
-	gpgsign = true
 [diff]
+  algorithm = histogram
   compactionHeuristic = true
 [difftool "vimdiff"]
   cmd = $EDITOR -d $LOCAL $REMOTE
+[fetch]
+  writeCommitGraph = true
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
@@ -21,27 +27,35 @@
   required = true
 [gpg]
   program = gpg
+[init]
+  defaultBranch = main
 [interactive]
-  diffFilter = delta --color-only
+  ; diffFilter = delta --color-only
 [merge]
   tool = vimdiff
+  conflictStyle = diff3
 [mergetool "vimdiff"]
   cmd = $EDITOR -d $LOCAL $MERGED $BASE $REMOTE -c 'winc w' -c 'winc J' -c 'winc k' -c 'winc l' -c 'diffo' -c 'winc j' -c 'diffo'
 [protocol]
   version = 2
+[pull]
+  rebase = true
+[push]
+  autoSetupRemote = true
+[rebase]
+  autosquash = true
+  updateRefs = true
 [rerere]
   enabled = true
 [user]
-	name = François Vantomme
+  name = François Vantomme
   email = akarzim@pm.me
-  ; signingkey = 23961A9C221E391FE2E624334BA5EFC5E2EE4C96
-  ; signingkey = 89AF7E357CE8E4C23972A3487C090509B9BF8D09
-  ; signingkey = A9A121905543A050F5AE91D70E39E37918494474
+
+[includeIf "gitdir:/home/francois.vantomme/dev/"]
+  path = .gitconfig-enercoop
 
 [includeIf "gitdir:~/dev/perso/"]
-path = .gitconfig-perso
+  path = .gitconfig-perso
 
 [includeIf "gitdir:~/dev/coagul/"]
-path = .gitconfig-perso
-[pull]
-	rebase = true
+  path = .gitconfig-perso
