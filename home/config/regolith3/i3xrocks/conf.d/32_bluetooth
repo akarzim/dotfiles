@@ -1,0 +1,4 @@
+# Displays bluetooth connection
+[bluetooth]
+progress_color=#458588
+interval=xresource:i3xrocks.bluetooth.interval 10

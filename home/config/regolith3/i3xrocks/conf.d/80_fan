@@ -1,0 +1,7 @@
+# Fan indicator
+#
+# Displays rotation speed of specified fan.
+# You can specify the instance by adding:
+# instance=fan1
+[fan]
+interval=10

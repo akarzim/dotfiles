@@ -36,11 +36,11 @@ get_info
 
 if [ $CRIT_NOTIFICATION_COUNT -gt 0 ]; then 
     VALUE_COLOR=${color:-$(xrescat i3xrocks.critical.color "#D8DEE9")}
-    LABEL_ICON=${label_icon:-$(xrescat i3xrocks.label.notify.some N)}
+    LABEL_ICON=${label_icon:-$(xrescat i3xrocks.label.notify.crit C)}
     NOTIFICATION_LABEL="$CRIT_NOTIFICATION_COUNT/$NOTIFICATION_COUNT"
 elif [ $NOTIFICATION_COUNT -gt 0 ]; then
     VALUE_COLOR=${color:-$(xrescat i3xrocks.warning "#D8DEE9")}
-    LABEL_ICON=${label_icon:-$(xrescat i3xrocks.label.notify.some N)}
+    LABEL_ICON=${label_icon:-$(xrescat i3xrocks.label.notify.some S)}
     NOTIFICATION_LABEL="$NOTIFICATION_COUNT"
 else
     VALUE_COLOR=${color:-$(xrescat i3xrocks.value.color "#D8DEE9")}

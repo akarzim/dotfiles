@@ -35,7 +35,19 @@ if [[ "$IF" == "" || ! -d "$IF_PATH" || ! -f "${IF_PATH}"/statistics/rx_bytes ||
 fi
 
 if [ -d "${IF_PATH}/wireless" ]; then
-  NIC=${label_icon:-$(xrescat i3xrocks.label.wifi )}
+  signal="$(awk 'NR==3 {print $3}' /proc/net/wireless | cut --delimiter '.' --fields 1)"
+
+  if [[ -z "${signal}" ]]; then
+    NIC=${label_icon:-$(xrescat i3xrocks.label.wifi.x X)}
+  elif (( ${signal} > $(xrescat i3xrocks.wifi.fair 60) )); then
+    NIC=${label_icon:-$(xrescat i3xrocks.label.wifi.high H)}
+  elif (( ${signal} > $(xrescat i3xrocks.wifi.good 45) )); then
+    NIC=${label_icon:-$(xrescat i3xrocks.label.wifi.medium M)}
+  elif (( ${signal} > $(xrescat i3xrocks.wifi.poor 30) )); then
+    NIC=${label_icon:-$(xrescat i3xrocks.label.wifi.low L)}
+  else
+    NIC=${label_icon:-$(xrescat i3xrocks.label.wifi.none N)}
+  fi
 else
   NIC=${label_icon:-$(xrescat i3xrocks.label.wired )}
 fi

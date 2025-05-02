@@ -1,5 +1,8 @@
 #!/bin/bash
 
+DEFAULT_VPN="${vpn:-$(nmcli connection show | awk '$3 == "vpn" {print $1}')}"
+BUTTON="${button:-}"
+
 CONNECTION=$(LC_ALL=C nmcli -t connection show --active | awk -F ':' '
 { if($3 == "vpn") {
     vpn_name=$1
@@ -12,13 +15,42 @@ CONNECTION=$(LC_ALL=C nmcli -t connection show --active | awk -F ':' '
   }
 }
 END{if (vpn_name) {printf("%s", vpn_name)}  else if(tun_name) {printf("%s", tun_name)}}')
-LABEL_COLOR=${vpn_label_color:-$(xrescat i3xrocks.label.color)}
-VALUE_COLOR="${vpn_color:-$(xrescat i3xrocks.value.color)}"
+
+control() {
+    regolith-control-center network
+}
+
+toggle_vpn() {
+    if [[ -n "${CONNECTION}" ]]; then
+        nmcli connection down "${CONNECTION}" | cut --delimiter " " --fields -5
+    else
+        nmcli connection up "${DEFAULT_VPN}" | cut --delimiter " " --fields -2
+    fi
+}
+
+ACTION_1=$(xrescat i3xrocks.action.vpn.left "control")
+ACTION_2=$(xrescat i3xrocks.action.vpn.middle "toggle_vpn")
+ACTION_3=$(xrescat i3xrocks.action.vpn.right "true")
+case $BUTTON in
+    1) eval $ACTION_1 ;;
+    2) eval $ACTION_2 ;;
+    3) eval $ACTION_3 ;;
+esac
+
+
+ICON=${icon:-$(xrescat i3xrocks.label.vpn ⧨)}
 VALUE_FONT=${font:-$(xrescat i3xrocks.value.font)}
 
 if [[ -z "$CONNECTION" ]]; then
-    exit 0
+    LABEL_COLOR=${vpn_label_color:-$(xrescat i3xrocks.warning orange)}
+    VALUE_COLOR="${vpn_color:-$(xrescat i3xrocks.warning orange)}"
+
+    echo "<span color=\"${LABEL_COLOR}\" font_desc=\"${VALUE_FONT}\">${ICON}</span><span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\">off</span>" # full text
+    echo "<span color=\"${LABEL_COLOR}\" font_desc=\"${VALUE_FONT}\">${ICON}</span>" # short text
 else
-    echo "<span color=\"${LABEL_COLOR}\" font_desc=\"${VALUE_FONT}\"> </span><span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\">$CONNECTION</span>" # full text
-    echo "<span color=\"${LABEL_COLOR}\" font_desc=\"${VALUE_FONT}\"> </span>" # short text
+    LABEL_COLOR=${vpn_label_color:-$(xrescat i3xrocks.label.color)}
+    VALUE_COLOR="${vpn_color:-$(xrescat i3xrocks.value.color)}"
+
+    echo "<span color=\"${LABEL_COLOR}\" font_desc=\"${VALUE_FONT}\">${ICON}</span><span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\">$CONNECTION</span>" # full text
+    echo "<span color=\"${LABEL_COLOR}\" font_desc=\"${VALUE_FONT}\">${ICON}</span>" # short text
 fi

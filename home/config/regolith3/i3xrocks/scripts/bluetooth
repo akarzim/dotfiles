@@ -1,0 +1,64 @@
+#!/bin/bash
+
+set -Eeu -o pipefail
+
+BUTTON="${button:-}"
+
+# Device 20:64:DE:32:EB:91 SRS-XG300
+# Device 9C:30:5B:F8:A5:DD SONY:CMT-SBT100
+# Device A8:F5:E1:7E:B9:C5 OpenRun Pro 2 by Shokz
+
+BT_CONTROLLER=$(xrescat i3xrocks.bt.controller "BC:F4:D4:DE:12:E4")
+BT_DEVICE=$(xrescat i3xrocks.bt.default_device "A8:F5:E1:7E:B9:C5") # OpenRun Pro 2 by Shokz
+POWERED=$(bluetoothctl show "${BT_CONTROLLER}" | awk '/Powered:/ {print $2}')
+CONNECTED_DEVICE=$(bluetoothctl devices Connected | cut --delimiter " " --fields 3-)
+
+control() {
+    regolith-control-center bluetooth
+}
+
+toggle_controller() {
+    if [ "${POWERED}" == "yes" ]; then
+        bluetoothctl power off | awk '/Changing/'
+    else
+        bluetoothctl power on | awk '/Changing/'
+    fi
+}
+
+toggle_device() {
+    if [[ -n "${CONNECTED_DEVICE}" ]]; then
+        bluetoothctl disconnect "${BT_DEVICE}" | awk '/Successful/'
+    else
+        bluetoothctl connect "${BT_DEVICE}" | awk '/successful/'
+    fi
+}
+
+ACTION_1=$(xrescat i3xrocks.action.bluetooth.left "control")
+ACTION_2=$(xrescat i3xrocks.action.bluetooth.middle "toggle_device")
+ACTION_3=$(xrescat i3xrocks.action.bluetooth.right "toggle_controller")
+case $BUTTON in
+    1) eval $ACTION_1 ;;
+    2) eval $ACTION_2 ;;
+    3) eval $ACTION_3 ;;
+esac
+
+if [ "${POWERED}" == "yes" ]; then
+    if [ -n "${CONNECTED_DEVICE}" ]; then
+        ICON=${icon_on:-$(xrescat i3xrocks.label.bt.on b)}
+        LABEL_COLOR=${color:-$(xrescat i3xrocks.label.color white)}
+        VALUE_COLOR=${color:-$(xrescat i3xrocks.value.color white)}
+    else
+        ICON=${icon_con:-$(xrescat i3xrocks.label.bt.con ḃ)}
+        LABEL_COLOR=${progress_color:-$(xrescat i3xrocks.progress blue)}
+        VALUE_COLOR=${progress_color:-$(xrescat i3xrocks.progress blue)}
+    fi
+else
+    ICON=${icon_off:-$(xrescat i3xrocks.label.bt.off B)}
+    LABEL_COLOR=${warn_color:-$(xrescat i3xrocks.warning orange)}
+    VALUE_COLOR=${warn_color:-$(xrescat i3xrocks.warning orange)}
+fi
+
+VALUE_FONT=${font:-$(xrescat i3xrocks.value.font "Source Code Pro Medium 13")}
+
+echo "<span font_desc=\"${VALUE_FONT}\" color=\"${LABEL_COLOR}\">${ICON}</span><span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\"> ${CONNECTED_DEVICE}</span>"
+echo "<span color=\"${VALUE_COLOR}\">${LABEL_ICON}</span>" # short text

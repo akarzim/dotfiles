@@ -1,0 +1,33 @@
+#!/bin/bash
+# Fan blocklet for Regolith
+
+BUTTON=${button:-}
+LABEL_COLOR=${label_color:-$(xrescat i3xrocks.label.color "#7B8394")}
+LABEL_ICON=$(xrescat i3xrocks.label.fan F)
+VALUE_COLOR=$(xrescat i3xrocks.value.color white)
+VALUE_FONT=${font:-$(xrescat i3xrocks.value.font "Source Code Pro Medium 13")}
+
+
+get_fan_status() {
+	if [[ "${BLOCK_INSTANCE}" =~ /fan[0-9]/ ]]; then
+		sensors | awk '"${BLOCK_INSTANCE}:" {print $2}' | head -n 1
+	else
+		sensors | awk '/fan[0-9]:/ {print $2}' | sort -u | tail -n 1
+	fi
+}
+
+fan_status="$(get_fan_status)"
+
+if [[ -z "${fan_status}" ]]; then
+	exit 0
+fi
+
+icon_span="<span font_desc=\"${VALUE_FONT}\" color=\"${LABEL_COLOR}\">${LABEL_ICON}</span>"
+value_span="<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\"> ${fan_status} RPM</span>"
+
+echo "${icon_span}${value_span}"
+
+if [[ "x${BUTTON}" == "x1" ]]; then
+    ACTION=$(xrescat i3xrocks.action.fan "regolith-control-center power")
+    /usr/bin/i3-msg -q exec "${ACTION}"
+fi

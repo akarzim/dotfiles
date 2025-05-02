@@ -54,8 +54,8 @@ i3xrocks.wifi.good: 45
 i3xrocks.wifi.poor: 30
 
 regolith.look.path: /usr/share/regolith-look/gruvbox
-regolith.wallpaper.file: wallpapers/wallpaper.jpg
-regolith.lockscreen.wallpaper.file: wallpapers/lockscreen.png
+regolith.wallpaper.file: ~/.config/regolith3/wallpapers/wallpaper.jpg
+regolith.lockscreen.wallpaper.file: ~/.config/regolith3/wallpapers/lockscreen.png
 
 wm.bar.font: IosevkaCustom 12
 wm.bar.trayoutput: none
