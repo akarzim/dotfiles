@@ -87,7 +87,7 @@ set diff-view  = line-number:no,interval=5 text:yes,commit-title-overflow=no
 set show-changes         = yes		# Show changes commits in the main view?
 set show-untracked       = yes		# Show also untracked changes?
 set wrap-lines           = no			# Wrap long lines in pager views?
-set tab-size             = 4			# Number of spaces to use when expanding tabs
+set tab-size             = 2			# Number of spaces to use when expanding tabs
 set line-graphics        = utf-8	# Enum: ascii, default, utf-8
 set truncation-delimiter = "utf-8"		# Character drawn for truncations, or "utf-8"
 
@@ -103,7 +103,7 @@ set truncation-delimiter = "utf-8"		# Character drawn for truncations, or "utf-8
 # Similarly, `remote` is used if no `tracked-remote` format exists.
 # Prefix with `hide:` to not show that reference type, e.g. `hide:remote`.
 # Expects a space-separated list of format strings.
-set reference-format = [branch] <tag> {remote} ~replace~
+set reference-format = [branch] <tag> {remote} ~replace~ # hide:prefetch
 
 # Settings controlling how content is read from Git
 set commit-order                = auto		# Enum: auto, default, topo, date, reverse (main)
@@ -180,16 +180,17 @@ set pgrp               = no		# Make tig process-group leader
 #   %(prompt)		Prompt for the argument value.
 
 bind main	C	?git cherry-pick %(commit)
-bind main U ?git revert %(commit)
-bind main ! ?git commit --fixup=%(commit)
-bind main <Ctrl-R> !git rebase --autosquash -i %(commit)
+bind main	U	?git revert %(commit)
+bind main	!	?git commit --fixup=%(commit)
+bind main	<Ctrl-R> !git rebase --autosquash -i %(commit)
 
-bind status A !git commit --amend
+bind status	A	!git commit --amend
 bind status	C	!git commit --verbose
-bind status N !git add -N %(file)
-bind status P !git add -p %(file)
+bind status	N	!git add -N %(file)
+bind status	P	!git add -p %(file)
+bind status	B	!git absorb --base origin/main
 
-bind stash  S ?git stash push --include-untracked
+bind stash	S	?git stash push --include-untracked
 bind stash	A	?git stash apply %(stash)
 bind stash	P	?git stash pop %(stash)
 bind stash	!	?git stash drop %(stash)
@@ -200,10 +201,10 @@ bind refs	!	?git branch -D %(branch)
 bind reflog	C	?git checkout %(branch)
 bind reflog	!	?git reset --hard %(commit)
 
-bind diff , !git log -p %(file)
-bind diff ! ?git checkout %(commit) -- %(file)
+bind diff	,	!git log -p %(file)
+bind diff	!	?git checkout %(commit) -- %(file)
 
-bind tree , !git log -p %(file)
+bind tree	,	!git log -p %(file)
 
 # Normal commands
 # ---------------
