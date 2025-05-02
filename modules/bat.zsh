@@ -2,7 +2,7 @@
 if program "batcat" "bat"; then
   copy ${0:A:h:h}/home/config/bat .config/bat
 
-  if caching_policy ${HOME}/.config/bat/themes; then
+  if caching_policy ${XDG_CONFIG_HOME:-$HOME/.config}/bat/themes; then
     batcat cache --build
     echo "$fg[green][+]$reset_color bat cache rebuilt"
   else
