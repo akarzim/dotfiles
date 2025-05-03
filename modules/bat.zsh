@@ -4,9 +4,9 @@ if program "batcat" "bat"; then
 
   if caching_policy ${XDG_CONFIG_HOME:-$HOME/.config}/bat/themes; then
     batcat cache --build
-    echo "$fg[green][+]$reset_color bat cache rebuilt"
+    success "bat cache rebuilt"
   else
-    echo "$fg[yellow][-]$reset_color no need to rebuild bat cache"
+    noop "no need to rebuild bat cache"
   fi
 else
   skip "bat"

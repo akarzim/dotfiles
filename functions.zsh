@@ -236,6 +236,12 @@ info() {
   echo "$fg[blue][•]$reset_color $msg"
 }
 
+noop() {
+  local msg=$argv[1]
+
+  echo "$fg[yellow][-]$reset_color $msg"
+}
+
 notify() {
   local msg=$argv[1]
 
