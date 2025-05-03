@@ -101,6 +101,7 @@ Environment:
   THEIR       copy dotfiles to local files (default: 1 ; values: 0, 1)
   DIFFTOOL    exectuable for diffing files (default: diff)
   DIFFEDITOR  executable for editing diff (default: EDITOR)
+  GITTOOL     executable for git diffing files (default: git)
   GPGTOOL     executable for the GPG file encryption tool (default: gpg)
   AGETOOL     executable for the age file encryption tool (default: age)
   AGEKEY      path to your age private key
@@ -108,6 +109,7 @@ Environment:
 Options:
       --age-tool=AGE_TOOL               set the age file encryption tool executable
       --gpg-tool=GPG_TOOL               set the gpg file encryption tool executable
+      --git-tool=GIT_TOOL               set the git tool executable
       --diff-tool=DIFF_TOOL             set the diff tool executable
       --diff-editor=DIFF_EDITOR         set the diff editor executable
   -d, --diff, --no-diff                 show/hide changes between files if they are different

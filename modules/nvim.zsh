@@ -13,8 +13,8 @@ if program "nvim"; then
     else
       notify "consider versioning your recent modifications!"
       if (( $DIFF )); then
-        if (( $INTERACTIVE )) && (( $+commands[tig] )); then
-          tig status
+        if (( $INTERACTIVE )) && (( $+commands[$GITTOOL] )); then
+          gittool_status
           if (git diff --exit-code --quiet); then
             info "nvim configuration is up to date!"
           fi

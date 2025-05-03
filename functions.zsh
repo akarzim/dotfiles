@@ -313,3 +313,18 @@ diffrq() {
     ;;
   esac
 }
+
+gittool_status() {
+  case $GITTOOL in
+    git )
+      $GITTOOL status $argv
+    ;;
+    tig )
+      $GITTOOL status $argv
+    ;;
+    * )
+      alert "unsupported git tool. abort."
+      exit 1
+    ;;
+  esac
+}
