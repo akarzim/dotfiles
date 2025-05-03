@@ -91,7 +91,10 @@ cd dotfiles && ./init.zsh
 ## Usage
 
 ```
-Usage: init.zsh [-d | --diff] [-i | --interactive] [-f | --force] [--ours | --their] [-h | --help] [-V | --version] [program ...]
+Usage: init.zsh [-d | --diff] [-i | --interactive] [--diff-tool diff] [--diff-editor vim] [--git-tool git]
+                [--gpg-tool gpg] [--age-tool age] [--age-key path/to/key]
+                [-f | --force] [--ours | --their] [-h | --help]
+                [-V | --version] [program ...]
 
 Environment:
   DIFF        hide/show changes between files if they are different (default: 0 ; values: 0, 1)
@@ -120,6 +123,9 @@ Options:
       --their                           copy dotfiles to local files when force is enabled
   -V, --version                         print the version number
 ```
+
+NOTE: Environment variables can be set in a `.dotfilesrc` file.
+      An example is available in `dotfilesrc.sample`.
 
 Add support for other dotfiles by creating new `.zsh` files under the `modules/`
 directory. You have some functions at your disposal:

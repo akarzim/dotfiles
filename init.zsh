@@ -6,7 +6,10 @@ version="0.5.0"
 
 help="dotfiles $version
 
-Usage: ${0:t} [-d | --diff] [-i | --interactive] [-f | --force] [--ours | --their] [-h | --help] [-V | --version] [program ...]
+Usage: ${0:t} [-d | --diff] [-i | --interactive] [--diff-tool diff] [--diff-editor vim] [--git-tool git]
+                [--gpg-tool gpg] [--age-tool age] [--age-key path/to/key]
+                [-f | --force] [--ours | --their] [-h | --help]
+                [-V | --version] [program ...]
 
 Environment:
   DIFF        hide/show changes between files if they are different (default: 0 ; values: 0, 1)
@@ -34,6 +37,11 @@ Options:
       --ours                            copy local files to dotfiles when force is enabled
       --their                           copy dotfiles to local files when force is enabled
   -V, --version                         print the version number"
+
+# rc file
+if [[ -f ".dotfilesrc" ]]; then
+  source .dotfilesrc
+fi
 
 # options
 while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do case $1 in
