@@ -79,7 +79,7 @@ copy() {
   fi
 
   if [[ -e $dotfile ]]; then
-    if diff -rq "$filepath" "$dotfile" &>/dev/null; then
+    if diffrq "$filepath" "$dotfile" &>/dev/null; then
       info "$dotfile already exists"
     elif (( $FORCE )); then
       if (( $THEIR )); then
@@ -117,16 +117,16 @@ copy() {
       warn "files $filepath and $dotfile differ"
       if (( $DIFF )); then
         if (( $INTERACTIVE )); then
-          if [[ -f $dotfile ]]; then
-            ${EDITOR} -d "$filepath" "$dotfile"
-            if diff -rq "$filepath" "$dotfile" &>/dev/null; then
+          if [[ -f $dotfile ]] && (( $+commands[$DIFFEDITOR] )); then
+            diffeditor "$filepath" "$dotfile"
+            if diffrq "$filepath" "$dotfile" &>/dev/null; then
               info "$filepath and $dotfile are now identical"
             fi
           else
-            diff -rq "$filepath" "$dotfile"
+            diffrq "$filepath" "$dotfile"
           fi
         else
-          diff -r "$filepath" "$dotfile"
+          diffr "$filepath" "$dotfile"
         fi
       fi
     fi
@@ -190,7 +190,7 @@ decipher() {
   if [[ -d $filepath ]]; then
     alert "decipher failed. $dotfile is a directory"
   elif [[ -e $dotfile ]]; then
-    if decryptool "$filepath" | diff -q - "$dotfile" &>/dev/null; then
+    if decryptool "$filepath" | diffq - "$dotfile" &>/dev/null; then
       info "$dotfile already exists"
     elif (( $FORCE )); then
       if decryptool "$filepath" 1>| "$dotfile"; then
@@ -204,7 +204,7 @@ decipher() {
         if (( $INTERACTIVE )); then
           notify "no interactive diff between encrypted files"
         fi
-        decryptool "$filepath" | diff - "$dotfile"
+        decryptool "$filepath" | $DIFFTOOL - "$dotfile"
         notify "to encrypt ${dotfile##*/} please run:"
         notify "age --encrypt -i ${AGEKEY} --output ${filepath} ${dotfile}"
       fi
@@ -228,6 +228,12 @@ rdecipher() {
   for subdir in $directory/*(/); do
     decipher "$filepath" "$subdir/$dotfile"
   done
+}
+
+alert() {
+  local msg=$argv[1]
+
+  echo "$fg[red][!]$reset_color $msg"
 }
 
 info() {
@@ -260,8 +266,50 @@ warn() {
   echo "$fg[yellow][?]$reset_color $msg"
 }
 
-alert() {
-  local msg=$argv[1]
+diffeditor() {
+  case $DIFFEDITOR in
+    vi | vim | nvim )
+      $DIFFEDITOR -d $argv
+    ;;
+    * )
+      notify "fallback to generic diff editor"
+      $DIFFEDITOR $argv
+    ;;
+  esac
+}
 
-  echo "$fg[red][!]$reset_color $msg"
+diffr() {
+  case $DIFFTOOL in
+    diff )
+      $DIFFTOOL -r $argv
+    ;;
+    * )
+      alert "unsupported diff tool. abort."
+      exit 1
+    ;;
+  esac
+}
+
+diffq() {
+  case $DIFFTOOL in
+    diff )
+      $DIFFTOOL -q $argv
+    ;;
+    * )
+      alert "unsupported diff tool. abort."
+      exit 1
+    ;;
+  esac
+}
+
+diffrq() {
+  case $DIFFTOOL in
+    diff )
+      $DIFFTOOL -rq $argv
+    ;;
+    * )
+      alert "unsupported diff tool. abort."
+      exit 1
+    ;;
+  esac
 }
