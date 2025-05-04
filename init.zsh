@@ -1,6 +1,9 @@
 #!/usr/bin/env zsh
+set -euo pipefail
+IFS=$'\n\t'
+
 autoload -Uz colors && colors
-source "functions.zsh"
+source "${0:A:h}/functions.zsh"
 
 version="0.6.0"
 
@@ -44,7 +47,8 @@ if [[ -f ".dotfilesrc" ]]; then
 fi
 
 # options
-while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do case $1 in
+opt=${1:-}
+while [[ "${opt}" =~ ^- && ! "${opt}" == "--" ]]; do case "${opt}" in
   -V | --version )
     echo $version
     exit
@@ -76,27 +80,27 @@ while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do case $1 in
     THEIR=1
     ;;
   --age-key )
-    shift; AGEKEY=$1
+    shift; AGEKEY=$opt
     echo "$fg[green](|)$reset_color age private key path is set to $AGEKEY"
     ;;
   --age-tool )
-    shift; AGETOOL=$1
+    shift; AGETOOL=$opt
     echo "$fg[green](|)$reset_color age file encryption tool is set to $AGETOOL"
     ;;
   --gpg-tool )
-    shift; GPGTOOL=$1
+    shift; GPGTOOL=$opt
     echo "$fg[green](|)$reset_color gpg file encryption tool is set to $GPGTOOL"
     ;;
   --git-tool )
-    shift; GITTOOL=$1
+    shift; GITTOOL=$opt
     echo "$fg[green](|)$reset_color git tool is set to $GITTOOL"
     ;;
   --diff-tool )
-    shift; DIFFTOOL=$1; DIFF=1
+    shift; DIFFTOOL=$opt; DIFF=1
     echo "$fg[green](|)$reset_color diff tool is set to $DIFFTOOL"
     ;;
   --diff-editor )
-    shift; DIFFEDITOR=$1; DIFF=1; INTERACTIVE=1
+    shift; DIFFEDITOR=$opt; DIFF=1; INTERACTIVE=1
     echo "$fg[green](|)$reset_color diff editor is set to $DIFFEDITOR"
     ;;
   --no-diff )
@@ -111,16 +115,16 @@ while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do case $1 in
     echo "$fg[yellow](–)$reset_color force mode off"
     FORCE=0
     ;;
-esac; shift; done
+esac; shift; opt=${1:-}; done
 
-if [[ "$1" == '--' ]]; then shift; fi
+if [[ "${opt}" == '--' ]]; then shift; fi
 
 AGETOOL=${AGETOOL:-age}
 GPGTOOL=${GPGTOOL:-gpg}
 GITTOOL=${GITTOOL:-git}
 DIFFTOOL=${DIFFTOOL:-diff}
 DIFFEDITOR=${DIFFEDITOR:-${EDITOR:-vim}}
-PROGRAM=${argv[@]}
+PROGRAM=$*
 THEIR=${THEIR:-1}
 
 # Load modules

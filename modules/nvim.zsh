@@ -1,13 +1,13 @@
 # nvim
 if program "nvim"; then
-  if [[ ! -d ${XDG_CONFIG_HOME:-$HOME/.config}/nvim ]]; then
+  if [[ ! -d "${XDG_CONFIG_HOME:-$HOME/.config}/nvim" ]]; then
     notify "please fetch nvim configuration by running:"
     notify "  git clone git@github.com:akarzim/kickstart.nvim.git ${XDG_CONFIG_HOME:-$HOME/.config}/nvim"
     notify "  git switch config"
-  elif [[ ! -d ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/.git ]]; then
+  elif [[ ! -d "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/.git" ]]; then
     notify "git repository not found"
   else
-    pushd ${XDG_CONFIG_HOME:-$HOME/.config}/nvim
+    pushd "${XDG_CONFIG_HOME:-$HOME/.config}/nvim"
     if (git diff --exit-code --quiet); then
       info "nvim configuration is up to date!"
     else

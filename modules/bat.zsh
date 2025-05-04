@@ -1,8 +1,8 @@
 # bat
 if program "batcat" "bat"; then
-  copy ${0:A:h:h}/home/config/bat .config/bat
+  copy "${0:A:h:h}/home/config/bat" ".config/bat"
 
-  if caching_policy ${XDG_CONFIG_HOME:-$HOME/.config}/bat/themes; then
+  if caching_policy "${XDG_CONFIG_HOME:-$HOME/.config}/bat/themes"; then
     batcat cache --build
     success "bat cache rebuilt"
   else

@@ -1,28 +1,37 @@
 #!/usr/bin/env zsh
+set -euo pipefail
+IFS=$'\n\t'
+
 module() {
+  local progname=${1:-}
+
   if [[ -o rematchpcre || "$OSTYPE" == darwin* ]]; then
-    [[ ${#PROGRAM} == 0 || ${PROGRAM} =~ [[:\<:]]$1[[:\>:]] ]]
+    [[ ${#PROGRAM} == 0 || ${PROGRAM} =~ [[:\<:]]${progname}[[:\>:]] ]]
   else
-    [[ ${#PROGRAM} == 0 || ${PROGRAM} =~ "\<$1\>" ]]
+    [[ ${#PROGRAM} == 0 || ${PROGRAM} =~ "\<${progname}\>" ]]
   fi
 }
 
 program() {
-  module ${2:-$1} && (( $+commands[$1] ))
+  local progname=${1:-}
+  local aliasname=${2:-${progname}}
+  module ${aliasname} && (( $+commands[${progname}] ))
 }
 
 caching_policy() {
-  local oldp=( $1/*(.Nmh-1) )
+  local policy=${1:-}
+  local oldp=( ${policy}/*(.Nmh-1) )
   (( $#oldp ))
 }
 
 skip() {
-  echo "$fg[magenta][/]$reset_color skip $1"
+  local msg=${1:-}
+  echo "$fg[magenta][/]$reset_color skip ${msg}"
 }
 
 link() {
-  local filepath=$argv[1]
-  local dotfile=${argv[2]:-.${filepath:t}}
+  local filepath=${1:-}
+  local dotfile=${2:-.${filepath:t}}
 
   if [[ ! $dotfile =~ "^/" ]]; then
     dotfile="$HOME/$dotfile"
@@ -56,9 +65,9 @@ link() {
 }
 
 rlink() {
-  local directory=$argv[1]
-  local filepath=$argv[2]
-  local dotfile=${argv[3]:-.${filepath:t}}
+  local directory=${1:-}
+  local filepath=${2:-}
+  local dotfile=${3:-.${filepath:t}}
 
   for subdir in $directory/*(/); do
     link "$filepath" "$subdir/$dotfile"
@@ -66,15 +75,15 @@ rlink() {
 }
 
 copy() {
-  local filepath=$argv[1]
-  local dotfile=${argv[2]:-.${filepath:t}}
-  local sudo=""
+  local filepath=${1:-}
+  local dotfile=${2:-.${filepath:t}}
+  local sudo=${3:-}
   
-  if [[ -n "$argv[3]" ]]; then
+  if [[ -n "$sudo" ]]; then
     sudo="sudo"
   fi
 
-  if [[ ! $dotfile =~ "^/" ]]; then
+  if [[ ! "$dotfile" =~ "^/" ]]; then
     dotfile="$HOME/$dotfile"
   fi
 
@@ -83,13 +92,13 @@ copy() {
       info "$dotfile already exists"
     elif (( $FORCE )); then
       if (( $THEIR )); then
-        if [[ -d $filepath ]]; then
+        if [[ -d "$filepath" ]]; then
           if $sudo cp -Rf "${filepath:a}" "$dotfile"; then
             success "$dotfile directory $fg[green]force$reset_color updated"
           else
             alert "$dotfile directory $fg[red]force$reset_color copy failed"
           fi
-        elif [[ -a $filepath ]]; then
+        elif [[ -a "$filepath" ]]; then
           if $sudo cp -pf "${filepath:a}" "$dotfile"; then
             success "$dotfile file $fg[green]force$reset_color updated"
           else
@@ -97,13 +106,13 @@ copy() {
           fi
         fi
       elif (( $OURS )); then
-        if [[ -d $dotfile ]]; then
+        if [[ -d "$dotfile" ]]; then
           if $sudo cp -Rf "${dotfile:a}" "${filepath:h}"; then
             success "$filepath directory $fg[green]force$reset_color updated"
           else
             alert "$filepath directory $fg[red]force$reset_color copy failed"
           fi
-        elif [[ -a $dotfile ]]; then
+        elif [[ -a "$dotfile" ]]; then
           if $sudo cp -pf "${dotfile:a}" "$filepath"; then
             success "$filepath file $fg[green]force$reset_color updated"
           else
@@ -117,7 +126,7 @@ copy() {
       warn "files $filepath and $dotfile differ"
       if (( $DIFF )); then
         if (( $INTERACTIVE )); then
-          if [[ -f $dotfile ]] && (( $+commands[$DIFFEDITOR] )); then
+          if [[ -f "$dotfile" ]] && (( $+commands[$DIFFEDITOR] )); then
             diffeditor "$filepath" "$dotfile"
             if diffrq "$filepath" "$dotfile" &>/dev/null; then
               info "$filepath and $dotfile are now identical"
@@ -130,13 +139,13 @@ copy() {
         fi
       fi
     fi
-  elif [[ -d $filepath ]]; then
+  elif [[ -d "$filepath" ]]; then
     if $sudo cp -R "${filepath:a}" "$dotfile"; then
       success "$dotfile directory copied"
     else
       alert "$dotfile directory copy failed"
     fi
-  elif [[ -a $filepath ]]; then
+  elif [[ -a "$filepath" ]]; then
     if $sudo mkdir -p "${dotfile:h}" && $sudo cp -p "${filepath:a}" "$dotfile"; then
       success "$dotfile file copied"
     else
@@ -148,13 +157,13 @@ copy() {
 }
 
 scopy() {
-  copy $argv "sudo"
+  copy $@ "sudo"
 }
 
 rcopy() {
-  local directory=$argv[1]
-  local filepath=$argv[2]
-  local dotfile=${argv[3]:-.${filepath:t}}
+  local directory=${1:-}
+  local filepath=${2:-}
+  local dotfile=${3:-.${filepath:t}}
 
   for subdir in $directory/*(/); do
     copy "$filepath" "$subdir/$dotfile"
@@ -162,7 +171,7 @@ rcopy() {
 }
 
 decryptool() {
-  local filepath=$argv[1]
+  local filepath=${1:-}
 
   if (( $+commands[$GPGTOOL] )) && [[ $filepath =~ ".gpg$" ]]; then
     $GPGTOOL --no-tty -q -d "$filepath"
@@ -180,16 +189,16 @@ decryptool() {
 }
 
 decipher() {
-  local filepath=$argv[1]
-  local dotfile=${argv[2]:-.${filepath:t}}
+  local filepath=${1:-}
+  local dotfile=${2:-.${filepath:t}}
 
-  if [[ ! $dotfile =~ "^/" ]]; then
+  if [[ ! "$dotfile" =~ "^/" ]]; then
     dotfile="$HOME/$dotfile"
   fi
 
-  if [[ -d $filepath ]]; then
+  if [[ -d "$filepath" ]]; then
     alert "decipher failed. $dotfile is a directory"
-  elif [[ -e $dotfile ]]; then
+  elif [[ -e "$dotfile" ]]; then
     if decryptool "$filepath" | diffq - "$dotfile" &>/dev/null; then
       info "$dotfile already exists"
     elif (( $FORCE )); then
@@ -209,7 +218,7 @@ decipher() {
         notify "age --encrypt -i ${AGEKEY} --output ${filepath} ${dotfile}"
       fi
     fi
-  elif [[ -a $filepath ]]; then
+  elif [[ -a "$filepath" ]]; then
     if decryptool "$filepath" 1> "$dotfile"; then
       success "$dotfile file deciphered"
     else
@@ -221,9 +230,9 @@ decipher() {
 }
 
 rdecipher() {
-  local directory=$argv[1]
-  local filepath=$argv[2]
-  local dotfile=${argv[3]:-.${filepath:t}}
+  local directory=${1:-}
+  local filepath=${2:-}
+  local dotfile=${3:-.${filepath:t}}
 
   for subdir in $directory/*(/); do
     decipher "$filepath" "$subdir/$dotfile"
@@ -231,49 +240,43 @@ rdecipher() {
 }
 
 alert() {
-  local msg=$argv[1]
-
+  local msg=${1:-}
   echo "$fg[red][!]$reset_color $msg"
 }
 
 info() {
-  local msg=$argv[1]
-
+  local msg=${1:-}
   echo "$fg[blue][•]$reset_color $msg"
 }
 
 noop() {
-  local msg=$argv[1]
-
+  local msg=${1:-}
   echo "$fg[yellow][-]$reset_color $msg"
 }
 
 notify() {
-  local msg=$argv[1]
-
+  local msg=${1:-}
   echo "$fg[yellow][ℹ]$reset_color $msg"
 }
 
 success() {
-  local msg=$argv[1]
-
+  local msg=${1:-}
   echo "$fg[green][+]$reset_color $msg"
 }
 
 warn() {
-  local msg=$argv[1]
-
+  local msg=${1:-}
   echo "$fg[yellow][?]$reset_color $msg"
 }
 
 diffeditor() {
   case $DIFFEDITOR in
     vi | vim | nvim )
-      $DIFFEDITOR -d $argv
+      $DIFFEDITOR -d $@
     ;;
     * )
       notify "fallback to generic diff editor"
-      $DIFFEDITOR $argv
+      $DIFFEDITOR $@
     ;;
   esac
 }
@@ -281,7 +284,7 @@ diffeditor() {
 diffr() {
   case $DIFFTOOL in
     diff )
-      $DIFFTOOL -r $argv
+      $DIFFTOOL -r $@
     ;;
     * )
       alert "unsupported diff tool. abort."
@@ -293,7 +296,7 @@ diffr() {
 diffq() {
   case $DIFFTOOL in
     diff )
-      $DIFFTOOL -q $argv
+      $DIFFTOOL -q $@
     ;;
     * )
       alert "unsupported diff tool. abort."
@@ -305,7 +308,7 @@ diffq() {
 diffrq() {
   case $DIFFTOOL in
     diff )
-      $DIFFTOOL -rq $argv
+      $DIFFTOOL -rq $@
     ;;
     * )
       alert "unsupported diff tool. abort."
@@ -317,10 +320,10 @@ diffrq() {
 gittool_status() {
   case $GITTOOL in
     git )
-      $GITTOOL status $argv
+      $GITTOOL status $@
     ;;
     tig )
-      $GITTOOL status $argv
+      $GITTOOL status $@
     ;;
     * )
       alert "unsupported git tool. abort."
