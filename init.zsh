@@ -5,7 +5,7 @@ IFS=$'\n\t'
 autoload -Uz colors && colors
 source "${0:A:h}/functions.zsh"
 
-version="0.6.0"
+version="0.7.0"
 
 help="dotfiles $version
 
