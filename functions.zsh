@@ -54,10 +54,14 @@ link() {
       warn "$dotfile should be a symlink but is a file"
     fi
   elif [[ -a $filepath ]]; then
-    if ln -sv "${filepath:a}" "$dotfile"; then
-      success "$dotfile linked"
+    if (( $CHECK )); then
+      notify "$dotfile need to be linked"
     else
-      alert "$dotfile link failed"
+      if ln -sv "${filepath:a}" "$dotfile"; then
+        success "$dotfile linked"
+      else
+        alert "$dotfile link failed"
+      fi
     fi
   else
     alert "$filepath does not exist"
@@ -140,16 +144,24 @@ copy() {
       fi
     fi
   elif [[ -d "$filepath" ]]; then
-    if $sudo cp -R "${filepath:a}" "$dotfile"; then
-      success "$dotfile directory copied"
+    if (( $CHECK )); then
+      notify "$dotfile directory doesn't exist"
     else
-      alert "$dotfile directory copy failed"
+      if $sudo cp -R "${filepath:a}" "$dotfile"; then
+        success "$dotfile directory copied"
+      else
+        alert "$dotfile directory copy failed"
+      fi
     fi
   elif [[ -a "$filepath" ]]; then
-    if $sudo mkdir -p "${dotfile:h}" && $sudo cp -p "${filepath:a}" "$dotfile"; then
-      success "$dotfile file copied"
+    if (( $CHECK )); then
+      notify "$dotfile file doesn't exist"
     else
-      alert "$dotfile file copy failed"
+      if $sudo mkdir -p "${dotfile:h}" && $sudo cp -p "${filepath:a}" "$dotfile"; then
+        success "$dotfile file copied"
+      else
+        alert "$dotfile file copy failed"
+      fi
     fi
   else
     alert "$filepath does not exist"
@@ -219,10 +231,14 @@ decipher() {
       fi
     fi
   elif [[ -a "$filepath" ]]; then
-    if decryptool "$filepath" 1> "$dotfile"; then
-      success "$dotfile file deciphered"
+    if (( $CHECK )); then
+      notify "$dotfile file need to be deciphered"
     else
-      alert "$dotfile file decipher failed"
+      if decryptool "$filepath" 1> "$dotfile"; then
+        success "$dotfile file deciphered"
+      else
+        alert "$dotfile file decipher failed"
+      fi
     fi
   else
     alert "$filepath does not exist"

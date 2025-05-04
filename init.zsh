@@ -11,15 +11,18 @@ help="dotfiles $version
 
 Usage: ${0:t} [-d | --diff] [-i | --interactive] [--diff-tool diff] [--diff-editor vim] [--git-tool git]
                 [--gpg-tool gpg] [--age-tool age] [--age-key path/to/key]
-                [-f | --force] [--ours | --their] [-h | --help]
-                [-V | --version] [program ...]
+                [-f | --force] [--ours | --their]
+                [-h | --help]
+                [-V | --version]
+                [-n | --dry-run] [program ...]
 
 Environment:
-  DIFF        hide/show changes between files if they are different (default: 0 ; values: 0, 1)
-  INTERACTIVE show changes in editor (default: 0 ; values: 0, 1)
-  FORCE       overwrite or not existing files if they are different (default: 0 ; values: 0, 1)
-  OURS        copy local files to dotfiles (default: 0 ; values: 0, 1)
-  THEIR       copy dotfiles to local files (default: 1 ; values: 0, 1)
+  CHECK       check if changes need to be applied (default: 0; values: 0, 1)
+  DIFF        hide/show changes between files if they are different (default: 0; values: 0, 1)
+  INTERACTIVE show changes in editor (default: 0; values: 0, 1)
+  FORCE       overwrite or not existing files if they are different (default: 0; values: 0, 1)
+  OURS        copy local files to dotfiles (default: 0; values: 0, 1)
+  THEIR       copy dotfiles to local files (default: 1; values: 0, 1)
   DIFFTOOL    exectuable for diffing files (default: diff)
   DIFFEDITOR  executable for editing diff (default: EDITOR)
   GITTOOL     executable for git diffing files (default: git)
@@ -33,6 +36,7 @@ Options:
       --git-tool=GIT_TOOL               set the git tool executable
       --diff-tool=DIFF_TOOL             set the diff tool executable
       --diff-editor=DIFF_EDITOR         set the diff editor executable
+  -n, --dry-run, --no-dry-run           check if changes need to be applied
   -d, --diff, --no-diff                 show/hide changes between files if they are different
   -f, --force, --no-force               overwrite or not existing files if they are different
   -h, --help                            print this help
@@ -56,6 +60,10 @@ while [[ "${opt}" =~ ^- && ! "${opt}" == "--" ]]; do case "${opt}" in
   -h | --help )
     echo $help
     exit
+    ;;
+  -n | --dry-run )
+    echo "$fg[green](|)$reset_color dry-run mode on"
+    CHECK=1;
     ;;
   -d | --diff )
     echo "$fg[green](|)$reset_color diff mode on"
@@ -102,6 +110,10 @@ while [[ "${opt}" =~ ^- && ! "${opt}" == "--" ]]; do case "${opt}" in
   --diff-editor )
     shift; DIFFEDITOR=$opt; DIFF=1; INTERACTIVE=1
     echo "$fg[green](|)$reset_color diff editor is set to $DIFFEDITOR"
+    ;;
+  --no-dry-run )
+    echo "$fg[yellow](–)$reset_color dry-run mode off"
+    CHECK=0
     ;;
   --no-diff )
     echo "$fg[yellow](–)$reset_color diff mode off"
