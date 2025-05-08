@@ -5,7 +5,7 @@ IFS=$'\n\t'
 autoload -Uz colors && colors
 source "${0:A:h}/functions.zsh"
 
-version="0.7.0"
+version="0.7.1"
 
 help="dotfiles $version
 
@@ -137,7 +137,14 @@ GITTOOL=${GITTOOL:-git}
 DIFFTOOL=${DIFFTOOL:-diff}
 DIFFEDITOR=${DIFFEDITOR:-${EDITOR:-vim}}
 PROGRAM=$*
+
+OURS=${OURS:-0}
 THEIR=${THEIR:-1}
+
+CHECK=${CHECK:-0}
+DIFF=${DIFF:-0}
+FORCE=${FORCE:-0}
+INTERACTIVE=${INTERACTIVE:-0}
 
 # Load modules
 for module in ${0:A:h}/modules/*.zsh; do
