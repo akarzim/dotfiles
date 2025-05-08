@@ -3,6 +3,9 @@ DOTFILES_EXISTS=$(shell [ -e "$(shell which dotfiles)" ] && echo 1 || echo 0 )
 install:	## Install the dotfiles application
 	./install.sh
 
+uninstall:	## Uninstall the dotfiles application
+	./uninstall.sh
+
 run:		## Run the dotfiles application
 ifeq ($(DOTFILES_EXISTS), 1)
 	@dotfiles
@@ -20,5 +23,5 @@ endif
 help:		## Show this help
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/##//'
 
-.PHONY: install run check help
+.PHONY: install uninstall run check help
 .DEFAULT_GOAL := help

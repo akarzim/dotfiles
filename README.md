@@ -88,6 +88,20 @@ git clone https://github.com/akarzim/dotfiles.git
 cd dotfiles && ./init.zsh
 ```
 
+## Makefile
+
+A Makefile exists to install, uninstall, run & check dotfiles.
+
+```
+make help
+
+install:	Install the dotfiles application
+uninstall:	Uninstall the dotfiles application
+run:		Run the dotfiles application
+check:		Run the healthcheck
+help:		Show this help
+```
+
 ## Usage
 
 ```
