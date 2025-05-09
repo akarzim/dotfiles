@@ -15,7 +15,7 @@ module() {
 program() {
   local progname=${1:-}
   local aliasname=${2:-${progname}}
-  module ${aliasname} && (( $+commands[${progname}] ))
+  module ${aliasname} && (( $+commands[${progname}] || $+commands[${aliasname}] ))
 }
 
 caching_policy() {
