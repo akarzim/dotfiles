@@ -6,7 +6,7 @@ if program "batcat" "bat"; then
     if (( $CHECK )); then
       notify "need to rebuild bat cache"
     else
-      batcat cache --build
+      $(which bat batcat 2>/dev/null | head -n 1) cache --build
       success "bat cache rebuilt"
     fi
   else
