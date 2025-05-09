@@ -1,4 +1,4 @@
-DOTFILES_EXISTS=$(shell [ -e "$(shell which dotfiles)" ] && echo 1 || echo 0 )
+DOTFILES_EXISTS=$(shell [ -e "$(shell which dotfiles &>/dev/null)" ] && echo 1 || echo 0 )
 
 install:	## Install the dotfiles application
 	./install.sh
