@@ -1,5 +1,9 @@
 [commit]
   gpgsign = false
+[maintenance]
+  repo = ~/dev/FAQ
+  repo = ~/dev/FSD
+  repo = ~/dev/web-wiki/
 [user]
   name = François Vantomme
   email = francois.vantomme@enercoop.org

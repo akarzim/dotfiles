@@ -1,9 +1,5 @@
 [commit]
   gpgsign = true
-[maintenance]
-  repo = ~/dev/FAQ
-  repo = ~/dev/FSD
-  repo = ~/dev/web-wiki/
 [user]
   name = François Vantomme
   email = akarzim@pm.me
