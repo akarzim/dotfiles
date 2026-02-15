@@ -1,8 +1,9 @@
 [absorb]
   maxStack = 50
 [alias]
-    # ATTENTION: All aliases prefixed with ! run in /bin/sh make sure you use sh syntax, not bash/zsh or whatever
-    recent = "!git_recent() { refbranch=$1 count=$2; git for-each-ref --sort=-committerdate refs/heads --format='%(refname:short)|%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' --color=always --count=${count:-20} | while read line; do branch=$(echo \"$line\" | awk 'BEGIN { FS = \"|\" }; { print $1 }' | tr -d '*'); colorline=$(echo \"$line\" | sed 's/^[^|]*|//'); echo \"$colorline\" | awk -F'|' -vOFS='|' '{$3=substr($3,1,70)}1' ; done | ( echo \"branch|lastcommit|message|author\n\" && cat) | column -ts'|';}; git_recent"
+  # ATTENTION: All aliases prefixed with ! run in /bin/sh make sure you use sh syntax, not bash/zsh or whatever
+  recent = "!git_recent() { refbranch=$1 count=$2; git for-each-ref --sort=-committerdate refs/heads --format='%(refname:short)|%(HEAD)%(color:yellow)%(refname:short)|%(color:reset)%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' --color=always --count=${count:-20} | while read line; do branch=$(echo \"$line\" | awk 'BEGIN { FS = \"|\" }; { print $1 }' | tr -d '*'); colorline=$(echo \"$line\" | sed 's/^[^|]*|//'); echo \"$colorline\" | awk -F'|' -vOFS='|' '{$1=substr($1,1,83)}{$3=substr($3,1,83)}1' ; done | ( echo \"branch|lastcommit|message|author\n\" && cat) | column -ts'|';}; git_recent"
+  swap = "!git_swap() { git recent | tail -n +2 | fzf --ansi | awk '{print $1}' | xargs git switch; }; git_swap"
 [core]
   excludesfile = ~/.gitignore
   ; pager = delta --plus-emph-color="#555628" --plus-color="#3b3c28" --minus-emph-color="#70342f" --minus-color="#4a2c2c" --theme='gruvbox.sepia'
