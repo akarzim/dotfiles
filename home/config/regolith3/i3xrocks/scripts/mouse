@@ -1,0 +1,71 @@
+#!/bin/bash
+# Mouse battery blocklet for Regolith
+
+LABEL_COLOR=${label_color:-$(xrescat i3xrocks.label.color "#7B8394")}
+VALUE_FONT=${font:-$(xrescat i3xrocks.value.font "Source Code Pro Medium 13")}
+BUTTON=${button:-}
+
+# Get mouse status.
+#
+# Returns:
+#   The mouse's status or state.
+get_mouse_status() {
+    echo "$__SOLAAR_INFO" | awk -W posix '$1 == "Battery:" { sub(/\./,"",$3); print $3 }' | head -n 1
+}
+
+# Get mouse percentage.
+#
+# Returns:
+#   The mouse's percentage, without the %.
+get_mouse_percent() {
+    echo "$__SOLAAR_INFO" | awk -W posix '$1 == "Battery:" { gsub(",%","",$2); print int($2) }' | head -n 1
+}
+
+__SOLAAR_INFO=$(solaar show)
+
+
+BATT_PERCENT=$(get_mouse_percent)
+CHARGE_STATE=$(get_mouse_status)
+
+if [ -z "$BATT_PERCENT" ]; then
+    exit 0
+elif [ "$BATT_PERCENT" -ge 0 ] && [ "$BATT_PERCENT" -le 20 ]; then
+    LABEL_ICON=$(xrescat i3xrocks.label.mouse E)
+    VALUE_COLOR=$(xrescat i3xrocks.critical.color red)
+elif [ "$BATT_PERCENT" -ge 20 ] && [ "$BATT_PERCENT" -le 50 ]; then
+    LABEL_ICON=$(xrescat i3xrocks.label.mouse L)
+    VALUE_COLOR=$(xrescat i3xrocks.error.color orange)
+elif [ "$BATT_PERCENT" -ge 50 ] && [ "$BATT_PERCENT" -le 80 ]; then
+    LABEL_ICON=$(xrescat i3xrocks.label.mouse M)
+    VALUE_COLOR=$(xrescat i3xrocks.nominal white)
+elif [ "$BATT_PERCENT" -ge 80 ] && [ "$BATT_PERCENT" -le 98 ]; then
+    LABEL_ICON=$(xrescat i3xrocks.label.mouse F)
+    VALUE_COLOR=$(xrescat i3xrocks.value.color white)
+else
+    LABEL_ICON=$(xrescat i3xrocks.label.mouse C)
+    VALUE_COLOR=$(xrescat i3xrocks.value.color white)
+fi
+
+if [ -z "$CHARGE_STATE" ]; then
+    exit 0
+elif [ "$CHARGE_STATE" == "discharging" ]; then
+    CHARGE_ICON=$(xrescat i3xrocks.label.dn D)
+elif [ "$CHARGE_STATE" == "charging" ]; then
+    CHARGE_ICON=$(xrescat i3xrocks.label.up C)
+else
+    CHARGE_ICON=$(echo -e '\u2003')
+fi
+
+ACTION_1=$(xrescat i3xrocks.action.mouse.left "regolith-control-center mouse")
+ACTION_2=$(xrescat i3xrocks.action.mouse.middle "solaar")
+case $BUTTON in
+    1) eval $ACTION_1 ;;
+    2) eval $ACTION_2 ;;
+    3) eval $ACTION_3 ;;
+esac
+
+ICON_SPAN="<span font_desc=\"${VALUE_FONT}\" color=\"${LABEL_COLOR}\">$LABEL_ICON</span>"
+VALUE_SPAN="<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\"> $BATT_PERCENT%</span>"
+CHARGE_SPAN="<span color=\"${VALUE_COLOR}\">$CHARGE_ICON</span>"
+
+echo "${ICON_SPAN}${VALUE_SPAN}${CHARGE_SPAN}"

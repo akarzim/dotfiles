@@ -9,6 +9,7 @@ i3xrocks.action.battery: regolith-control-center power
 i3xrocks.action.bluetooth.left: regolith-control-center bluetooth
 i3xrocks.action.mic.left: regolith-control-center sound
 i3xrocks.action.mic.middle: pavucontrol -t 4
+i3xrocks.action.mouse: regolith-control-center mouse
 i3xrocks.action.network.left: regolith-control-center network
 i3xrocks.action.time: regolith-control-center datetime
 i3xrocks.action.volume.left: regolith-control-center sound
@@ -29,6 +30,7 @@ i3xrocks.label.fan: 
 i3xrocks.label.cpu:  
 i3xrocks.label.mic.mute:  
 i3xrocks.label.mic:  
+i3xrocks.label.mouse:  
 i3xrocks.label.mute:  
 i3xrocks.label.notify.none:  
 i3xrocks.label.notify.some:  

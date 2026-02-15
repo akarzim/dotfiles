@@ -1,0 +1,5 @@
+# Mouse indicator
+#
+# Displays total percentage charge left of specified mouse.
+[mouse]
+interval=60
