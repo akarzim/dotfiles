@@ -10,6 +10,7 @@
   attributesfile = ~/.gitattributes
   # see https://stackoverflow.com/questions/51147825/is-it-possible-for-git-to-display-the-filename-with-accents
   quotepath = false
+  editor = /usr/local/bin/nvim --listen ~/.cache/nvim/git.pipe
 [color "status"]
   added = yellow
   changed = magenta
@@ -17,8 +18,8 @@
 [diff]
   algorithm = histogram
   compactionHeuristic = true
-[difftool "vimdiff"]
-  cmd = $EDITOR -d $LOCAL $REMOTE
+[difftool "nvimdiff"]
+  cmd = /usr/local/bin/nvim --listen ~/.cache/nvim/git.pipe -d $LOCAL $REMOTE
 [fetch]
   writeCommitGraph = true
 [filter "lfs"]
@@ -33,10 +34,10 @@
 [interactive]
   ; diffFilter = delta --color-only
 [merge]
-  tool = vimdiff
+  tool = nvimdiff
   conflictStyle = diff3
-[mergetool "vimdiff"]
-  cmd = $EDITOR -d $LOCAL $MERGED $BASE $REMOTE -c 'winc w' -c 'winc J' -c 'winc k' -c 'winc l' -c 'diffo' -c 'winc j' -c 'diffo'
+[mergetool "nvimdiff"]
+  cmd = /usr/local/bin/nvim --listen ~/.cache/nvim/git.pipe -d $LOCAL $MERGED $BASE $REMOTE -c 'winc w' -c 'winc J' -c 'winc k' -c 'winc l' -c 'diffo' -c 'winc j' -c 'diffo'
 [protocol]
   version = 2
 [pull]
