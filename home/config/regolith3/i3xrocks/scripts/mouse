@@ -5,12 +5,20 @@ LABEL_COLOR=${label_color:-$(xrescat i3xrocks.label.color "#7B8394")}
 VALUE_FONT=${font:-$(xrescat i3xrocks.value.font "Source Code Pro Medium 13")}
 BUTTON=${button:-}
 
+# Get mouse battery info.
+#
+# Returns:
+#   The mouse's battery info line from solaar.
+get_mouse_battery() {
+    echo "$__SOLAAR_INFO" | awk -W posix '$1 == "Battery:"' | head -n 1
+}
+
 # Get mouse status.
 #
 # Returns:
-#   The mouse's status or state.
-get_mouse_status() {
-    echo "$__SOLAAR_INFO" | awk -W posix '$1 == "Battery:" { sub(/\./,"",$3); print $3 }' | head -n 1
+#   The mouse's status (charging or discharging) or unknown.
+get_mouse_charge() {
+    echo "$(get_mouse_battery)" | awk -W posix '$2 != "unknown" { sub(/\./,"",$3); print $3 }; $2 == "unknown" { print $2 }'
 }
 
 # Get mouse percentage.
@@ -18,27 +26,25 @@ get_mouse_status() {
 # Returns:
 #   The mouse's percentage, without the %.
 get_mouse_percent() {
-    echo "$__SOLAAR_INFO" | awk -W posix '$1 == "Battery:" { gsub(",%","",$2); print int($2) }' | head -n 1
+    echo "$(get_mouse_battery)" | awk -W posix '{ gsub(",%","",$2); print int($2) }'
 }
 
 __SOLAAR_INFO=$(solaar show)
 
+MOUSE_BATTERY=$(get_mouse_battery)
+MOUSE_PERCENT=$(get_mouse_percent)
+MOUSE_CHARGE=$(get_mouse_charge)
 
-BATT_PERCENT=$(get_mouse_percent)
-CHARGE_STATE=$(get_mouse_status)
-
-if [ -z "$BATT_PERCENT" ]; then
-    exit 0
-elif [ "$BATT_PERCENT" -ge 0 ] && [ "$BATT_PERCENT" -le 20 ]; then
+if [ "$MOUSE_PERCENT" -ge 0 ] && [ "$MOUSE_PERCENT" -le 20 ]; then
     LABEL_ICON=$(xrescat i3xrocks.label.mouse E)
     VALUE_COLOR=$(xrescat i3xrocks.critical.color red)
-elif [ "$BATT_PERCENT" -ge 20 ] && [ "$BATT_PERCENT" -le 50 ]; then
+elif [ "$MOUSE_PERCENT" -ge 20 ] && [ "$MOUSE_PERCENT" -le 50 ]; then
     LABEL_ICON=$(xrescat i3xrocks.label.mouse L)
     VALUE_COLOR=$(xrescat i3xrocks.error.color orange)
-elif [ "$BATT_PERCENT" -ge 50 ] && [ "$BATT_PERCENT" -le 80 ]; then
+elif [ "$MOUSE_PERCENT" -ge 50 ] && [ "$MOUSE_PERCENT" -le 80 ]; then
     LABEL_ICON=$(xrescat i3xrocks.label.mouse M)
     VALUE_COLOR=$(xrescat i3xrocks.nominal white)
-elif [ "$BATT_PERCENT" -ge 80 ] && [ "$BATT_PERCENT" -le 98 ]; then
+elif [ "$MOUSE_PERCENT" -ge 80 ] && [ "$MOUSE_PERCENT" -le 98 ]; then
     LABEL_ICON=$(xrescat i3xrocks.label.mouse F)
     VALUE_COLOR=$(xrescat i3xrocks.value.color white)
 else
@@ -46,11 +52,11 @@ else
     VALUE_COLOR=$(xrescat i3xrocks.value.color white)
 fi
 
-if [ -z "$CHARGE_STATE" ]; then
+if [ -z "$MOUSE_CHARGE" ]; then # no mouse dongle
     exit 0
-elif [ "$CHARGE_STATE" == "discharging" ]; then
+elif [ "$MOUSE_CHARGE" == "discharging" ]; then
     CHARGE_ICON=$(xrescat i3xrocks.label.dn D)
-elif [ "$CHARGE_STATE" == "charging" ]; then
+elif [ "$MOUSE_CHARGE" == "charging" ]; then
     CHARGE_ICON=$(xrescat i3xrocks.label.up C)
 else
     CHARGE_ICON=$(echo -e '\u2003')
@@ -61,11 +67,16 @@ ACTION_2=$(xrescat i3xrocks.action.mouse.middle "solaar")
 case $BUTTON in
     1) eval $ACTION_1 ;;
     2) eval $ACTION_2 ;;
-    3) eval $ACTION_3 ;;
 esac
 
 ICON_SPAN="<span font_desc=\"${VALUE_FONT}\" color=\"${LABEL_COLOR}\">$LABEL_ICON</span>"
-VALUE_SPAN="<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\"> $BATT_PERCENT%</span>"
+
+if [[ "$MOUSE_BATTERY" =~ "unknown" ]]; then # mouse is switched off
+    VALUE_COLOR=$(xrescat i3xrocks.value.color white)
+    VALUE_SPAN="<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\"> off</span>"
+else
+    VALUE_SPAN="<span font_desc=\"${VALUE_FONT}\" color=\"${VALUE_COLOR}\"> $MOUSE_PERCENT%</span>"
+fi
 CHARGE_SPAN="<span color=\"${VALUE_COLOR}\">$CHARGE_ICON</span>"
 
 echo "${ICON_SPAN}${VALUE_SPAN}${CHARGE_SPAN}"
