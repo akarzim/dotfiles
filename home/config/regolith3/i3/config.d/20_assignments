@@ -2,6 +2,7 @@ assign [class="firefox-dev"] workspace number $ws2
 assign [class="thunderbird-default"] workspace number $ws3
 assign [class="Rocket.Chat"] workspace number $ws4
 
-assign [class="Spotify"] workspace number $ws9
+assign [class="Element"] workspace number $ws8
+assign [class="qobuz-linux"] workspace number $ws9
 assign [class="Firefox-esr"] workspace number $ws10
 assign [class="LibreWolf"] workspace number $ws10

@@ -15,7 +15,7 @@ set_from_resource $wm.binding.capture_window wm.binding.capture_window Ctrl+Prin
 set_from_resource $wm.program.capture_window wm.program.capture_window maim --window $(xdotool getactivewindow)
 bindsym $mod+$wm.binding.capture_window exec --no-startup-id $wm.program.capture_window $wm.storage.capture.path
 
-## Screenshot // Capture Active Window // <><Ctrl><Print> ##
+## Screenshot // Capture Selection // <><Shift><Print> ##
 set_from_resource $wm.binding.capture_selection wm.binding.capture_selection Shift+Print
 set_from_resource $wm.program.capture_selection wm.program.capture_selection maim --select
 bindsym $mod+$wm.binding.capture_selection exec --no-startup-id $wm.program.capture_selection $wm.storage.capture.path

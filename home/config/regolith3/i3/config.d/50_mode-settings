@@ -1,5 +1,5 @@
 ## Resize // Enter Resize Mode // <> r ##
-set_from_resource $wm.binding.resize_mode wm.binding.resize_mode r
+# set_from_resource $wm.binding.resize_mode wm.binding.resize_mode r
 
 ## Presentation // Enter Presentation Mode // <> p ##
 set_from_resource $wm.binding.presentation_mode wm.binding.presentation_mode p
