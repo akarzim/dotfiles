@@ -1,5 +1,5 @@
 [commit]
-  gpgsign = true
+  gpgsign = false
 [user]
   name = François Vantomme
   email = akarzim@pm.me
