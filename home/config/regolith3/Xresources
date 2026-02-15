@@ -54,8 +54,6 @@ i3xrocks.wifi.good: 45
 i3xrocks.wifi.poor: 30
 
 regolith.look.path: /usr/share/regolith-look/gruvbox
-regolith.wallpaper.file: ~/.config/regolith3/wallpapers/wallpaper.jpg
-regolith.lockscreen.wallpaper.file: ~/.config/regolith3/wallpapers/lockscreen.png
 
 wm.bar.font: IosevkaCustom 12
 wm.bar.trayoutput: none
@@ -76,3 +74,7 @@ wm.font: IosevkaCustom 12
 wm.gaps.inner.size: 18
 wm.program.terminal: /usr/bin/kitty
 wm.window.border.size: 2
+regolith.wallpaper.file: /home/francois.vantomme/.local/share/backgrounds/2026-02-14-15-05-45-2023-01-09_The-after-rain-smell_by-David-Revoy.jpg
+! regolith.lockscreen.wallpaper.file: /home/francois.vantomme/.local/share/backgrounds/2026-02-14-15-05-45-2023-01-09_The-after-rain-smell_by-David-Revoy.jpg
+! regolith.wallpaper.file: /home/francois.vantomme/.local/share/backgrounds/2026-02-14-15-06-01-2024-11-11_Light-in-the-Darkness_by-David-Revoy.jpg
+regolith.lockscreen.wallpaper.file: /home/francois.vantomme/.local/share/backgrounds/2026-02-14-15-06-01-2024-11-11_Light-in-the-Darkness_by-David-Revoy.jpg
