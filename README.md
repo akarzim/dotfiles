@@ -5,6 +5,9 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
+> [!IMPORTANT]
+> Moved to [Codeberg](https://codeberg.org/akarzim/dotfiles)
+
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
